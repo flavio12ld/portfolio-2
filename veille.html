@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille technologique - Portfolio Flavio Lodé</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .emoji-bounce {
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            to { transform: translateY(-10px);}
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen text-white">
+    <nav class="bg-gray-900 shadow-lg">
+        <div class="flex items-center justify-between max-w-7xl mx-auto px-4">
+            <span class="text-xl font-bold text-white">Flavio Lodé</span>
+        <ul class="flex justify-center space-x-8 py-4">
+            <li><a href="index.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">Accueil</a></li>
+            <li><a href="a-propos.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">À propos</a></li>
+            <li><a href="cv.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">CV</a></li>
+            <li><a href="competence.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">Compétences</a></li>
+            <li><a href="projet.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">Projet</a></li>
+            <li><a href="veille.html" class="uppercase font-semibold px-4 py-2 rounded bg-blue-500 transition">Veille technologique</a></li>
+            <li><a href="contact.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition">Contact</a></li>
+        </ul>
+        </div>
+    </nav>
+    <section id="veille" class="py-16 px-4 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-blue-400 fade-in">Veille technologique <span ></span></h2>
+        <p class="text-lg text-gray-200 fade-in">
+            Je m'informe régulièrement sur les dernières tendances du numérique, de la cybersécurité <span>🛡️</span> et du développement web <span >💻</span>.
+        </p>
+        <div class="mt-10 grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg fade-in hover:scale-105 transition cursor-pointer">
+                <h3 class="text-xl font-semibold mb-2 text-blue-300">Intelligence Artificielle <span>🤖</span></h3>
+                <p class="text-gray-200">Suivi des avancées en IA, machine learning et automatisation.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg fade-in hover:scale-105 transition cursor-pointer">
+                <h3 class="text-xl font-semibold mb-2 text-blue-300">Cybersécurité <span>🔒</span></h3>
+                <p class="text-gray-200">Veille sur les nouvelles menaces, bonnes pratiques et outils de sécurité.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg fade-in hover:scale-105 transition cursor-pointer">
+                <h3 class="text-xl font-semibold mb-2 text-blue-300">Développement Web <span>🌐</span></h3>
+                <p class="text-gray-200">Découverte des frameworks, tendances UI/UX et technologies front/back.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg fade-in hover:scale-105 transition cursor-pointer">
+                <h3 class="text-xl font-semibold mb-2 text-blue-300">Cloud & DevOps <span>☁️</span></h3>
+                <p class="text-gray-200">Exploration des solutions cloud, CI/CD et automatisation des déploiements.</p>
+            </div>
+        </div>
+        <button id="surpriseBtn" class="mt-10 px-6 py-3 bg-blue-500 rounded-lg hover:bg-blue-600 transition font-semibold fade-in">
+            Clique pour une surprise <span class="emoji-bounce">✨</span>
+        </button>
+        <div id="surprise" class="mt-6 text-center text-2xl hidden">
+            🚀 Continue à apprendre et à explorer, le futur t'appartient ! 🚀
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
+            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
+            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
+            <a href="competence.html" class="hover:text-blue-400 transition">Compétence</a>
+            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
+            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
+        </div>
+        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+    </footer>
+    <script>
+        // Animation fade-in au scroll
+        function revealOnScroll() {
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Bouton surprise
+        document.getElementById('surpriseBtn').addEventListener('click', function() {
+            const surprise = document.getElementById('surprise');
+            surprise.classList.toggle('hidden');
+            surprise.classList.add('fade-in', 'visible');
+        });
+    </script>
+</body>
+</html>
