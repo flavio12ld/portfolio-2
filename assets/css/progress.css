@@ -1,0 +1,26 @@
+/* progress.css - styles barres */
+.progress-track{
+    background: rgba(255,255,255,0.04);
+    border-radius:9999px;
+    height: .6rem;
+    overflow:hidden;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.progress-fill{
+    height:100%;
+    border-radius:9999px;
+    transition: width 900ms cubic-bezier(.2,.9,.2,1), filter .18s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.45) inset;
+}
+
+/* dégradés par famille pour lisibilité */
+.fill-blue{ background-image: linear-gradient(90deg,#1e3a8a,#3b82f6); }
+.fill-green{ background-image: linear-gradient(90deg,#166534,#34d399); }
+.fill-red{ background-image: linear-gradient(90deg,#7f1d1d,#ef4444); }
+.fill-yellow{ background-image: linear-gradient(90deg,#92400e,#f97316); }
+
+.progress-fill:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+
+/* percentage label */
+.percent-label{ min-width:48px; text-align:right; font-weight:600; }

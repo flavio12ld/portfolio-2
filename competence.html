@@ -3,214 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétence - Portfolio Flavio Lodé</title>
+    <title>Compétences - Portfolio Flavio Lodé</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/veille.css">
+    <style>
+        /* base pour les "fills" */
+        .progress-fill {
+            transition: width 900ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.45) inset;
+        }
+        /* Hover global sur les barres pour léger relief */
+        .w-full > .progress-fill:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        /* Dégradés cohérents par famille de couleurs */
+        .bg-blue-500 { background-image: linear-gradient(90deg,#1e40af,#3b82f6); }
+        .bg-blue-400 { background-image: linear-gradient(90deg,#1e3a8a,#60a5fa); }
+        .bg-blue-300 { background-image: linear-gradient(90deg,#1e3a8a,#93c5fd); }
+        .bg-blue-200 { background-image: linear-gradient(90deg,#153e75,#bfdbfe); }
+        .bg-blue-100 { background-image: linear-gradient(90deg,#0f172a,#dbeafe); }
+
+        .bg-green-600 { background-image: linear-gradient(90deg,#166534,#10b981); }
+        .bg-green-500 { background-image: linear-gradient(90deg,#15803d,#34d399); }
+        .bg-green-400 { background-image: linear-gradient(90deg,#15803d,#6ee7b7); }
+        .bg-green-300 { background-image: linear-gradient(90deg,#14532d,#86efac); }
+        .bg-green-200 { background-image: linear-gradient(90deg,#134e4a,#bbf7d0); }
+        .bg-green-100 { background-image: linear-gradient(90deg,#052e16,#d1fae5); }
+
+        .bg-red-400 { background-image: linear-gradient(90deg,#991b1b,#fb7185); }
+        .bg-red-500 { background-image: linear-gradient(90deg,#7f1d1d,#f43f5e); }
+        .bg-red-600 { background-image: linear-gradient(90deg,#7f1d1d,#ef4444); }
+        .bg-red-700 { background-image: linear-gradient(90deg,#5b0b0b,#dc2626); }
+        .bg-red-300 { background-image: linear-gradient(90deg,#7f1d1d,#fca5a5); }
+        .bg-red-200 { background-image: linear-gradient(90deg,#7f1d1d,#fecaca); }
+        .bg-red-100 { background-image: linear-gradient(90deg,#7f1d1d,#fee2e2); }
+
+        .bg-yellow-300 { background-image: linear-gradient(90deg,#b45309,#fbbf24); }
+        .bg-yellow-400 { background-image: linear-gradient(90deg,#92400e,#f59e0b); }
+        .bg-yellow-500 { background-image: linear-gradient(90deg,#78350f,#f97316); }
+
+        /* style pour la "piste" des barres */
+        .progress-track { background: rgba(255,255,255,0.04); }
+
+        /* petit label percent à droite (responsive) */
+        .percent-label { min-width: 48px; text-align: right; }
+
+        /* force rounding net */
+        .rounded-progress { border-radius: 9999px; overflow: hidden; }
+    </style>
+    <!-- ajout script d'animation des barres -->
 </head>
 <body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen text-white">
-    <nav class="bg-gray-900 shadow-lg">
-        <div class="flex items-center justify-between max-w-7xl mx-auto px-4">
-            <span class="text-xl font-bold text-white">Flavio Lodé</span>            
-        <ul class="flex justify-center space-x-8 py-4">
-            <li>
-                <a href="index.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">🏠</span> Accueil
+        <nav class="bg-gray-900 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="block">
+                    <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-white/10 object-cover shadow-md" />
                 </a>
-            </li>
-            <li>
-                <a href="a-propos.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">🙋‍♂️</span> À propos
-                </a>
-            </li>
-            <li>
-                <a href="cv.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">📄</span> CV
-                </a>
-            </li>
-            <li>
-                <a href="competence.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">💻</span> Compétences
-                </a>
-            </li>
-            <li>
-                <a href="projet.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">🚀</span> Projet
-                </a>
-            </li>
-            <li>
-                <a href="veille.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">🛰️</span> Veille technologique
-                </a>
-            </li>
-            <li>
-                <a href="contact.html" class="uppercase font-semibold px-4 py-2 rounded hover:bg-blue-500 transition flex items-center gap-2">
-                    <span style="font-size:1.2em;">✉️</span> Contact
-                </a>
-            </li>
-        </ul>
+                <a href="index.html" class="hidden md:inline text-lg font-bold text-white">Flavio Lodé</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <ul id="mainNav" class="hidden md:flex items-center gap-3">
+                    <li class="flex-1 md:flex-none">
+                        <a href="index.html" aria-current="page" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> Accueil
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="a-propos.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> À propos
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="cv.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> CV
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="competence.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> Compétences
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="projet.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> Projet
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="veille.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> Veille
+                        </a>
+                    </li>
+                    <li class="flex-1 md:flex-none">
+                        <a href="contact.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
+                            <span class="nav-emoji inline-block mr-2"></span> Contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="hidden md:flex items-center gap-3 ml-3">
+                    <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="LinkedIn">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6" />
+                    </a>
+                    <a href="https://github.com/flavio-lode" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="GitHub">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-6 h-6 bg-white rounded-full" />
+                    </a>
+                </div>
+                <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="md:hidden p-2 rounded-md hover:bg-gray-800 transition text-white ml-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
     <section class="py-16 px-4 max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-10 text-blue-400">COMPÉTENCES</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="flex flex-col gap-8">
             <!-- Bloc Informatique -->
-            <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px]">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-300">💻 Compétences informatique</h3>
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-300">💻 Spécialisation SISR</h3>
+                <p class="mb-6"> Solutions d'Infrastructure, Systèmes et Réseaux</p>
                 <div class="mb-4">
                     <div class="flex justify-between">
-                        <span>HTML/CSS</span>
-                        <span class="font-semibold">90%</span>
+                        <span>Administration systèmes</span>
+                        <span class="font-semibold">40%</span>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-500 h-3 rounded-full" style="width: 90%"></div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-blue-500 h-3 rounded-full" style="width: 40%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="flex justify-between">
-                        <span>JavaScript</span>
-                        <span class="font-semibold">15%</span>
+                        <span>Configuration réseaux</span>
+                        <span class="font-semibold">50%</span>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-400 h-3 rounded-full" style="width: 75%"></div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-blue-400 h-3 rounded-full" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between">
+                        <span>Active Directory</span>
+                        <span class="font-semibold">55%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-blue-300 h-3 rounded-full" style="width: 55%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between">
+                        <span>DNS / DHCP</span>
+                        <span class="font-semibold">40%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-blue-200 h-3 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>    
+                <div>
+                    <div class="flex justify-between">
+                        <span>Virtualisation (VMware, Hyper-V)</span>
+                        <span class="font-semibold">20%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-blue-100 h-3 rounded-full" style="width: 20%"></div>
+                    </div>
+                </div>                                
+            </div>
+
+            <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Autres compétences informatiques</h3>
+                <div class="mb-4">
+                    <div class="flex justify-between">
+                        <span>HTML / CSS</span>
+                        <span class="font-semibold">75%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-green-600 h-3 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between">
+                        <span>SQL</span>
+                        <span class="font-semibold">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-green-400 h-3 rounded-full" style="width: 65%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="flex justify-between">
                         <span>PHP</span>
-                        <span class="font-semibold">65%</span>
+                        <span class="font-semibold">25%</span>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-300 h-3 rounded-full" style="width: 65%"></div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-green-500 h-3 rounded-full" style="width: 25%"></div>
                     </div>
                 </div>
                 <div class="mb-4">
                     <div class="flex justify-between">
                         <span>Python</span>
-                        <span class="font-semibold">70%</span>
+                        <span class="font-semibold">30%</span>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-200 h-3 rounded-full" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>MySQL</span>
-                        <span class="font-semibold">60%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-600 h-3 rounded-full" style="width: 60%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between">
-                        <span>Administration systèmes</span>
-                        <span class="font-semibold">55%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-blue-800 h-3 rounded-full" style="width: 55%"></div>
+                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-green-100 h-3 rounded-full" style="width: 30%"></div>
                     </div>
                 </div>
             </div>
-            <!-- Bloc Autre compétence -->
-            <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px]">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Autre compétences</h3>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Travail en équipe</span>
-                        <span class="font-semibold">85%</span>
+            
+            <!-- Autres compétences : listées verticalement (une après l'autre) -->
+
+                <!-- Cybersécurité -->
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl ">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🛡️ Compétences en cybersécurité</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Sécurité Informatique</span>
+                            <span class="font-semibold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 75%"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-green-400 h-3 rounded-full" style="width: 85%"></div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Méthode EBios</span>
+                            <span class="font-semibold">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-400 h-3 rounded-full" style="width: 65%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Gestion de projet</span>
-                        <span class="font-semibold">70%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-green-500 h-3 rounded-full" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Communication</span>
-                        <span class="font-semibold">80%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-green-300 h-3 rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Anglais B1</span>
-                        <span class="font-semibold">60%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-green-200 h-3 rounded-full" style="width: 60%"></div>
+                    <div>
+                        <div class="flex justify-between">
+                            <span>RGPD</span>
+                            <span class="font-semibold">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-500 h-3 rounded-full" style="width: 60%"></div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="flex justify-between">
-                        <span>Allemand A2</span>
-                        <span class="font-semibold">40%</span>
+
+                <!-- Compétences Personnelles -->
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Compétences Personnelles</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Travail en équipe</span>
+                            <span class="font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-900 h-3 rounded-full" style="width: 85%"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-green-100 h-3 rounded-full" style="width: 40%"></div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Gestion de projet</span>
+                            <span class="font-semibold">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-500 h-3 rounded-full" style="width: 70%"></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Bloc Cybersécurité -->
-            <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px]">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-300">🛡️ Compétences en cybersécurité</h3>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Sensibilisation sécurité</span>
-                        <span class="font-semibold">80%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-red-400 h-3 rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Gestion des mots de passe</span>
-                        <span class="font-semibold">75%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-red-500 h-3 rounded-full" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Protection des données</span>
-                        <span class="font-semibold">65%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-red-600 h-3 rounded-full" style="width: 65%"></div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Communication</span>
+                            <span class="font-semibold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-700 h-3 rounded-full" style="width: 80%"></div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="flex justify-between">
-                        <span>Veille sécurité</span>
-                        <span class="font-semibold">60%</span>
+
+                <!-- Compétences Linguistiques -->
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🌐 Compétences Linguistiques</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Français (maternelle)</span>
+                            <span class="font-semibold">100%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-500 h-3 rounded-full" style="width: 100%"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2">
-                        <div class="bg-red-700 h-3 rounded-full" style="width: 60%"></div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Anglais B1</span>
+                            <span class="font-semibold">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-300 h-3 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Allemand A2</span>
+                            <span class="font-semibold">40%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-100 h-3 rounded-full" style="width: 40%"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
     <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
         <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">🏠 Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">🙋‍♂️ À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">📄 CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">💻 Compétence</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">🚀 Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">🛰️ Veille technologique</a>
+            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
+            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
+            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
+            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
+            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
+            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
         </div>
         <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
     </footer>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+/* navbar.css - styles pour la nav */
+:root{
+    --nav-accent-1:#2563eb; /* bleu */
+    --nav-accent-2:#06b6d4; /* cyan */
+    --nav-bg: rgba(17,24,39,1);
+}
+
+/* global navbar container si besoin */
+nav { background: var(--nav-bg); }
+
+/* items */
+.nav-item{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #e6eefc;
+    transition: transform .25s ease, box-shadow .25s ease, color .18s ease;
+    position:relative;
+    overflow:hidden;
+    padding: .55rem .9rem;
+    border-radius: .5rem;
+}
+
+/* gradient sliding layer */
+.nav-item::before{
+    content:"";
+    position:absolute;
+    left:-130%;
+    top:0;
+    width:260%;
+    height:100%;
+    background: linear-gradient(90deg, rgba(37,99,235,0.14), rgba(6,182,212,0.12));
+    transform:translateX(0);
+    transition: transform .45s cubic-bezier(.2,.9,.2,1);
+    pointer-events:none;
+}
+.nav-item:hover::before{ transform: translateX(-50%); }
+.nav-item:hover{ transform: translateY(-6px); box-shadow:0 10px 30px rgba(6,40,90,0.2); color: #fff; }
+
+/* emoji micro-bob */
+.nav-emoji{ display:inline-block; transition: transform .2s ease; -webkit-filter: grayscale(100%) saturate(0%); filter: grayscale(100%) saturate(0%); }
+.nav-item:hover .nav-emoji{ transform: translateY(-4px) scale(1.06); }
+
+/* Alternative: if platform shows color emoji as images, ensure they appear neutral by lowering saturation */
+.nav-emoji img { -webkit-filter: grayscale(100%) saturate(0%); filter: grayscale(100%) saturate(0%); }
+
+/* active state */
+.nav-item[aria-current="page"]{
+    background: linear-gradient(90deg,var(--nav-accent-1),var(--nav-accent-2));
+    color:#fff;
+    box-shadow: 0 8px 28px rgba(2,56,140,0.32);
+}
+
+/* responsive */
+@media (max-width:768px){
+    .nav-item{ padding:.6rem .8rem; font-size:.95rem; }
+}
+
+/* mobile nav: make each nav item block and full width for clearer UX */
+@media (max-width:768px){
+    #mainNav{ display:block; padding: 0.5rem 0; }
+    #mainNav li{ display:block; width:100%; }
+    .nav-item{ display:flex; justify-content:flex-start; width:100%; padding-left:1rem; }
+}
+
+/* Animated background (index page) */
+.animated-bg{
+    background-image: linear-gradient(135deg, #000000 0%, #0f172a 40%, #63666aa7 100%);
+    background-size: 300% 300%;
+    animation: bgShift 12s ease-out infinite;
+}
+
+@keyframes bgShift{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .animated-bg{ animation: none !important; }
+}
