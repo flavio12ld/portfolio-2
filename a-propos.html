@@ -88,7 +88,7 @@
             @media (min-width: 640px){ .passion-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
             @media (min-width: 1024px){ .passion-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
             .passion-card { cursor: default; overflow: hidden; display: flex; flex-direction: column; min-height: 420px; }
-            .passion-img { width: 100%; height: 220px; min-height: 200px; background-size: cover; background-position: center; border-radius: 0.6rem; margin-bottom: 1.25rem; }
+            .passion-img { display:block; width: 100%; height: 220px; min-height: 200px; object-fit: cover; object-position: center; border-radius: 0.6rem; margin-bottom: 1.25rem; transition: transform .35s ease, filter .35s ease; will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
             .passion-icon { font-size: 2.6rem; transition: transform .28s ease, filter .28s ease; display:inline-block; }
             .passion-emoji { width: 56px; height: 56px; border-radius: 0.6rem; object-fit: cover; box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
             .passion-card:hover .passion-icon{ transform: translateY(-6px) rotate(-8deg) scale(1.06); }
@@ -97,9 +97,8 @@
             /* add subtle entrance tilt on hover */
             .passion-card:hover{ transform: translateY(-8px) rotate(-0.5deg) scale(1.02); }
             .passion-card{ transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s ease; }
-            /* image hover zoom */
-            .passion-img{ transition: transform .35s ease, filter .35s ease; }
-            .passion-card:hover .passion-img{ transform: scale(1.03); filter: brightness(1.02) contrast(1.02); }
+            /* image hover zoom (reduced to limit softening) */
+            .passion-card:hover .passion-img{ transform: scale(1.02); filter: brightness(1.02) contrast(1.02); }
 
             /* petits encadrés pour les pays visités (Voyages) */
             .country-list { display:flex; justify-content:center; gap:0.6rem; margin-top:0.8rem; flex-wrap:wrap; }
@@ -112,7 +111,7 @@
         <h3 class="text-xl font-semibold mt-10 mb-4 text-blue-300">Passions</h3>
         <div class="passion-grid">
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 60ms;">
-                <div class="passion-img bg-gray-700/30" aria-hidden="true" style="background-image: url('assets/img/sport.jpg');"></div>
+                <img src="assets/img/sport.jpg" alt="Sport" loading="lazy" class="passion-img" aria-hidden="true" />
                 <div class="flex items-start gap-4">
                     
                     <div>
@@ -129,18 +128,18 @@
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 120ms;">
-                <div class="passion-img bg-gray-700/30" aria-hidden="true" style="background-image: url('assets/img/ski.jpg');"></div>
+                <img src="assets/img/ski.jpg" alt="Ski" loading="lazy" class="passion-img" aria-hidden="true" />
                 <div class="flex items-start gap-4">
                    
                     <div>
                         <div class="title">Ski</div>
-                        <p class="desc mt-2">Amoureux des montagnes : le ski me permet de me ressourcer et d'acquérir concentration et prise de décision rapide.</p>
+                        <p class="desc mt-2">Passsionné des montagnes : le ski me permet de me ressourcer et d'acquérir concentration et prise de décision rapide.</p>
                     </div>
                 </div>
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 180ms;">
-                <div class="passion-img bg-gray-700/30" aria-hidden="true" style="background-image: url('assets/img/voyage.jpg');"></div>
+                <img src="assets/img/voyage.jpg" alt="Voyages" loading="lazy" class="passion-img" aria-hidden="true" />
                 <div class="flex items-start gap-4">
                     
                     <div>
@@ -160,7 +159,7 @@
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 240ms;">
-                <div class="passion-img bg-gray-700/30" aria-hidden="true" style="background-image: url('assets/img/info.jpg');"></div>
+                <img src="assets/img/info.jpg" alt="Informatique" loading="lazy" class="passion-img" aria-hidden="true" />
                 <div class="flex items-start gap-4">
                     
                     <div>

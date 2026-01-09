@@ -148,6 +148,72 @@
         });
     }
 
+    // Certifications: gère l'affichage des liens par module (remplacez les URLs par vos liens réels)
+    function attachCertModules() {
+        const buttons = document.querySelectorAll('.cert-module');
+        const certList = document.getElementById('certList');
+        const certMessage = document.getElementById('certMessage');
+
+        if (!buttons || !certList || !certMessage) return;
+
+        const mapping = {
+            '1': [
+                { title: 'CNIL - Certification', url: 'PDF/certificat1.pdf' },
+                { title: 'CNIL - RGPD & Conformité', url: 'PDF/certificat2.pdf' },
+                { title: 'CNIL - Délégué (DPO) - Formation', url: 'PDF/certificat3.pdf' },
+                { title: 'CNIL - Audit & Sécurité des données', url: 'PDF/certificat4.pdf' },
+                { title: 'CNIL - Gouvernance des données', url: 'PDF/certificat5.pdf' }
+            ],
+            '2': [
+                { title: 'ANSSI - Certification', url: 'PDF/certif anssi.pdf'}
+            ],
+            '3': [
+                { title: 'PIX - Certification', url: '#' }
+            ],
+            '4': [
+                { title: 'ECRI+ - Certification', url: '#' }
+            ]
+        };
+
+        function showModule(id) {
+            // update buttons' aria and active styles
+            buttons.forEach(function (b) {
+                const isActive = b.dataset.module === id;
+                b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                b.classList.toggle('bg-blue-500', isActive);
+                b.classList.toggle('bg-gray-700', !isActive);
+            });
+
+            const certs = mapping[id] || [];
+            certList.innerHTML = '';
+            if (!certs.length) {
+                certMessage.textContent = 'Aucun certificat renseigné pour ce module.';
+                return;
+            }
+            certMessage.textContent = 'Certificats :';
+            certs.forEach(function (c) {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = c.url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.textContent = c.title;
+                a.className = 'text-blue-300 hover:underline';
+                li.appendChild(a);
+                certList.appendChild(li);
+            });
+        }
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                showModule(btn.dataset.module);
+            });
+        });
+
+        // Optionally show module 1 by default
+        // showModule('1');
+    }
+
     // Chargement progressif des images de la section "Passions".
     // Logique : si un fichier local haute-résolution existe (ex: assets/img/passion-*-4k.webp), il est utilisé,
     // sinon on utilise l'URL distante fournie en data-remote-src. Le chargement se fait quand l'élément entre
@@ -228,6 +294,7 @@
         attachNavToggle();
         attachNavCloseOnClick();
         attachSkillHover();
+        attachCertModules();
 
         // load passion images with fallback logic
         try { setPassionBackgrounds(); } catch (e) { /* non critique */ }

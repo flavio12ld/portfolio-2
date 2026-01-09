@@ -312,8 +312,22 @@
                             <div class="bg-red-100 h-3 rounded-full" style="width: 40%"></div>
                         </div>
                     </div>
-                </div>
         </div>
+        <!-- Certifications -->
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[220px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">📜 CERTIFICATIONS</h3>
+                    <p class="mb-4 text-gray-300">Cliquez sur un module pour afficher les certificats associés.</p>
+                    <div class="flex flex-wrap gap-3 mb-4" role="tablist" aria-label="Modules de certifications">
+                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="1" aria-pressed="false">Module 1</button>
+                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="2" aria-pressed="false">Module 2</button>
+                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="3" aria-pressed="false">Module 3</button>
+                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="4" aria-pressed="false">Module 4</button>
+                    </div>
+                    <div id="certContent" class="bg-gray-700 p-4 rounded text-gray-200">
+                        <p id="certMessage">Cliquez sur un module pour afficher les certificats.</p>
+                        <ul id="certList" class="mt-3 space-y-2"></ul>
+                    </div>
+                </div>
     </section>
     <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
         <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
