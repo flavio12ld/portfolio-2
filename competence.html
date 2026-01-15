@@ -54,6 +54,24 @@
 
         /* force rounding net */
         .rounded-progress { border-radius: 9999px; overflow: hidden; }
+
+        /* Logos et labels pour compétences */
+        .skill-label { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .skill-logo { width: 28px; height: 28px; object-fit: contain; display: inline-block }
+        .tool-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.03); }
+
+        /* Unified aesthetic gradient for all progress bars (teal → blue) */
+        .w-full.bg-gray-700 > div {
+            background-image: linear-gradient(90deg,#06b6d4,#2b29ce);
+            background-size: 200% 100%;
+            transition: filter 300ms ease, transform 300ms ease, background-position 900ms cubic-bezier(.2,.9,.2,1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.45) inset;
+        }
+        .w-full.bg-gray-700 > div:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+            background-position: 100% 0;
+        }
     </style>
     <!-- ajout script d'animation des barres -->
 </head>
@@ -129,9 +147,19 @@
                 <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
                 <h3 class="text-2xl font-semibold mb-4 text-blue-300">💻 Spécialisation SISR</h3>
                 <p class="mb-6"> Solutions d'Infrastructure, Systèmes et Réseaux</p>
+
+                <!-- outils utilisés (badges) -->
+                <div class="mb-4 flex flex-wrap gap-2 items-center">
+                    <div class="tool-badge"><img src="assets/img/windows-server.png" alt="Windows Server" class="skill-logo"> <span class="text-sm text-gray-300">Windows Server</span></div>
+                    <div class="tool-badge"><img src="assets/img/logo AD.jpg" alt="Active Directory" class="skill-logo"> <span class="text-sm text-gray-300">Active Directory</span></div>
+                    <div class="tool-badge"><img src="assets/img/proxmox.png" alt="Proxmox" class="skill-logo"> <span class="text-sm text-gray-300">Proxmox</span></div>
+                    <div class="tool-badge"><img src="assets/img/cisco.png" alt="Cisco" class="skill-logo"> <span class="text-sm text-gray-300">Cisco</span></div>
+                    <div class="tool-badge"><img src="assets/img/powershell.png" alt="PowerShell" class="skill-logo"> <span class="text-sm text-gray-300">PowerShell</span></div>
+                </div>
+
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Administration systèmes</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="assets/img/windows-server.png" alt="Windows Server" class="skill-logo"> <span>Administration systèmes</span></div>
                         <span class="font-semibold">40%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -139,8 +167,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Configuration réseaux</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="assets/img/cisco.png" alt="Cisco" class="skill-logo"> <span>Configuration réseaux</span></div>
                         <span class="font-semibold">50%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -148,8 +176,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Active Directory</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="assets/img/logo AD.jpg" alt="Active Directory" class="skill-logo"> <span>Active Directory</span></div>
                         <span class="font-semibold">55%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -157,8 +185,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>DNS / DHCP</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="assets/img/cisco.png" alt="DNS / DHCP" class="skill-logo"> <span>DNS / DHCP</span></div>
                         <span class="font-semibold">40%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -166,8 +194,8 @@
                     </div>
                 </div>    
                 <div>
-                    <div class="flex justify-between">
-                        <span>Virtualisation (VMware, Hyper-V)</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="assets/img/proxmox.png" alt="Virtualisation" class="skill-logo"> <span>Virtualisation (VMware, Hyper-V)</span></div>
                         <span class="font-semibold">20%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -179,8 +207,8 @@
             <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
                 <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Autres compétences informatiques</h3>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>HTML / CSS</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skill-logo"> <span>HTML / CSS</span></div>
                         <span class="font-semibold">75%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -188,8 +216,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>SQL</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-logo"> <span>SQL</span></div>
                         <span class="font-semibold">65%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -197,8 +225,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>PHP</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="skill-logo"> <span>PHP</span></div>
                         <span class="font-semibold">25%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -206,8 +234,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between">
-                        <span>Python</span>
+                    <div class="flex justify-between items-center">
+                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo"> <span>Python</span></div>
                         <span class="font-semibold">30%</span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
@@ -248,6 +276,35 @@
                             <div class="bg-yellow-500 h-3 rounded-full" style="width: 60%"></div>
                         </div>
                     </div>
+
+                    <!-- Ajout : compétences cybersécurité supplémentaires -->
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Analyse de vulnérabilités</span>
+                            <span class="font-semibold">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-400 h-3 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Gestion d'incidents</span>
+                            <span class="font-semibold">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between">
+                            <span>SIEM / Supervision</span>
+                            <span class="font-semibold">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Compétences Personnelles -->
@@ -280,10 +337,39 @@
                             <div class="bg-red-700 h-3 rounded-full" style="width: 80%"></div>
                         </div>
                     </div>
+
+                    <!-- Ajout : compétences personnelles supplémentaires -->
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Leadership</span>
+                            <span class="font-semibold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-500 h-3 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Résolution de problèmes</span>
+                            <span class="font-semibold">72%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-600 h-3 rounded-full" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span>Adaptabilité</span>
+                            <span class="font-semibold">78%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                            <div class="bg-red-700 h-3 rounded-full" style="width: 78%"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Compétences Linguistiques -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[260px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
                     <h3 class="text-2xl font-semibold mb-4 text-blue-300">🌐 Compétences Linguistiques</h3>
                     <div class="mb-4">
                         <div class="flex justify-between">

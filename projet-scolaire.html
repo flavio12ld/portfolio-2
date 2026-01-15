@@ -116,7 +116,7 @@
 
                     <article class="bg-gray-900 border border-gray-700 rounded-lg p-4">
                         <header class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg font-bold text-blue-300">GSB — Partie 1 : Mise en place du réseau</h3>
+                            <h3 class="text-lg font-bold text-blue-300">Partie 1 : Mise en place du réseau</h3>
                             <time class="text-sm text-gray-400">oct. 2025</time>
                         </header>
                         <p class="text-gray-300 mb-3">Mise en place initiale de l'infrastructure : VMs sur Proxmox, configuration switches (Cisco L2 / HPE L3) et DHCP (REZOLAB).</p>
@@ -129,7 +129,7 @@
 
                     <article class="bg-gray-900 border border-gray-700 rounded-lg p-4">
                         <header class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg font-bold text-blue-300">GSB — Partie 2 : Automatisation & Service Qualité</h3>
+                            <h3 class="text-lg font-bold text-blue-300">Partie 2 : Automatisation & Service Qualité</h3>
                             <time class="text-sm text-gray-400">nov. 2025</time>
                         </header>
                         <p class="text-gray-300 mb-3">Automatisation des tâches d'administration et ajout d'un VLAN dédié pour le service Qualité (VLAN 78).</p>
@@ -142,7 +142,7 @@
 
                     <article class="bg-gray-900 border border-gray-700 rounded-lg p-4">
                         <header class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg font-bold text-blue-300">GSB — Partie 3 : Haute disponibilité & serveur de secours</h3>
+                            <h3 class="text-lg font-bold text-blue-300">Partie 3 : Haute disponibilité & serveur de secours</h3>
                             <time class="text-sm text-gray-400">déc. 2025</time>
                         </header>
                         <p class="text-gray-300 mb-3">Mise en place d'un serveur de secours (Windows Server 2022) et synchronisation des services AD/DNS/DHCP pour assurer la continuité.</p>
@@ -150,6 +150,71 @@
                             <li>Installation AD DS, DNS et DHCP en miroir</li>
                             <li>Promotion du serveur Backup en contrôleur secondaire et tests de basculement</li>
                         </ul>
+                    </article>
+
+                    <!-- Schéma réseau et logos des outils -->
+                    <article class="bg-gray-900 border border-gray-700 rounded-lg p-4">
+                        <header class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-blue-300">Schéma réseau GSB</h3>
+                            <time class="text-sm text-gray-400">visualisation</time>
+                        </header>
+
+                        <div class="grid md:grid-cols-2 gap-4 items-start">
+                            <!-- Diagramme (schéma fourni) -->
+                            <figure class="bg-gray-800 rounded-lg p-4 md:col-span-2 border border-gray-700">
+                                <figcaption class="mt-4 text-center">
+                                    <a href="assets/img/schema.png" class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                        </svg>
+                                        Voir schéma
+                                    </a>
+                                </figcaption>
+                            </figure>
+
+                            <!-- Galerie des logos (plein largeur sous le schéma) -->
+                            <div class="md:col-span-2 mt-6">
+                                <h4 class="font-semibold text-blue-300 mb-4 text-center">Outils utilisés</h4>
+                                <div class="flex flex-wrap gap-4 justify-center">
+                                    <!-- Proxmox -->
+                                    <div class="flex flex-col items-center group cursor-pointer">
+                                        <div class="p-4 bg-gray-700 rounded-lg border border-gray-600 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-400 group-hover:scale-110 group-hover:bg-gray-600">
+                                            <img src="assets/img/proxmox.png" alt="Proxmox" class="h-24 w-24 object-contain" />
+                                        </div>
+                                        <span class="text-sm text-gray-300 mt-2 group-hover:text-blue-300 transition">Proxmox</span>
+                                    </div>
+                                    <!-- Cisco -->
+                                    <div class="flex flex-col items-center group cursor-pointer">
+                                        <div class="p-4 bg-gray-700 rounded-lg border border-gray-600 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-400 group-hover:scale-110 group-hover:bg-gray-600">
+                                            <img src="assets/img/cisco.png" alt="Cisco" class="h-24 w-24 object-contain" />
+                                        </div>
+                                        <span class="text-sm text-gray-300 mt-2 group-hover:text-blue-300 transition">Cisco</span>
+                                    </div>
+                                    <!-- Active Directory -->
+                                    <div class="flex flex-col items-center group cursor-pointer">
+                                        <div class="p-4 bg-gray-700 rounded-lg border border-gray-600 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-400 group-hover:scale-110 group-hover:bg-gray-600">
+                                            <img src="assets/img/logo AD.jpg" alt="Active Directory" class="h-24 w-24 object-contain" />
+                                        </div>
+                                        <span class="text-sm text-gray-300 mt-2 group-hover:text-blue-300 transition">Active Directory</span>
+                                    </div>
+                                    <!-- PowerShell -->
+                                    <div class="flex flex-col items-center group cursor-pointer">
+                                        <div class="p-4 bg-gray-700 rounded-lg border border-gray-600 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-400 group-hover:scale-110 group-hover:bg-gray-600">
+                                            <img src="assets/img/powershell.png" alt="PowerShell" class="h-24 w-24 object-contain" />
+                                        </div>
+                                        <span class="text-sm text-gray-300 mt-2 group-hover:text-blue-300 transition">PowerShell</span>
+                                    </div>
+                                    <!-- Windows Server -->
+                                    <div class="flex flex-col items-center group cursor-pointer">
+                                        <div class="p-4 bg-gray-700 rounded-lg border border-gray-600 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-400 group-hover:scale-110 group-hover:bg-gray-600">
+                                            <img src="assets/img/windows-server.png" alt="Windows Server" class="h-24 w-24 object-contain" />
+                                        </div>
+                                        <span class="text-sm text-gray-300 mt-2 group-hover:text-blue-300 transition">Windows Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
