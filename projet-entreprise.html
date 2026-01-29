@@ -12,80 +12,408 @@
     <link rel="stylesheet" href="assets/css/veille.css">
 </head>
 <body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-        <nav class="bg-gray-900 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3">
-        <div class="flex items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <a href="index.html" class="block">
-                    <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-white/10 object-cover shadow-md" />
-                </a>
-                <a href="index.html" class="hidden md:inline text-lg font-bold text-white">Flavio Lodé</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <ul id="mainNav" class="hidden md:flex items-center gap-3">
-                    <li class="flex-1 md:flex-none">
-                        <a href="index.html" aria-current="page" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Accueil
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="a-propos.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> À propos
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="cv.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> CV
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="competence.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Compétences
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="projet.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Projet
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="veille.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Veille
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="contact.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Contact
-                        </a>
-                    </li>
-                </ul>
-                <div class="hidden md:flex items-center gap-3 ml-3">
-                    <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="LinkedIn">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6" />
+        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <!-- Logo et Nom -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="block group relative">
+                        <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-blue-400/50 object-cover shadow-lg group-hover:ring-blue-400 group-hover:shadow-blue-500/50 transition duration-300" />
                     </a>
-                    <a href="https://github.com/flavio-lode" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="GitHub">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-6 h-6 bg-white rounded-full" />
-                    </a>
+                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
                 </div>
-                <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="md:hidden p-2 rounded-md hover:bg-gray-800 transition text-white ml-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+
+                <!-- Menu Desktop -->
+                <div class="flex items-center gap-8">
+                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
+                        <li>
+                            <a href="index.html" aria-current="page" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Accueil
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> À propos
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> CV
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Compétences
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Projet
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20">
+                                <span class="nav-emoji inline-block mr-2"></span> Veille
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Contact
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Réseaux Sociaux -->
+                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
+                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
+                        </a>
+                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
+                        </a>
+                    </div>
+
+                    <!-- Bouton Mobile -->
+                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 <main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 flex-1">
-        <h1 class="text-3xl text-center mb-6">PROJETS en entreprise</h1>
-        <div class="flex justify-start mb-4">
-            <a href="projet.html" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md shadow-md transition transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-300" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets">
-                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-blue-400">PROJETS EN ENTREPRISE</h1>
+        <p class="text-center text-gray-300 mb-8">Mes réalisations professionnelles et contributions</p>
+
+        <!-- Bouton retour -->
+        <div class="flex justify-start mb-8">
+            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
                 </svg>
-                <span class="font-semibold text-base md:text-lg">Retour aux projets</span>
+                <span>Retour</span>
             </a>
-        </div>        
+        </div>
+
+        <style>
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes slideInDown {
+                from { opacity: 0; transform: translateY(-30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes float-up {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Statistiques */
+            .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; animation: fadeInUp 0.7s ease-out; }
+            .stat-card {
+                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+                border: 1px solid rgba(96, 165, 250, 0.2);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+            .stat-card:hover {
+                transform: translateY(-8px);
+                border-color: rgba(96, 165, 250, 0.5);
+                box-shadow: 0 15px 35px rgba(96, 165, 250, 0.15);
+            }
+            .stat-number { font-size: 3rem; font-weight: 700; color: #60a5fa; margin-bottom: 0.5rem; }
+            .stat-label { color: #cbd5e1; font-size: 1.1rem; }
+
+            /* Projets principaux */
+            .projects-section { margin-top: 4rem; }
+            .section-title { font-size: 1.75rem; font-weight: 700; color: #60a5fa; margin-bottom: 2rem; margin-top: 2rem; border-bottom: 2px solid rgba(96, 165, 250, 0.3); padding-bottom: 1rem; }
+
+            /* Projet phare */
+            .featured-project {
+                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
+                border: 2px solid rgba(96, 165, 250, 0.4);
+                border-radius: 1.5rem;
+                overflow: hidden;
+                margin-bottom: 3rem;
+                animation: fadeInUp 0.8s ease-out 0.2s both;
+            }
+            .featured-header {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 2rem;
+                align-items: center;
+            }
+            @media (max-width: 768px) {
+                .featured-header { grid-template-columns: 1fr; }
+            }
+            .featured-image {
+                width: 100%;
+                height: 300px;
+                background: linear-gradient(135deg, #1e293b, #0f172a);
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #64748b;
+                font-size: 1rem;
+                border: 1px dashed rgba(96, 165, 250, 0.2);
+            }
+            .featured-info h3 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
+            .featured-info .company { color: #60a5fa; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
+            .featured-info .period { color: #cbd5e1; font-size: 1rem; margin-bottom: 1rem; }
+            .featured-info .description { color: #bcd0df; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem; }
+            .featured-content { padding: 2rem; padding-top: 0; }
+            .featured-project:hover {
+                border-color: rgba(96, 165, 250, 0.7);
+                box-shadow: 0 20px 50px rgba(96, 165, 250, 0.2);
+            }
+
+            /* Grille de projets */
+            .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+            .project-card {
+                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+                border: 1px solid rgba(96, 165, 250, 0.2);
+                border-radius: 1rem;
+                overflow: hidden;
+                transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+                display: flex;
+                flex-direction: column;
+                animation: float-up 0.6s ease-out backwards;
+            }
+            .project-card:nth-child(1) { animation-delay: 0.3s; }
+            .project-card:nth-child(2) { animation-delay: 0.4s; }
+            .project-card:nth-child(3) { animation-delay: 0.5s; }
+            .project-card:nth-child(4) { animation-delay: 0.6s; }
+            .project-card:nth-child(5) { animation-delay: 0.7s; }
+            .project-card:nth-child(6) { animation-delay: 0.8s; }
+
+            .project-card:hover {
+                transform: translateY(-12px);
+                border-color: rgba(96, 165, 250, 0.5);
+                box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
+            }
+
+            .project-image {
+                width: 100%;
+                height: 200px;
+                background: linear-gradient(135deg, #1e293b, #0f172a);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #64748b;
+                font-size: 3rem;
+                border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+            }
+            .project-card:hover .project-image {
+                filter: brightness(1.1);
+            }
+
+            .project-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+            .project-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+            .project-company { color: #60a5fa; font-size: 0.95rem; margin-bottom: 0.8rem; }
+            .project-period { color: #94a3b8; font-size: 0.95rem; margin-bottom: 0.8rem; }
+            .project-description { color: #bcd0df; font-size: 1.05rem; line-height: 1.5; margin-bottom: 1rem; flex-grow: 1; }
+
+            /* Badges technologies */
+            .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+            .tech-badge {
+                display: inline-block;
+                padding: 0.25rem 0.7rem;
+                background: rgba(96, 165, 250, 0.15);
+                color: #60a5fa;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                transition: all 0.2s ease;
+            }
+            .tech-badge:hover {
+                background: rgba(96, 165, 250, 0.25);
+                border-color: rgba(96, 165, 250, 0.6);
+            }
+
+            /* Résultats/Impact */
+            .results { font-size: 1rem; color: #a5f3fc; font-weight: 600; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
+            .result-item { margin-bottom: 0.5rem; }
+            .result-item::before { content: '✓ '; color: #10b981; }
+        </style>
+
+        <!-- STATISTIQUES CLÉS -->
+        <section class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Projets réalisés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Ans d'expérience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Technologies maîtrisées</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Projets livrés</div>
+            </div>
+        </section>
+
+        <!-- PROJET PHARE -->
+        <section class="projects-section">
+            <h2 class="section-title">🌟 Projet Phare</h2>
+            <div class="featured-project">
+                <div class="featured-header">
+                    <div class="featured-image">
+                        <!-- 📌 AJOUTER : Image ou screenshot du projet -->
+                        <span>Clic droit → Ajouter image</span>
+                    </div>
+                    <div class="featured-info">
+                        <!-- 📌 AJOUTER : Informations du projet phare -->
+                        <h3>Titre du Projet Phare</h3>
+                        <div class="company">📍 Nom de l'entreprise</div>
+                        <div class="period">📅 Janvier 2024 - Décembre 2024</div>
+                        <p class="description">
+                            Description détaillée de votre projet phare. Expliquez le contexte, les défis rencontrés, votre rôle et l'impact qu'il a eu. Cette section doit mettre en avant vos meilleures réalisations.
+                        </p>
+                    </div>
+                </div>
+                <div class="featured-content">
+                    <!-- 📌 AJOUTER : Détails techniques et résultats -->
+                    <div>
+                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Technologies utilisées</strong>
+                        <div class="tech-stack">
+                            <span class="tech-badge">PHP 8</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Résultats & Impact</strong>
+                        <div style="color: #bcd0df; font-size: 0.9rem; line-height: 1.6;">
+                            ✓ Amélioration des performances de 45%<br>
+                            ✓ Réduit le temps de traitement de 2h à 15min<br>
+                            ✓ Utilisé par 500+ utilisateurs actifs<br>
+                            ✓ Reconnu pour son innovation interne
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUTRES PROJETS -->
+        <section class="projects-section">
+            <h2 class="section-title">📚 Autres Projets</h2>
+            <div class="projects-grid">
+                <!-- 📌 PROJET 1 : À remplir avec vos données -->
+                <div class="project-card">
+                    <div class="project-image">💼</div>
+                    <div class="project-content">
+                        <div class="project-name">Projet 1</div>
+                        <div class="project-company">Nom entreprise / Client</div>
+                        <div class="project-period">Jan 2023 - Mar 2023</div>
+                        <p class="project-description">
+                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Technology 1</span>
+                            <span class="tech-badge">Technology 2</span>
+                            <span class="tech-badge">Technology 3</span>
+                        </div>
+                        <div class="results">
+                            <div class="result-item">Résultat clé 1</div>
+                            <div class="result-item">Résultat clé 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📌 PROJET 2 : À remplir avec vos données -->
+                <div class="project-card">
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <div class="project-name">Projet 2</div>
+                        <div class="project-company">Nom entreprise / Client</div>
+                        <div class="project-period">Avr 2023 - Jun 2023</div>
+                        <p class="project-description">
+                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Technology 1</span>
+                            <span class="tech-badge">Technology 2</span>
+                        </div>
+                        <div class="results">
+                            <div class="result-item">Résultat clé 1</div>
+                            <div class="result-item">Résultat clé 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📌 PROJET 3 : À remplir avec vos données -->
+                <div class="project-card">
+                    <div class="project-image">⚙️</div>
+                    <div class="project-content">
+                        <div class="project-name">Projet 3</div>
+                        <div class="project-company">Nom entreprise / Client</div>
+                        <div class="project-period">Jul 2023 - Sep 2023</div>
+                        <p class="project-description">
+                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Technology 1</span>
+                            <span class="tech-badge">Technology 2</span>
+                            <span class="tech-badge">Technology 3</span>
+                        </div>
+                        <div class="results">
+                            <div class="result-item">Résultat clé 1</div>
+                            <div class="result-item">Résultat clé 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📌 TEMPLATES : Dupliquez cette structure pour ajouter plus de projets -->
+                <!-- 
+                <div class="project-card">
+                    <div class="project-image">EMOJI</div>
+                    <div class="project-content">
+                        <div class="project-name">Titre du projet</div>
+                        <div class="project-company">Entreprise</div>
+                        <div class="project-period">Dates</div>
+                        <p class="project-description">Description</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Tech 1</span>
+                            <span class="tech-badge">Tech 2</span>
+                        </div>
+                        <div class="results">
+                            <div class="result-item">Résultat 1</div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <!-- APPEL À L'ACTION -->
+        <section class="projects-section" style="text-align: center; margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.7)); border-radius: 1rem; border: 1px solid rgba(96, 165, 250, 0.2);">
+            <h3 style="color: #60a5fa; font-size: 1.5rem; margin-bottom: 1rem;">Intéressé par mes projets ?</h3>
+            <p style="color: #cbd5e1; margin-bottom: 1.5rem; font-size: 1.05rem;">Explorez mon GitHub ou contactez-moi pour discuter de mes réalisations</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/flavio-lode" target="_blank" class="inline-block px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition text-base">📦 GitHub</a>
+                <a href="contact.html" class="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-md transition text-base">✉️ Me contacter</a>
+            </div>
+        </section>
 </main>
 
 <footer class="bg-gray-900 text-gray-400 py-6 mt-12">

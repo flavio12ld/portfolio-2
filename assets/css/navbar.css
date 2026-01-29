@@ -64,11 +64,13 @@ nav { background: var(--nav-bg); }
     #mainNav{ display:block; padding: 0.5rem 0; }
     #mainNav li{ display:block; width:100%; }
     .nav-item{ display:flex; justify-content:flex-start; width:100%; padding-left:1rem; }
+    #mainNav.hidden { display:none !important; }
+    #mainNav:not(.hidden) { display:block !important; }
 }
 
 /* Animated background (index page) */
 .animated-bg{
-    background-image: linear-gradient(135deg, #000000 0%, #0f172a 40%, #63666aa7 100%);
+    background-image: linear-gradient(135deg, #000000 0%, #0f172a 40%, #175a7e 100%);
     background-size: 300% 300%;
     animation: bgShift 12s ease-out infinite;
 }

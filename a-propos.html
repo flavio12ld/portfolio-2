@@ -12,159 +12,336 @@
     <link rel="stylesheet" href="assets/css/veille.css">
 </head>
 <body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-        <nav class="bg-gray-900 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3">
-        <div class="flex items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <a href="index.html" class="block">
-                    <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-white/10 object-cover shadow-md" />
-                </a>
-                <a href="index.html" class="hidden md:inline text-lg font-bold text-white">Flavio Lodé</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <ul id="mainNav" class="hidden md:flex items-center gap-3">
-                    <li class="flex-1 md:flex-none">
-                        <a href="index.html" aria-current="page" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Accueil
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="a-propos.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> À propos
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="cv.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> CV
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="competence.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Compétences
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="projet.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Projet
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="veille.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Veille
-                        </a>
-                    </li>
-                    <li class="flex-1 md:flex-none">
-                        <a href="contact.html" class="nav-item block text-center px-4 py-2 rounded-md text-sm md:text-lg">
-                            <span class="nav-emoji inline-block mr-2"></span> Contact
-                        </a>
-                    </li>
-                </ul>
-                <div class="hidden md:flex items-center gap-3 ml-3">
-                    <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="LinkedIn">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6" />
+        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <!-- Logo et Nom -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="block group relative">
+                        <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-blue-400/50 object-cover shadow-lg group-hover:ring-blue-400 group-hover:shadow-blue-500/50 transition duration-300" />
                     </a>
-                    <a href="https://github.com/flavio-lode" target="_blank" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="GitHub">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-6 h-6 bg-white rounded-full" />
-                    </a>
+                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
                 </div>
-                <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="md:hidden p-2 rounded-md hover:bg-gray-800 transition text-white ml-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+
+                <!-- Menu Desktop -->
+                <div class="flex items-center gap-8">
+                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
+                        <li>
+                            <a href="index.html" aria-current="page" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Accueil
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> À propos
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> CV
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Compétences
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Projet
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20">
+                                <span class="nav-emoji inline-block mr-2"></span> Veille
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                                <span class="nav-emoji inline-block mr-2"></span> Contact
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Réseaux Sociaux -->
+                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
+                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
+                        </a>
+                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
+                        </a>
+                    </div>
+
+                    <!-- Bouton Mobile -->
+                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <section class="py-16 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto flex-1">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-400">À propos</h2>
-        <p class="text-lg text-gray-200 max-w-3xl">
-            Étudiant motivé, curieux et passionné par les nouvelles technologies, je souhaite évoluer dans le domaine de l'informatique. Ci-dessous mes principales passions — elles nourrissent mes projets et compétences techniques.
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-400">À PROPOS</h1>
+        <p class="text-lg text-gray-200 w-full text-justify">
+            Bonjour, je suis Flavio Lodé, J'ai 19ans. Je suis en deuxième année de BTS SIO (Services Informatiques aux Organisations) au lycée Louis Pergaud.    Étudiant motivé, curieux et passionné par les nouvelles technologies, je souhaite évoluer dans le domaine de l'informatique.
         </p>
 
         <style>
-            /* Local styles pour la section Passions */
+            /* Animations globales */
+            @keyframes slideInDown {
+                from { opacity: 0; transform: translateY(-30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes float-up {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes borderGlow {
+                0%, 100% { box-shadow: 0 0 15px rgba(96, 165, 250, 0.2), inset 0 0 20px rgba(96, 165, 250, 0.05); }
+                50% { box-shadow: 0 0 30px rgba(96, 165, 250, 0.4), inset 0 0 30px rgba(96, 165, 250, 0.1); }
+            }
+            @keyframes shimmer {
+                0% { background-position: -1000px 0; }
+                100% { background-position: 1000px 0; }
+            }
+
+            /* Grid des passions */
             .passion-grid { display: grid; grid-template-columns: repeat(1, minmax(0,1fr)); gap: 1.5rem; margin-top: 1.5rem; }
             @media (min-width: 640px){ .passion-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
             @media (min-width: 1024px){ .passion-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-            .passion-card { cursor: default; overflow: hidden; display: flex; flex-direction: column; min-height: 420px; }
-            .passion-img { display:block; width: 100%; height: 220px; min-height: 200px; object-fit: cover; object-position: center; border-radius: 0.6rem; margin-bottom: 1.25rem; transition: transform .35s ease, filter .35s ease; will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-            .passion-icon { font-size: 2.6rem; transition: transform .28s ease, filter .28s ease; display:inline-block; }
-            .passion-emoji { width: 56px; height: 56px; border-radius: 0.6rem; object-fit: cover; box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
-            .passion-card:hover .passion-icon{ transform: translateY(-6px) rotate(-8deg) scale(1.06); }
-            .passion-card .title{ font-weight:700; color: #fff; font-size: 1.25rem; }
-            .passion-card .desc{ color: #bcd0df; }
-            /* add subtle entrance tilt on hover */
-            .passion-card:hover{ transform: translateY(-8px) rotate(-0.5deg) scale(1.02); }
-            .passion-card{ transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s ease; }
-            /* image hover zoom (reduced to limit softening) */
-            .passion-card:hover .passion-img{ transform: scale(1.02); filter: brightness(1.02) contrast(1.02); }
 
-            /* petits encadrés pour les pays visités (Voyages) */
-            .country-list { display:flex; justify-content:center; gap:0.6rem; margin-top:0.8rem; flex-wrap:wrap; }
+            /* Cartes de passion améliorées */
+            .passion-card { 
+                cursor: default; 
+                overflow: hidden; 
+                display: flex; 
+                flex-direction: column; 
+                min-height: 420px;
+                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+                border: 1px solid rgba(96, 165, 250, 0.2);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                position: relative;
+                transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+                box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
+                animation: float-up 0.6s ease-out backwards;
+            }
+            .passion-card:nth-child(1) { animation-delay: 0.1s; }
+            .passion-card:nth-child(2) { animation-delay: 0.2s; }
+            .passion-card:nth-child(3) { animation-delay: 0.3s; }
+            .passion-card:nth-child(4) { animation-delay: 0.4s; }
+
+            /* Bordure animée au hover */
+            .passion-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, rgba(96, 165, 250, 0.3), rgba(59, 130, 246, 0.1));
+                opacity: 0;
+                transition: opacity 0.35s ease;
+                pointer-events: none;
+                border-radius: 1rem;
+            }
+
+            .passion-card:hover {
+                transform: translateY(-12px) scale(1.02);
+                border-color: rgba(96, 165, 250, 0.5);
+                box-shadow: 0 20px 50px rgba(96, 165, 250, 0.25), inset 0 0 30px rgba(96, 165, 250, 0.08);
+            }
+            .passion-card:hover::before { opacity: 1; }
+
+            /* Image de la passion */
+            .passion-img { 
+                display: block; 
+                width: 100%; 
+                height: 220px; 
+                min-height: 200px; 
+                object-fit: cover; 
+                object-position: center; 
+                border-radius: 0.8rem; 
+                margin-bottom: 1.5rem;
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+                margin-top: -1.5rem;
+                width: calc(100% + 3rem);
+                transition: all 0.35s ease; 
+            }
+            .passion-card:hover .passion-img { 
+                transform: scale(1.08); 
+                filter: brightness(1.15) contrast(1.05) saturate(1.1);
+            }
+
+            /* Contenu de la carte */
+            .passion-content { position: relative; z-index: 1; }
+
+            /* Icônes et titres */
+            .passion-icon { 
+                font-size: 2.8rem; 
+                margin-bottom: 0.5rem;
+                display: inline-block;
+                transition: transform 0.35s ease;
+            }
+            .passion-card:hover .passion-icon { 
+                transform: translateY(-8px) rotate(-8deg) scale(1.12);
+            }
+
+            .passion-card .title { 
+                font-weight: 700; 
+                color: #fff; 
+                font-size: 1.35rem;
+                margin-bottom: 0.5rem;
+                transition: all 0.35s ease;
+            }
+            .passion-card:hover .title { 
+                color: #60a5fa;
+                text-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+            }
+
+            /* Description */
+            .passion-card .desc { 
+                color: #bcd0df;
+                line-height: 1.6;
+                transition: color 0.35s ease;
+                flex-grow: 1;
+            }
+            .passion-card:hover .desc { 
+                color: #e0e7ff;
+            }
+
+            /* Badges et chips */
+            .country-list { 
+                display: flex; 
+                justify-content: flex-start; 
+                gap: 0.6rem; 
+                margin-top: 1rem; 
+                flex-wrap: wrap;
+            }
             
-            .country-chip { display:inline-block; padding:0.28rem 0.8rem; border-radius:9999px; font-size:0.9rem; border:1px solid rgba(255,255,255,0.06); box-shadow: 0 6px 14px rgba(2,6,23,0.5); transform: translateY(0); transition: transform .18s ease, box-shadow .18s ease; }
-            .country-chip--accent { background: rgba(250,204,21,0.08); color: #FFD166; border-color: rgba(250,204,21,0.18); }
-            .country-chip:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(2,6,23,0.6); }
+            .country-chip { 
+                display: inline-block; 
+                padding: 0.35rem 0.9rem; 
+                border-radius: 20px;
+                font-size: 0.85rem;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                background: rgba(30, 41, 59, 0.8);
+                color: #e0e7ff;
+                box-shadow: 0 4px 12px rgba(2, 6, 23, 0.4);
+                transform: translateY(0);
+                transition: all 0.25s cubic-bezier(0.2, 0.9, 0.2, 1);
+                animation: float-up 0.5s ease-out backwards;
+            }
+            .country-chip:nth-child(1) { animation-delay: 0.5s; }
+            .country-chip:nth-child(2) { animation-delay: 0.55s; }
+            .country-chip:nth-child(3) { animation-delay: 0.6s; }
+            .country-chip:nth-child(4) { animation-delay: 0.65s; }
+            .country-chip:nth-child(5) { animation-delay: 0.7s; }
+
+            .country-chip--accent { 
+                background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(251, 146, 60, 0.1));
+                color: #FFD166;
+                border-color: rgba(250, 204, 21, 0.3);
+            }
+
+            .country-chip:hover { 
+                transform: translateY(-4px) scale(1.08);
+                box-shadow: 0 10px 28px rgba(250, 204, 21, 0.3);
+                border-color: rgba(250, 204, 21, 0.6);
+                background: linear-gradient(135deg, rgba(250, 204, 21, 0.25), rgba(251, 146, 60, 0.15));
+            }
+
+            /* Label des sections de chips */
+            .chips-label {
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                color: #94a3b8;
+                font-weight: 600;
+                margin-top: 0.75rem;
+                margin-bottom: 0.5rem;
+                letter-spacing: 0.5px;
+            }
         </style>
 
-        <h3 class="text-xl font-semibold mt-10 mb-4 text-blue-300">Passions</h3>
+        <h2 class="text-xl font-semibold mt-10 mb-4 text-blue-300">PASSION</h2>
         <div class="passion-grid">
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 60ms;">
                 <img src="assets/img/sport.jpg" alt="Sport" loading="lazy" class="passion-img" aria-hidden="true" />
-                <div class="flex items-start gap-4">
-                    
-                    <div>
-                        <div class="title">Sport</div>
-                        <p class="desc mt-2">Pratique régulière : course, musculation et sports collectifs. Le sport m'apporte rigueur, endurance et esprit d'équipe.</p>
+                <div class="passion-content">
+                    <div class="passion-icon">⚽</div>
+                    <div class="title">Sport</div>
+                    <p class="desc mt-2">Pratique régulière : course, musculation et sports collectifs. Le sport m'apporte rigueur, endurance et esprit d'équipe.</p>
 
-                        <div class="country-list" role="list" aria-label="Sports pratiqués">
-                            <span role="listitem" class="country-chip country-chip--accent">Foot</span>
-                            <span role="listitem" class="country-chip country-chip--accent">Musculation</span>
-                            <span role="listitem" class="country-chip country-chip--accent">Badminton</span>
-                        </div>
+                    <div class="chips-label">Sports pratiqués</div>
+                    <div class="country-list" role="list" aria-label="Sports pratiqués">
+                        <span role="listitem" class="country-chip country-chip--accent">Foot</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Musculation</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Badminton</span>
                     </div>
                 </div>
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 120ms;">
                 <img src="assets/img/ski.jpg" alt="Ski" loading="lazy" class="passion-img" aria-hidden="true" />
-                <div class="flex items-start gap-4">
-                   
-                    <div>
-                        <div class="title">Ski</div>
-                        <p class="desc mt-2">Passionné des montagnes : le ski me permet de me ressourcer et d'acquérir concentration et prise de décision rapide.</p>
+                <div class="passion-content">
+                    <div class="passion-icon">🏔️</div>
+                    <div class="title">Ski</div>
+                    <p class="desc mt-2">Passionné des montagnes : le ski me permet de me ressourcer et d'acquérir concentration et prise de décision rapide.</p>
+                    
+                    <div class="chips-label">Niveaux de pratique</div>
+                    <div class="country-list" role="list" aria-label="Niveaux de ski">
+                        <span role="listitem" class="country-chip country-chip--accent">Alpin</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Expert</span>
+                        
                     </div>
                 </div>
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 180ms;">
                 <img src="assets/img/voyage.jpg" alt="Voyages" loading="lazy" class="passion-img" aria-hidden="true" />
-                <div class="flex items-start gap-4">
-                    
-                    <div>
-                        <div class="title">Voyages</div>
-                        <p class="desc mt-2">Découvrir de nouveaux lieux et cultures — source d'inspiration pour mes projets et ouverture d'esprit.</p>
+                <div class="passion-content">
+                    <div class="passion-icon">✈️</div>
+                    <div class="title">Voyages</div>
+                    <p class="desc mt-2">Découvrir de nouveaux lieux et cultures — source d'inspiration pour mes projets et ouverture d'esprit.</p>
 
-                        <div class="country-list" role="list" aria-label="Pays visités">
-                            <span role="listitem" class="country-chip country-chip--accent">Grèce</span>
-                            <span role="listitem" class="country-chip country-chip--accent">États‑Unis</span>
-                            <span role="listitem" class="country-chip country-chip--accent">Canada</span>
-                            <span role="listitem" class="country-chip country-chip--accent">Espagne</span>
-                            <span role="listitem" class="country-chip country-chip--accent">Italie</span>
-                        </div>
-
+                    <div class="chips-label">Pays visités</div>
+                    <div class="country-list" role="list" aria-label="Pays visités">
+                        <span role="listitem" class="country-chip country-chip--accent">Grèce</span>
+                        <span role="listitem" class="country-chip country-chip--accent">États‑Unis</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Canada</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Espagne</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Italie</span>
                     </div>
                 </div>
             </article>
 
             <article class="card-impression p-8 fade-in passion-card" role="article" tabindex="0" style="transition-delay: 240ms;">
                 <img src="assets/img/info.jpg" alt="Informatique" loading="lazy" class="passion-img" aria-hidden="true" />
-                <div class="flex items-start gap-4">
+                <div class="passion-content">
+                    <div class="passion-icon">💻</div>
+                    <div class="title">Informatique</div>
+                    <p class="desc mt-2">Passion technique : infrastructure, sécurité et développement. J'aime assembler des solutions robustes et automatiser les processus.</p>
                     
-                    <div>
-                        <div class="title">Informatique</div>
-                        <p class="desc mt-2">Passion technique : infrastructure, sécurité et développement. J'aime assembler des solutions robustes et automatiser les processus.</p>
+                    <div class="chips-label">Domaines de passion</div>
+                    <div class="country-list" role="list" aria-label="Domaines informatiques">
+                        <span role="listitem" class="country-chip country-chip--accent">Infrastructure</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Sécurité</span>
+                        <span role="listitem" class="country-chip country-chip--accent">Configuration réseaux</span>
                     </div>
                 </div>
             </article>
