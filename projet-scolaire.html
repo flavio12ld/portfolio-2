@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -17,9 +17,6 @@
             <div class="flex items-center justify-between gap-4">
                 <!-- Logo et Nom -->
                 <div class="flex items-center gap-3">
-                    <a href="index.html" class="block group relative">
-                        <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-blue-400/50 object-cover shadow-lg group-hover:ring-blue-400 group-hover:shadow-blue-500/50 transition duration-300" />
-                    </a>
                     <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
                 </div>
 
@@ -27,7 +24,7 @@
                 <div class="flex items-center gap-8">
                     <ul id="mainNav" class="hidden lg:flex items-center gap-1">
                         <li>
-                            <a href="index.html" aria-current="page" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
                                 <span class="nav-emoji inline-block mr-2"></span> Accueil
                                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                             </a>
@@ -51,15 +48,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
                                 <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20">
+                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
                                 <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                             </a>
                         </li>
                         <li>
@@ -96,7 +93,7 @@
 
         <!-- Bouton retour -->
         <div class="flex justify-start mb-8">
-            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets">
+            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets" aria-current="page">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
                 </svg>
@@ -519,16 +516,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- APPEL À L'ACTION -->
-        <section class="projects-section" style="text-align: center; margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.7)); border-radius: 1rem; border: 1px solid rgba(96, 165, 250, 0.2);">
-            <h3 style="color: #60a5fa; font-size: 1.3rem; margin-bottom: 1rem;">Découvrez mes projets</h3>
-            <p style="color: #cbd5e1; margin-bottom: 1.5rem;">Consultez mon GitHub pour voir le code source ou contactez-moi pour plus de détails sur ces réalisations</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://github.com/flavio-lode" target="_blank" class="inline-block px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition">📦 GitHub</a>
-                <a href="contact.html" class="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-md transition">✉️ Me contacter</a>
-            </div>
-        </section>
     </main>
     <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
         <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
@@ -536,7 +523,7 @@
             <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
             <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
             <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
+            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
             <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
         </div>
         <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
@@ -546,3 +533,7 @@
 </body>
 </html>
     
+
+
+
+

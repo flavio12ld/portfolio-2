@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -17,9 +17,7 @@
             <div class="flex items-center justify-between gap-4">
                 <!-- Logo et Nom -->
                 <div class="flex items-center gap-3">
-                    <a href="index.html" class="block group relative">
-                        <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-blue-400/50 object-cover shadow-lg group-hover:ring-blue-400 group-hover:shadow-blue-500/50 transition duration-300" />
-                    </a>
+                    
                     <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
                 </div>
 
@@ -27,7 +25,7 @@
                 <div class="flex items-center gap-8">
                     <ul id="mainNav" class="hidden lg:flex items-center gap-1">
                         <li>
-                            <a href="index.html" aria-current="page" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
                                 <span class="nav-emoji inline-block mr-2"></span> Accueil
                                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                             </a>
@@ -51,15 +49,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
                                 <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20">
+                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
                                 <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                             </a>
                         </li>
                         <li>
@@ -96,7 +94,7 @@
 
         <!-- Bouton retour -->
         <div class="flex justify-start mb-8">
-            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets">
+            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets" aria-current="page">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
                 </svg>
@@ -164,13 +162,11 @@
                 height: 300px;
                 background: linear-gradient(135deg, #1e293b, #0f172a);
                 border-radius: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #64748b;
-                font-size: 1rem;
-                border: 1px dashed rgba(96, 165, 250, 0.2);
+                overflow: hidden;
+                border: 1px solid rgba(96, 165, 250, 0.25);
             }
+            .featured-image > a { display: block; width: 100%; height: 100%; }
+            .featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
             .featured-info h3 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
             .featured-info .company { color: #60a5fa; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
             .featured-info .period { color: #cbd5e1; font-size: 1rem; margin-bottom: 1rem; }
@@ -211,12 +207,18 @@
                 height: 200px;
                 background: linear-gradient(135deg, #1e293b, #0f172a);
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: stretch;
+                justify-content: stretch;
                 color: #64748b;
-                font-size: 3rem;
+                font-size: 1rem;
                 border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+                overflow: hidden;
             }
+            .project-image > a { display: block; width: 100%; height: 100%; }
+            .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+            .project-image .placeholder { margin: auto; padding: 0 1rem; text-align: center; }
+            /* Some screenshots are tall/narrow (modal popups). Use contain + padding to avoid cropping. */
+            .project-image--contain img { object-fit: contain; padding: 12px; box-sizing: border-box; }
             .project-card:hover .project-image {
                 filter: brightness(1.1);
             }
@@ -254,20 +256,54 @@
         <!-- STATISTIQUES CLÉS -->
         <section class="stats-container">
             <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Projets réalisés</div>
+                <div class="stat-number">5</div>
+                <div class="stat-label">Semaines de stage</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">2+</div>
-                <div class="stat-label">Ans d'expérience</div>
+                <div class="stat-number">1</div>
+                <div class="stat-label">Entreprise d'accueil</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Technologies maîtrisées</div>
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Missions réalisées</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Projets livrés</div>
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Technos utilisées</div>
+            </div>
+        </section>
+
+        <!-- CONTEXTE DU STAGE -->
+        <section class="projects-section">
+            <h2 class="section-title">🏢 Contexte du stage</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card">
+                    <div class="project-image"><span class="placeholder">
+                        <img src="assets/img/logo-forvia.png" alt="logo Forvia Clean Mobility" loading="lazy"/></span></div>
+                    <div class="project-content">
+                        <div class="project-name">Forvia Clean Mobility</div>
+                        <div class="project-company">Bois sur Prés (25550 Bavans)</div>
+                        <div class="project-period">Stage du 26 mai au 27 juin 2025</div>
+                        <p class="project-description">
+                            Entreprise spécialisée dans la production d’équipements automobiles. Intégration au service IT,
+                            avec un rôle de stagiaire DevOps et un encadrement par l’équipe architecture.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><span class="placeholder">
+                        <img src="assets/img/vs.png"alt="Capture d'écran de Visual Studio Code"loading="lazy"/>
+                    </span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-name">Ressources & environnement</div>
+                        <div class="project-company">Outils principaux</div>
+                        <p class="project-description">
+                            Visual Studio Code, PowerShell, WinSCP, WSL/Ubuntu, GitLab, PostgreSQL, Redis et Antora (Asciidoc).
+                            Utilisation d’une application métier (DORY) pour l’inventaire des architectures.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -277,37 +313,47 @@
             <div class="featured-project">
                 <div class="featured-header">
                     <div class="featured-image">
-                        <!-- 📌 AJOUTER : Image ou screenshot du projet -->
-                        <span>Clic droit → Ajouter image</span>
+                        <a href="assets/img/Image1.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
+                            <img
+                                src="assets/img/Image1.png"
+                                alt="Capture d'écran de l'application DORY — TIGER (DEV2)"
+                                loading="lazy"
+                            />
+                        </a>
                     </div>
                     <div class="featured-info">
-                        <!-- 📌 AJOUTER : Informations du projet phare -->
-                        <h3>Titre du Projet Phare</h3>
-                        <div class="company">📍 Nom de l'entreprise</div>
-                        <div class="period">📅 Janvier 2024 - Décembre 2024</div>
+                        <h3>Optimisation de l’application DORY</h3>
+                        <div class="company">📍 Forvia Clean Mobility — Service IT</div>
+                        <div class="period">📅 26 mai 2025 – 27 juin 2025</div>
                         <p class="description">
-                            Description détaillée de votre projet phare. Expliquez le contexte, les défis rencontrés, votre rôle et l'impact qu'il a eu. Cette section doit mettre en avant vos meilleures réalisations.
+                            Stage DevOps centré sur l’amélioration de DORY, l’application interne d’inventaire des architectures et configurations.
+                            Mon rôle a consisté à analyser l’existant, ajouter de nouvelles fonctionnalités, améliorer l’ergonomie et mettre à jour
+                            la documentation pour faciliter l’adoption par les équipes.
                         </p>
                     </div>
                 </div>
                 <div class="featured-content">
-                    <!-- 📌 AJOUTER : Détails techniques et résultats -->
                     <div>
                         <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Technologies utilisées</strong>
                         <div class="tech-stack">
-                            <span class="tech-badge">PHP 8</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Vue.js</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">JSON</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">WSL / Ubuntu</span>
+                            <span class="tech-badge">GitLab</span>
+                            <span class="tech-badge">Antora (Asciidoc)</span>
                         </div>
                     </div>
                     <div style="margin-top: 1.5rem;">
                         <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Résultats & Impact</strong>
                         <div style="color: #bcd0df; font-size: 0.9rem; line-height: 1.6;">
-                            ✓ Amélioration des performances de 45%<br>
-                            ✓ Réduit le temps de traitement de 2h à 15min<br>
-                            ✓ Utilisé par 500+ utilisateurs actifs<br>
-                            ✓ Reconnu pour son innovation interne
+                            ✓ Amélioration de l’ergonomie et de la navigation dans DORY<br>
+                            ✓ Ajout de fonctionnalités métier (duplication, suppression multi-alias)<br>
+                            ✓ Internationalisation des messages d’erreur (FR/EN)<br>
+                            ✓ Documentation mise à jour + création d’une FAQ
                         </div>
                     </div>
                 </div>
@@ -318,67 +364,83 @@
         <section class="projects-section">
             <h2 class="section-title">📚 Autres Projets</h2>
             <div class="projects-grid">
-                <!-- 📌 PROJET 1 : À remplir avec vos données -->
                 <div class="project-card">
-                    <div class="project-image">💼</div>
+                    <div class="project-image project-image--contain">
+                        <a href="assets/img/Image2.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
+                            <img
+                                src="assets/img/Image2.png"
+                                alt="Pop-up DORY « Ajouter un alias » avec le message d'erreur : machine non sélectionnée"
+                                loading="lazy"
+                            />
+                        </a>
+                    </div>
                     <div class="project-content">
-                        <div class="project-name">Projet 1</div>
-                        <div class="project-company">Nom entreprise / Client</div>
-                        <div class="project-period">Jan 2023 - Mar 2023</div>
+                        <div class="project-name">Validation formulaire & messages d’erreur</div>
+                        <div class="project-company">Forvia Clean Mobility</div>
+                        <div class="project-period">Mai 2025</div>
                         <p class="project-description">
-                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                            Ajout de messages d’erreur bloquants quand l’environnement ou la machine n’est pas sélectionné.
+                            Mise en place d’un libellé bilingue (FR/EN) via fichier JSON.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Technology 1</span>
-                            <span class="tech-badge">Technology 2</span>
-                            <span class="tech-badge">Technology 3</span>
+                            <span class="tech-badge">Vue.js</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">JSON</span>
                         </div>
                         <div class="results">
-                            <div class="result-item">Résultat clé 1</div>
-                            <div class="result-item">Résultat clé 2</div>
+                            <div class="result-item">Meilleure clarté des erreurs utilisateurs</div>
+                            <div class="result-item">Support multilingue intégré</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 📌 PROJET 2 : À remplir avec vos données -->
                 <div class="project-card">
-                    <div class="project-image">🚀</div>
+                    <div class="project-image"><span class="placeholder"><img
+                                src="assets/img/Image4.png"
+                                alt="Capture d'écran de l'application DORY — Pop-up de duplication"
+                                loading="lazy"
+                            /></span></div>
                     <div class="project-content">
-                        <div class="project-name">Projet 2</div>
-                        <div class="project-company">Nom entreprise / Client</div>
-                        <div class="project-period">Avr 2023 - Jun 2023</div>
+                        <div class="project-name">Action “Dupliquer configuration”</div>
+                        <div class="project-company">Forvia Clean Mobility</div>
+                        <div class="project-period">Juin 2025</div>
                         <p class="project-description">
-                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                            Création d’un bouton et d’un pop-up permettant de dupliquer la configuration d’un environnement vers un module.
+                            Intégration de l’action côté interface et alignement UX.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Technology 1</span>
-                            <span class="tech-badge">Technology 2</span>
+                            <span class="tech-badge">Vue.js</span>
+                            <span class="tech-badge">Vuetify</span>
                         </div>
                         <div class="results">
-                            <div class="result-item">Résultat clé 1</div>
-                            <div class="result-item">Résultat clé 2</div>
+                            <div class="result-item">Gain de temps pour les utilisateurs</div>
+                            <div class="result-item">Action plus lisible et guidée</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 📌 PROJET 3 : À remplir avec vos données -->
                 <div class="project-card">
-                    <div class="project-image">⚙️</div>
+                    <div class="project-image"><span class="placeholder"><img
+                                src="assets/img/Image6.png"
+                                alt="Capture d'écran "
+                                loading="lazy"
+                            /></span></div>
                     <div class="project-content">
-                        <div class="project-name">Projet 3</div>
-                        <div class="project-company">Nom entreprise / Client</div>
-                        <div class="project-period">Jul 2023 - Sep 2023</div>
+                        <div class="project-name">Suppression multi-alias & FAQ</div>
+                        <div class="project-company">Forvia Clean Mobility</div>
+                        <div class="project-period">Juin 2025</div>
                         <p class="project-description">
-                            Description courte de ce projet. Expliquez brièvement l'objectif, votre contribution et les technologies utilisées.
+                            Ajout de la suppression de plusieurs alias (frontend + backend).
+                            Création d’une page FAQ via Antora pour clarifier les nouvelles fonctionnalités.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Technology 1</span>
-                            <span class="tech-badge">Technology 2</span>
-                            <span class="tech-badge">Technology 3</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Antora</span>
                         </div>
                         <div class="results">
-                            <div class="result-item">Résultat clé 1</div>
-                            <div class="result-item">Résultat clé 2</div>
+                            <div class="result-item">Traitements en lot simplifiés</div>
+                            <div class="result-item">Documentation claire et à jour</div>
                         </div>
                     </div>
                 </div>
@@ -404,16 +466,6 @@
                 -->
             </div>
         </section>
-
-        <!-- APPEL À L'ACTION -->
-        <section class="projects-section" style="text-align: center; margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.7)); border-radius: 1rem; border: 1px solid rgba(96, 165, 250, 0.2);">
-            <h3 style="color: #60a5fa; font-size: 1.5rem; margin-bottom: 1rem;">Intéressé par mes projets ?</h3>
-            <p style="color: #cbd5e1; margin-bottom: 1.5rem; font-size: 1.05rem;">Explorez mon GitHub ou contactez-moi pour discuter de mes réalisations</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://github.com/flavio-lode" target="_blank" class="inline-block px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition text-base">📦 GitHub</a>
-                <a href="contact.html" class="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-md transition text-base">✉️ Me contacter</a>
-            </div>
-        </section>
 </main>
 
 <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
@@ -422,7 +474,7 @@
             <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
             <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
             <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
+            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
             <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
         </div>
         <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
@@ -432,3 +484,6 @@
     <script src="assets/js/security.js" defer></script>
 </body>
 </html>
+
+
+

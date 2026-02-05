@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -150,9 +150,7 @@
             <div class="flex items-center justify-between gap-4">
                 <!-- Logo et Nom -->
                 <div class="flex items-center gap-3">
-                    <a href="index.html" class="block group relative">
-                        <img src="assets/img/profile.jpg" alt="Photo de profil Flavio" loading="lazy" class="w-12 h-12 rounded-full ring-2 ring-blue-400/50 object-cover shadow-lg group-hover:ring-blue-400 group-hover:shadow-blue-500/50 transition duration-300" />
-                    </a>
+                    
                     <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
                 </div>
 
@@ -160,9 +158,9 @@
                 <div class="flex items-center gap-8">
                     <ul id="mainNav" class="hidden lg:flex items-center gap-1">
                         <li>
-                            <a href="index.html" aria-current="page" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
+                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
                                 <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
                             </a>
                         </li>
                         <li>
@@ -190,9 +188,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20">
+                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
                                 <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                             </a>
                         </li>
                         <li>
@@ -231,7 +229,7 @@
     </main>
     <footer class="bg-gray-900 text-gray-400 py-6 mt-12 relative z-10">
         <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
+            <a href="index.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Accueil</a>
             <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
             <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
             <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
@@ -244,3 +242,6 @@
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
+
+

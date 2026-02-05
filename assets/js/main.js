@@ -168,7 +168,7 @@
                 { title: 'ANSSI - Certification', url: 'PDF/certif anssi.pdf'}
             ],
             '3': [
-                { title: 'PIX - Certification', url: '#' }
+                { title: 'PIX - Certification', url: 'PDF/certification-pix-20260204.pdf'}
             ],
             '4': [
                 { title: 'ECRI+ - Certification', url: '#' }
