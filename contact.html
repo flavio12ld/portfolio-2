@@ -113,7 +113,7 @@
 
                         <div class="p-12 card-impression min-h-[160px]">
                             <div class="label">Ville</div>
-                            <div class="value">Montbéliard, Francedddd</div>
+                            <div class="value">Montbéliard, France</div>
                         </div>
                     </div>
                 </div>
@@ -163,6 +163,20 @@
     <!-- Script commun -->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/security.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nom = document.getElementById('nom').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                const subject = 'Message depuis le portfolio';
+                const body = `Nom: ${nom}\nEmail: ${email}\n\nMessage:\n${message}`;
+                window.location.href = `mailto:flaviolode12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+        });
+    </script>
 </body>
 </html>
 
