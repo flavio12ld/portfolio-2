@@ -3,446 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
-    <style>
-        /* base pour les "fills" */
-        .progress-fill {
-            transition: width 900ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.45) inset;
-        }
-        /* Hover global sur les barres pour léger relief */
-        .w-full > .progress-fill:hover {
-            filter: brightness(1.05);
-            transform: translateY(-1px);
-        }
-
-        /* Dégradés cohérents par famille de couleurs */
-        .bg-blue-500 { background-image: linear-gradient(90deg,#1e40af,#3b82f6); }
-        .bg-blue-400 { background-image: linear-gradient(90deg,#1e3a8a,#60a5fa); }
-        .bg-blue-300 { background-image: linear-gradient(90deg,#1e3a8a,#93c5fd); }
-        .bg-blue-200 { background-image: linear-gradient(90deg,#153e75,#bfdbfe); }
-        .bg-blue-100 { background-image: linear-gradient(90deg,#0f172a,#dbeafe); }
-
-        .bg-green-600 { background-image: linear-gradient(90deg,#166534,#10b981); }
-        .bg-green-500 { background-image: linear-gradient(90deg,#15803d,#34d399); }
-        .bg-green-400 { background-image: linear-gradient(90deg,#15803d,#6ee7b7); }
-        .bg-green-300 { background-image: linear-gradient(90deg,#14532d,#86efac); }
-        .bg-green-200 { background-image: linear-gradient(90deg,#134e4a,#bbf7d0); }
-        .bg-green-100 { background-image: linear-gradient(90deg,#052e16,#d1fae5); }
-
-        .bg-red-400 { background-image: linear-gradient(90deg,#991b1b,#fb7185); }
-        .bg-red-500 { background-image: linear-gradient(90deg,#7f1d1d,#f43f5e); }
-        .bg-red-600 { background-image: linear-gradient(90deg,#7f1d1d,#ef4444); }
-        .bg-red-700 { background-image: linear-gradient(90deg,#5b0b0b,#dc2626); }
-        .bg-red-300 { background-image: linear-gradient(90deg,#7f1d1d,#fca5a5); }
-        .bg-red-200 { background-image: linear-gradient(90deg,#7f1d1d,#fecaca); }
-        .bg-red-100 { background-image: linear-gradient(90deg,#7f1d1d,#fee2e2); }
-
-        .bg-yellow-300 { background-image: linear-gradient(90deg,#b45309,#fbbf24); }
-        .bg-yellow-400 { background-image: linear-gradient(90deg,#92400e,#f59e0b); }
-        .bg-yellow-500 { background-image: linear-gradient(90deg,#78350f,#f97316); }
-
-        /* style pour la "piste" des barres */
-        .progress-track { background: rgba(255,255,255,0.04); }
-
-        /* petit label percent à droite (responsive) */
-        .percent-label { min-width: 48px; text-align: right; }
-
-        /* force rounding net */
-        .rounded-progress { border-radius: 9999px; overflow: hidden; }
-
-        /* Logos et labels pour compétences */
-        .skill-label { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .skill-logo { width: 28px; height: 28px; object-fit: contain; display: inline-block }
-        .tool-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.03); }
-
-        /* Unified aesthetic gradient for all progress bars (teal → blue) */
-        .w-full.bg-gray-700 > div {
-            background-image: linear-gradient(90deg,#06b6d4,#2b29ce);
-            background-size: 200% 100%;
-            transition: filter 300ms ease, transform 300ms ease, background-position 900ms cubic-bezier(.2,.9,.2,1);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.45) inset;
-        }
-        .w-full.bg-gray-700 > div:hover {
-            filter: brightness(1.05);
-            transform: translateY(-1px);
-            background-position: 100% 0;
-        }
-    </style>
-    <!-- ajout script d'animation des barres -->
+    <title>Compétences — Flavio Lodé</title>
+    <meta name="description" content="Compétences de Flavio Lodé : systèmes et réseaux (SISR), cybersécurité, développement, langues et certifications.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen text-white">
-    <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html" aria-current="page">Compétences</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                    </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <p class="prompt reveal"><b>flavio@portfolio</b>:<i>~/skills</i>$ ls -la</p>
+                <span class="eyebrow reveal" style="margin-top:18px">Compétences</span>
+                <h1 class="reveal d1">Ma boîte à <span class="grad">outils</span></h1>
+                <p class="lead reveal d2">Systèmes, réseaux, cybersécurité et développement : les technologies que j'ai travaillées en formation et en entreprise, et les certifications obtenues.</p>
             </div>
-        </div>
-    </nav>
-    <section class="py-16 px-4 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-10 text-blue-400">COMPÉTENCES</h2>
-        <div class="flex flex-col gap-8">
-            <!-- Bloc Informatique -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-300">💻 Spécialisation SISR</h3>
-                <p class="mb-6"> Solutions d'Infrastructure, Systèmes et Réseaux</p>
+        </section>
 
-                <!-- outils utilisés (badges) -->
-                <div class="mb-4 flex flex-wrap gap-2 items-center">
-                    <div class="tool-badge"><img src="assets/img/windows-server.png" alt="Windows Server" class="skill-logo"> <span class="text-sm text-gray-300">Windows Server</span></div>
-                    <div class="tool-badge"><img src="assets/img/logo AD.jpg" alt="Active Directory" class="skill-logo"> <span class="text-sm text-gray-300">Active Directory</span></div>
-                    <div class="tool-badge"><img src="assets/img/proxmox.png" alt="Proxmox" class="skill-logo"> <span class="text-sm text-gray-300">Proxmox</span></div>
-                    <div class="tool-badge"><img src="assets/img/cisco.png" alt="Cisco" class="skill-logo"> <span class="text-sm text-gray-300">Cisco</span></div>
-                    <div class="tool-badge"><img src="assets/img/powershell.png" alt="PowerShell" class="skill-logo"> <span class="text-sm text-gray-300">PowerShell</span></div>
+        <!-- SISR -->
+        <section class="section" style="padding-top:20px">
+            <div class="container">
+                <div class="card reveal">
+                    <div class="skill-card-head">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div>
+                        <div><h3>Spécialisation SISR</h3><p>Solutions d'Infrastructure, Systèmes et Réseaux</p></div>
+                    </div>
+                    <div class="tools" style="margin-bottom:22px">
+                        <span class="tool"><span class="tool-ico"><img src="assets/img/windows-server.png" alt=""></span>Windows Server</span>
+                        <span class="tool"><span class="tool-ico"><img src="assets/img/logo%20AD.jpg" alt=""></span>Active Directory</span>
+                        <span class="tool"><span class="tool-ico"><img src="assets/img/proxmox.png" alt=""></span>Proxmox</span>
+                        <span class="tool"><span class="tool-ico"><img src="assets/img/cisco.png" alt=""></span>Cisco</span>
+                        <span class="tool"><span class="tool-ico"><img src="assets/img/powershell.png" alt=""></span>PowerShell</span>
+                    </div>
+                    <div class="skill-rows">
+                        <div class="skill-row"><span class="name">Administration systèmes</span><span class="level">Notions travaillées</span></div>
+                        <div class="skill-row"><span class="name">Configuration réseaux</span><span class="level">Notions travaillées</span></div>
+                        <div class="skill-row"><span class="name">Active Directory</span><span class="level">Notions travaillées</span></div>
+                        <div class="skill-row"><span class="name">DNS / DHCP</span><span class="level">Notions travaillées</span></div>
+                        <div class="skill-row"><span class="name">Virtualisation (VMware, Hyper-V)</span><span class="level">Notions travaillées</span></div>
+                    </div>
                 </div>
 
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="assets/img/windows-server.png" alt="Windows Server" class="skill-logo"> <span>Administration systèmes</span></div>
-                        <span class="font-semibold">40%</span>
+                <div class="grid cols-2" style="margin-top:20px">
+                    <!-- Cybersécurité -->
+                    <div class="card reveal">
+                        <div class="skill-card-head">
+                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                            <div><h3>Cybersécurité</h3><p>Le cœur de ma spécialisation</p></div>
+                        </div>
+                        <div class="skill-rows">
+                            <div class="skill-row"><span class="name">Sécurité informatique</span><span class="level cyan">Notions abordées</span></div>
+                            <div class="skill-row"><span class="name">Méthode EBIOS</span><span class="level cyan">Notions abordées</span></div>
+                            <div class="skill-row"><span class="name">RGPD</span><span class="level cyan">Notions abordées</span></div>
+                            <div class="skill-row"><span class="name">Analyse de vulnérabilités</span><span class="level cyan">Notions abordées</span></div>
+                            <div class="skill-row"><span class="name">Gestion d'incidents</span><span class="level cyan">Notions abordées</span></div>
+                            <div class="skill-row"><span class="name">SIEM / Supervision</span><span class="level cyan">Notions abordées</span></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-blue-500 h-3 rounded-full" style="width: 40%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="assets/img/cisco.png" alt="Cisco" class="skill-logo"> <span>Configuration réseaux</span></div>
-                        <span class="font-semibold">50%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-blue-400 h-3 rounded-full" style="width: 50%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="assets/img/logo AD.jpg" alt="Active Directory" class="skill-logo"> <span>Active Directory</span></div>
-                        <span class="font-semibold">55%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-blue-300 h-3 rounded-full" style="width: 55%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="assets/img/cisco.png" alt="DNS / DHCP" class="skill-logo"> <span>DNS / DHCP</span></div>
-                        <span class="font-semibold">40%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-blue-200 h-3 rounded-full" style="width: 40%"></div>
-                    </div>
-                </div>    
-                <div>
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="assets/img/proxmox.png" alt="Virtualisation" class="skill-logo"> <span>Virtualisation (VMware, Hyper-V)</span></div>
-                        <span class="font-semibold">20%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-blue-100 h-3 rounded-full" style="width: 20%"></div>
-                    </div>
-                </div>                                
-            </div>
 
-            <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Autres compétences informatiques</h3>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skill-logo"> <span>HTML / CSS</span></div>
-                        <span class="font-semibold">75%</span>
+                    <!-- Dev -->
+                    <div class="card reveal d1">
+                        <div class="skill-card-head">
+                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+                            <div><h3>Autres compétences informatiques</h3><p>Développement web et scripts</p></div>
+                        </div>
+                        <div class="skill-rows">
+                            <div class="skill-row"><span class="name"><span class="tool-ico"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""></span>HTML / CSS</span><span class="level">Mises en pratique</span></div>
+                            <div class="skill-row"><span class="name"><span class="tool-ico"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""></span>SQL</span><span class="level">Mises en pratique</span></div>
+                            <div class="skill-row"><span class="name"><span class="tool-ico"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt=""></span>PHP</span><span class="level">Mises en pratique</span></div>
+                            <div class="skill-row"><span class="name"><span class="tool-ico"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""></span>Python</span><span class="level">Mises en pratique</span></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-green-600 h-3 rounded-full" style="width: 75%"></div>
+
+                    <!-- Personnelles -->
+                    <div class="card reveal">
+                        <div class="skill-card-head">
+                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.7 3 2.5 3.5 5.2"/></svg></div>
+                            <div><h3>Compétences personnelles</h3><p>Savoir-être en équipe et en projet</p></div>
+                        </div>
+                        <div class="soft-grid">
+                            <span class="soft">Travail en équipe</span>
+                            <span class="soft">Gestion de projet</span>
+                            <span class="soft">Communication</span>
+                            <span class="soft">Rigoureux</span>
+                            <span class="soft">Résolution de problèmes</span>
+                            <span class="soft">Adaptabilité</span>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-logo"> <span>SQL</span></div>
-                        <span class="font-semibold">65%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-green-400 h-3 rounded-full" style="width: 65%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="skill-logo"> <span>PHP</span></div>
-                        <span class="font-semibold">25%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-green-500 h-3 rounded-full" style="width: 25%"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-center">
-                        <div class="skill-label"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo"> <span>Python</span></div>
-                        <span class="font-semibold">55%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-green-100 h-3 rounded-full" style="width: 55%"></div>
+
+                    <!-- Langues -->
+                    <div class="card reveal d1">
+                        <div class="skill-card-head">
+                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+                            <div><h3>Compétences linguistiques</h3><p>Niveaux selon le CECRL</p></div>
+                        </div>
+                        <div class="lang">
+                            <div class="lang-head"><b>Français</b><span>Langue maternelle</span></div>
+                            <div class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                        </div>
+                        <div class="lang">
+                            <div class="lang-head"><b>Anglais</b><span>B1</span></div>
+                            <div class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="lang">
+                            <div class="lang-head"><b>Allemand</b><span>A2</span></div>
+                            <div class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+                            <div class="meter-scale" aria-hidden="true"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Autres compétences : listées verticalement (une après l'autre) -->
+        </section>
 
-                <!-- Cybersécurité -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl ">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🛡️ Compétences en cybersécurité</h3>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Sécurité Informatique</span>
-                            <span class="font-semibold">75%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Méthode EBios</span>
-                            <span class="font-semibold">65%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-400 h-3 rounded-full" style="width: 65%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between">
-                            <span>RGPD</span>
-                            <span class="font-semibold">60%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-500 h-3 rounded-full" style="width: 60%"></div>
+        <!-- CERTIFICATIONS -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="num">// certifications</span><h2>Certifications</h2></div>
+                    <p>Cliquez sur un certificat pour ouvrir le document PDF.</p>
+                </div>
+                <div class="grid cols-2">
+                    <div class="card cert reveal">
+                        <div class="org"><span class="badge">Module 1</span><span class="mono" style="color:var(--dim);font-size:.78rem">5 certificats</span></div>
+                        <h3>CNIL</h3>
+                        <p style="margin:6px 0 16px">Protection des données personnelles et RGPD.</p>
+                        <div class="cert-links">
+                            <a class="cert-link" href="PDF/Certificat1.pdf" target="_blank" rel="noopener">CNIL - Certification <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+                            <a class="cert-link" href="PDF/Certificat%202.pdf" target="_blank" rel="noopener">CNIL - RGPD &amp; Conformité <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+                            <a class="cert-link" href="PDF/Certificat3.pdf" target="_blank" rel="noopener">CNIL - Délégué (DPO) - Formation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+                            <a class="cert-link" href="PDF/Certificat4.pdf" target="_blank" rel="noopener">CNIL - Audit &amp; Sécurité des données <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+                            <a class="cert-link" href="PDF/Certificat5.pdf" target="_blank" rel="noopener">CNIL - Gouvernance des données <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
                         </div>
                     </div>
-
-                    <!-- Ajout : compétences cybersécurité supplémentaires -->
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Analyse de vulnérabilités</span>
-                            <span class="font-semibold">70%</span>
+                    <div class="grid" style="gap:20px">
+                        <div class="card cert reveal d1">
+                            <div class="org"><span class="badge">Module 2</span></div>
+                            <h3>ANSSI</h3>
+                            <p style="margin:6px 0 16px">Agence nationale de la sécurité des systèmes d'information.</p>
+                            <div class="cert-links">
+                                <a class="cert-link" href="PDF/certif%20anssi.pdf" target="_blank" rel="noopener">ANSSI - Certification <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+                            </div>
                         </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-400 h-3 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Gestion d'incidents</span>
-                            <span class="font-semibold">65%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 65%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between">
-                            <span>SIEM / Supervision</span>
-                            <span class="font-semibold">60%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-yellow-300 h-3 rounded-full" style="width: 60%"></div>
+                        <div class="card cert reveal d3">
+                            <div class="org"><span class="badge amber">Module 3</span></div>
+                            <h3>ECRI+</h3>
+                            <div class="cert-links" style="margin-top:12px">
+                                <span class="cert-link disabled">ECRI+ - Certification <span class="mono" style="font-size:.72rem">PDF à venir</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <!-- Compétences Personnelles -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[420px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🧑‍🤝‍🧑 Compétences Personnelles</h3>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Travail en équipe</span>
-                            <span class="font-semibold">85%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-900 h-3 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Gestion de projet</span>
-                            <span class="font-semibold">70%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-500 h-3 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Communication</span>
-                            <span class="font-semibold">80%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-700 h-3 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Ajout : compétences personnelles supplémentaires -->
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Leadership</span>
-                            <span class="font-semibold">75%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-500 h-3 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Résolution de problèmes</span>
-                            <span class="font-semibold">72%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-600 h-3 rounded-full" style="width: 72%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Adaptabilité</span>
-                            <span class="font-semibold">78%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-700 h-3 rounded-full" style="width: 78%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compétences Linguistiques -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[260px] w-full transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">🌐 Compétences Linguistiques</h3>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Français (maternelle)</span>
-                            <span class="font-semibold">100%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-500 h-3 rounded-full" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Anglais B1</span>
-                            <span class="font-semibold">60%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-300 h-3 rounded-full" style="width: 60%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between">
-                            <span>Allemand A2</span>
-                            <span class="font-semibold">40%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
-                            <div class="bg-red-100 h-3 rounded-full" style="width: 40%"></div>
-                        </div>
-                    </div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html" aria-current="page">Compétences</a>
+                <a href="projet.html">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            </div>
         </div>
-        <!-- Certifications -->
-                <div class="bg-gray-800 rounded-lg p-10 shadow-lg min-h-[220px] w-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">📜 CERTIFICATIONS</h3>
-                    <p class="mb-4 text-gray-300">Cliquez sur un module pour afficher les certificats associés.</p>
-                    <div class="flex flex-wrap gap-3 mb-4" role="tablist" aria-label="Modules de certifications">
-                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="1" aria-pressed="false">Module 1</button>
-                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="2" aria-pressed="false">Module 2</button>
-                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="3" aria-pressed="false">Module 3</button>
-                        <button class="cert-module px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white" data-module="4" aria-pressed="false">Module 4</button>
-                    </div>
-                    <div id="certContent" class="bg-gray-700 p-4 rounded text-gray-200">
-                        <p id="certMessage">Cliquez sur un module pour afficher les certificats.</p>
-                        <ul id="certList" class="mt-3 space-y-2"></ul>
-                    </div>
-                </div>
-    </section>
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Compétences</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
-        </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
 
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-
-
-
-

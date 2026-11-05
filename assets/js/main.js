@@ -1,381 +1,211 @@
+/* =========================================================
+   Portfolio Flavio Lodé — script commun
+   - pluie de code "Matrix" (canvas)
+   - menu mobile
+   - apparition des blocs au scroll
+   - texte tapé, compteurs, formulaire de contact
+   ========================================================= */
 (function () {
     'use strict';
 
-    // util: debounce
-    function debounce(fn, wait) {
-        let t;
-        return function () {
-            const args = arguments;
-            const ctx = this;
-            clearTimeout(t);
-            t = setTimeout(function () { fn.apply(ctx, args); }, wait);
-        };
-    }
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // util: check if element visible in viewport (with offset)
-    function isInViewport(el, offset = 50) {
-        const rect = el.getBoundingClientRect();
-        return rect.top < (window.innerHeight - offset);
-    }
+    /* ---------- Pluie Matrix ---------- */
+    function initMatrix() {
+        var canvas = document.getElementById('matrix');
+        if (!canvas || !canvas.getContext) return;
+        var ctx = canvas.getContext('2d');
+        var glyphs = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>{}[]/=+*#$;:'.split('');
+        var words = ['ssh', 'nmap', 'sudo', 'root', 'vlan', 'dns', 'dhcp', 'tcp', 'ping', 'gpo', 'ufw', 'cis', 'aes', 'ldap', 'siem', 'vpn'];
+        var size, cols, drops, speeds, queue, w, h, last = 0, raf = null;
 
-    // revealOnScroll: ajoute .visible aux éléments .fade-in
-    function revealOnScroll() {
-        document.querySelectorAll('.fade-in').forEach(function (el) {
-            if (isInViewport(el, 50)) el.classList.add('visible');
-        });
-    }
+        function pick() { return glyphs[(Math.random() * glyphs.length) | 0]; }
 
-    // animateProgressBars: anime la largeur depuis 0 jusqu'au pourcentage défini
-    function animateProgressBars() {
-        document.querySelectorAll('.progress-fill').forEach(function (el) {
-            // valeur cible préférée : data-target (ex: "40" ou "40%")
-            const raw = el.getAttribute('data-target') || el.style.width || el.dataset.percent || '';
-            let percent = 0;
-            if (typeof raw === 'string' && raw.trim().length) {
-                percent = parseFloat(raw.replace('%', '')) || 0;
+        function resize() {
+            var dpr = Math.min(window.devicePixelRatio || 1, 2);
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w * dpr;
+            canvas.height = h * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            size = w < 600 ? 14 : 17;
+            cols = Math.ceil(w / size);
+            drops = []; speeds = []; queue = [];
+            for (var i = 0; i < cols; i++) {
+                drops[i] = Math.random() * -(h / size);
+                speeds[i] = 0.45 + Math.random() * 0.85;
+                queue[i] = '';
             }
-            // aria for accessibility
-            el.setAttribute('role', 'progressbar');
-            el.setAttribute('aria-valuemin', '0');
-            el.setAttribute('aria-valuemax', '100');
+            ctx.fillStyle = '#030806';
+            ctx.fillRect(0, 0, w, h);
+        }
 
-            // animate
-            el.style.width = '0%';
-            // ensure transition set (in case custom)
-            el.style.transition = 'width 900ms cubic-bezier(.2,.9,.2,1)';
-            // small timeout for visual effect
-            setTimeout(function () {
-                el.style.width = percent + '%';
-                el.setAttribute('aria-valuenow', '' + percent);
-            }, 80);
+        function step() {
+            ctx.fillStyle = 'rgba(3, 8, 6, 0.085)';
+            ctx.fillRect(0, 0, w, h);
+            ctx.font = '500 ' + size + 'px "JetBrains Mono", monospace';
+            for (var i = 0; i < cols; i++) {
+                var x = i * size;
+                var y = drops[i] * size;
+                // de temps en temps, une colonne "écrit" un mot de commande réseau
+                var ch;
+                if (queue[i].length) { ch = queue[i].charAt(0); queue[i] = queue[i].slice(1); }
+                else { ch = pick(); if (Math.random() > 0.9985) queue[i] = words[(Math.random() * words.length) | 0]; }
+
+                ctx.fillStyle = 'rgba(0, 255, 136, ' + (0.5 + Math.random() * 0.4) + ')';
+                ctx.fillText(pick(), x, y - size);
+                ctx.fillStyle = '#d9ffec';
+                ctx.fillText(ch, x, y);
+
+                if (y > h && Math.random() > 0.975) {
+                    drops[i] = 0;
+                    speeds[i] = 0.45 + Math.random() * 0.85;
+                }
+                drops[i] += speeds[i];
+            }
+        }
+
+        function loop(t) {
+            raf = requestAnimationFrame(loop);
+            if (t - last < 48) return; // ~20 images/s : fluide et léger
+            last = t;
+            step();
+        }
+
+        resize();
+        if (reduceMotion) {
+            for (var n = 0; n < 90; n++) step(); // image fixe, sans animation
+        } else {
+            raf = requestAnimationFrame(loop);
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) { cancelAnimationFrame(raf); raf = null; }
+                else if (!raf) { raf = requestAnimationFrame(loop); }
+            });
+        }
+        var t;
+        window.addEventListener('resize', function () {
+            clearTimeout(t);
+            t = setTimeout(function () { resize(); if (reduceMotion) for (var n = 0; n < 90; n++) step(); }, 150);
         });
     }
 
-    // attachSurpriseHandler -> bouton surprise
-    function attachSurpriseHandler() {
-        const btn = document.getElementById('surpriseBtn');
-        const surprise = document.getElementById('surprise');
-        if (!btn || !surprise) return;
-        btn.addEventListener('click', function () {
-            surprise.classList.toggle('hidden');
-            // faire apparaître avec animation si besoin
-            surprise.classList.add('fade-in');
-            setTimeout(function () { surprise.classList.add('visible'); }, 20);
-            // access focus pour clavier
-            if (!surprise.classList.contains('hidden')) surprise.focus();
+    /* ---------- Menu mobile ---------- */
+    function initNav() {
+        var toggle = document.getElementById('navToggle');
+        var list = document.getElementById('mainNav');
+        if (!toggle || !list) return;
+        function close() { list.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+        toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = list.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
+        list.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+        document.addEventListener('click', function (e) { if (!list.contains(e.target) && e.target !== toggle) close(); });
     }
 
-    // attachContactHandler -> simulate submit (remplacer par fetch si backend)
-    function attachContactHandler() {
-        const form = document.getElementById('contactForm') || document.querySelector('form#contactForm');
+    /* ---------- Apparition au scroll ---------- */
+    function initReveal() {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) || reduceMotion) {
+            els.forEach(function (el) { el.classList.add('in'); });
+            return;
+        }
+        var fired = false;
+        var io = new IntersectionObserver(function (entries) {
+            fired = true;
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+        // Sécurité : si l'observateur ne répond jamais, on affiche tout le contenu
+        setTimeout(function () {
+            if (!fired) { io.disconnect(); els.forEach(function (el) { el.classList.add('in'); }); }
+        }, 1500);
+    }
+
+    /* ---------- Texte tapé (accueil) ---------- */
+    function initTyped() {
+        var el = document.querySelector('[data-typed]');
+        if (!el) return;
+        var items;
+        try { items = JSON.parse(el.getAttribute('data-typed')); } catch (e) { return; }
+        if (!items || !items.length) return;
+        if (reduceMotion) { el.textContent = items[0]; return; }
+        var i = 0, pos = 0, deleting = false;
+        function tick() {
+            var word = items[i];
+            pos += deleting ? -1 : 1;
+            el.textContent = word.slice(0, pos);
+            var delay = deleting ? 35 : 70;
+            if (!deleting && pos === word.length) { deleting = true; delay = 1800; }
+            else if (deleting && pos === 0) { deleting = false; i = (i + 1) % items.length; delay = 350; }
+            setTimeout(tick, delay);
+        }
+        el.textContent = '';
+        setTimeout(tick, 900);
+    }
+
+    /* ---------- Compteurs ---------- */
+    function initCounters() {
+        var els = document.querySelectorAll('[data-count]');
+        if (!els.length) return;
+        function run(el) {
+            var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+            var suffix = el.getAttribute('data-suffix') || '';
+            if (reduceMotion) { el.textContent = target + suffix; return; }
+            var start = null, dur = 1200;
+            function frame(ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / dur, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(target * eased) + suffix;
+                if (p < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+        }
+        if (!('IntersectionObserver' in window)) { els.forEach(run); return; }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
+            });
+        }, { threshold: 0.5 });
+        els.forEach(function (el) { io.observe(el); });
+    }
+
+    /* ---------- Formulaire de contact (ouvre la messagerie) ---------- */
+    function initContactForm() {
+        var form = document.getElementById('contactForm');
         if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Envoi...';
-            }
-            // simulation
-            setTimeout(function () {
-                const success = document.createElement('p');
-                success.className = 'mt-4 text-green-400 contact-success';
-                success.setAttribute('role', 'status');
-                success.textContent = 'Message envoyé — merci ! (simulation locale)';
-                if (!form.querySelector('.contact-success')) form.appendChild(success);
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Envoyer';
-                }
-                form.reset();
-            }, 900);
+            var nom = form.querySelector('#nom').value;
+            var email = form.querySelector('#email').value;
+            var message = form.querySelector('#message').value;
+            var subject = 'Message depuis le portfolio';
+            var body = 'Nom: ' + nom + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+            var to = ['flaviolode12', 'gmail.com'].join('@');
+            window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
     }
 
-    // mobile nav toggle (si bouton #navToggle exist) — utilise mainNav id
-    function attachNavToggle() {
-        const toggle = document.getElementById('navToggle');
-        const navList = document.getElementById('mainNav');
-        if (!toggle || !navList) return;
-        toggle.addEventListener('click', function () {
-            const open = navList.classList.toggle('hidden') === false;
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-    }
-
-    // Close mobile nav when clicking a nav link (improves UX on small screens)
-    function attachNavCloseOnClick() {
-        const toggle = document.getElementById('navToggle');
-        const navList = document.getElementById('mainNav');
-        if (!toggle || !navList) return;
-        navList.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-                if (window.innerWidth < 768 && !navList.classList.contains('hidden')) {
-                    navList.classList.add('hidden');
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-        // Escape key to close mobile nav
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && window.innerWidth < 768 && !navList.classList.contains('hidden')) {
-                navList.classList.add('hidden');
-                if (toggle) toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        // Click outside to close
-        document.addEventListener('click', function (e) {
-            const target = e.target;
-            if (window.innerWidth < 768 && !navList.classList.contains('hidden')) {
-                if (!navList.contains(target) && target !== toggle && !toggle.contains(target)) {
-                    navList.classList.add('hidden');
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-    }
-
-    // small UI helpers: add hover effect for skill percentage label (optional)
-    function attachSkillHover() {
-        document.querySelectorAll('.progress-track').forEach(function (track) {
-            track.addEventListener('mouseenter', function () {
-                track.classList.add('hovered');
-            });
-            track.addEventListener('mouseleave', function () {
-                track.classList.remove('hovered');
-            });
-        });
-    }
-
-    // Certifications: gère l'affichage des liens par module (remplacez les URLs par vos liens réels)
-    function attachCertModules() {
-        const buttons = document.querySelectorAll('.cert-module');
-        const certList = document.getElementById('certList');
-        const certMessage = document.getElementById('certMessage');
-
-        if (!buttons || !certList || !certMessage) return;
-
-        const mapping = {
-            '1': [
-                { title: 'CNIL - Certification', url: 'PDF/certificat1.pdf' },
-                { title: 'CNIL - RGPD & Conformité', url: 'PDF/certificat2.pdf' },
-                { title: 'CNIL - Délégué (DPO) - Formation', url: 'PDF/certificat3.pdf' },
-                { title: 'CNIL - Audit & Sécurité des données', url: 'PDF/certificat4.pdf' },
-                { title: 'CNIL - Gouvernance des données', url: 'PDF/certificat5.pdf' }
-            ],
-            '2': [
-                { title: 'ANSSI - Certification', url: 'PDF/certif anssi.pdf'}
-            ],
-            '3': [
-                { title: 'PIX - Certification', url: 'PDF/certification-pix-20260204.pdf'}
-            ],
-            '4': [
-                { title: 'ECRI+ - Certification', url: '#' }
-            ]
-        };
-
-        function showModule(id) {
-            // update buttons' aria and active styles
-            buttons.forEach(function (b) {
-                const isActive = b.dataset.module === id;
-                b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                b.classList.toggle('bg-blue-500', isActive);
-                b.classList.toggle('bg-gray-700', !isActive);
-            });
-
-            const certs = mapping[id] || [];
-            certList.innerHTML = '';
-            if (!certs.length) {
-                certMessage.textContent = 'Aucun certificat renseigné pour ce module.';
-                return;
-            }
-            certMessage.textContent = 'Certificats :';
-            certs.forEach(function (c) {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = c.url;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                a.textContent = c.title;
-                a.className = 'text-blue-300 hover:underline';
-                li.appendChild(a);
-                certList.appendChild(li);
-            });
-        }
-
-        buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                showModule(btn.dataset.module);
-            });
-        });
-
-        // Optionally show module 1 by default
-        // showModule('1');
-    }
-
-    // Chargement progressif des images de la section "Passions".
-    // Logique : si un fichier local haute-résolution existe (ex: assets/img/passion-*-4k.webp), il est utilisé,
-    // sinon on utilise l'URL distante fournie en data-remote-src. Le chargement se fait quand l'élément entre
-    // dans le viewport (lazy) pour économiser la bande passante.
-    function setPassionBackgrounds() {
-        document.querySelectorAll('.passion-img').forEach(function (el) {
-            // Attributs attendus : data-local-src, data-remote-src
-            const local = el.dataset.localSrc;
-            const remote = el.dataset.remoteSrc;
-            const setBg = function (src) {
-                if (!src) return;
-                el.style.backgroundImage = "url('" + src + "')";
-            };
-
-            const loadSrc = function () {
-                if (local) {
-                    const img = new Image();
-                    img.onload = function () { setBg(local); };
-                    img.onerror = function () { if (remote) setBg(remote); };
-                    img.src = local;
-                } else if (remote) {
-                    const img = new Image();
-                    img.onload = function () { setBg(remote); };
-                    img.onerror = function () { /* ignore */ };
-                    img.src = remote;
-                }
-            };
-
-            // Si déjà visible, charger tout de suite sinon attendre le scroll
-            if (isInViewport(el, 120)) {
-                loadSrc();
-            } else {
-                const handler = debounce(function () {
-                    if (isInViewport(el, 120)) {
-                        loadSrc();
-                        window.removeEventListener('scroll', handler);
-                    }
-                }, 100);
-                window.addEventListener('scroll', handler);
-                // aussi essayer au chargement complet
-                window.addEventListener('load', function () { if (isInViewport(el, 120)) { loadSrc(); window.removeEventListener('scroll', handler); } });
-            }
-        });
-    }
-
-    // Définit dynamiquement l'item de la navbar qui correspond à la page courante
-    function setActiveNavItem() {
-        try {
-            const path = (window.location.pathname || '').toLowerCase();
-            let page = path.substring(path.lastIndexOf('/') + 1);
-            if (!page || page === '') page = 'index.html';
-
-            document.querySelectorAll('#mainNav a').forEach(function (a) {
-                a.removeAttribute('aria-current');
-                try {
-                    const href = a.getAttribute('href') || '';
-                    const url = new URL(href, window.location.origin);
-                    let hrefPage = url.pathname.substring(url.pathname.lastIndexOf('/') + 1).toLowerCase();
-                    if (!hrefPage || hrefPage === '') hrefPage = 'index.html';
-                    if (hrefPage === page) {
-                        a.setAttribute('aria-current', 'page');
-                    }
-                } catch (e) { /* ignore invalid href */ }
-            });
-        } catch (e) { /* non critique */ }
+    /* ---------- Année du footer ---------- */
+    function initYear() {
+        document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
     }
 
     function init() {
-        // initial actions
-        revealOnScroll();
-        animateProgressBars();
-
-        // Animated background setup (index only) and respects preferences
-        setupAnimatedBackground();
-
-        attachSurpriseHandler();
-        attachContactHandler();
-        attachNavToggle();
-        attachNavCloseOnClick();
-        attachSkillHover();
-        attachCertModules();
-
-        // load passion images with fallback logic
-        try { setPassionBackgrounds(); } catch (e) { /* non critique */ }
-
-        // set the active nav item based on the current page
-        try { setActiveNavItem(); } catch (e) { /* non critique */ }
-
-        // event listeners (debounced)
-        window.addEventListener('scroll', debounce(revealOnScroll, 60));
-        window.addEventListener('resize', debounce(function () {
-            revealOnScroll();
-            animateProgressBars();
-        }, 100));
-
-        // re-run after load to ensure assets/styles applied
-        window.addEventListener('load', function () {
-            revealOnScroll();
-            animateProgressBars();
-        });
+        initMatrix();
+        initNav();
+        initReveal();
+        initTyped();
+        initCounters();
+        initContactForm();
+        initYear();
     }
 
-    // run on DOM ready
-    document.addEventListener('DOMContentLoaded', init);
-
-    // Animated background logic: enable on index.html and respect reduced-motion
-    function isIndexPage() {
-        try {
-            const path = window.location.pathname || '';
-            const last = path.substring(path.lastIndexOf('/') + 1).toLowerCase();
-            // consider when URL ends with / (last === '') or index file
-            return last === '' || last === 'index.html' || last === 'index.htm';
-        } catch (e) { return false; }
-    }
-
-    function setupAnimatedBackground() {
-        const body = document.body;
-        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        // debug info
-        // debug logs removed for production; keep function call above
-        if (!isIndexPage()) {
-            body.classList.remove('animated-bg');
-            return;
-        }
-        if (prefersReduced) {
-            body.classList.remove('animated-bg');
-            body.style.animationPlayState = 'paused';
-        } else {
-            body.classList.add('animated-bg');
-            body.style.animationPlayState = 'running';
-        }
-
-        // Ensure layout-flex for index so footer stays bottom (adds classes if missing)
-        try {
-            const mainEl = document.querySelector('main');
-            body.classList.add('flex', 'flex-col');
-            if (mainEl) mainEl.classList.add('flex-1');
-        } catch (e) { /* ignore */ }
-
-        // Remove static tailwind gradient classes if present so CSS animation takes precedence
-        ['bg-gradient-to-br', 'from-black', 'via-gray-800', 'to-blue-200'].forEach(cls => body.classList.remove(cls));
-
-        // Pause animation when tab is hidden
-        document.addEventListener('visibilitychange', function () {
-            const prefersNow = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (document.hidden) body.style.animationPlayState = 'paused';
-            else body.style.animationPlayState = prefersNow ? 'paused' : 'running';
-        });
-
-        // watch for preference changes
-        if (window.matchMedia) {
-            const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-            mq.addEventListener('change', function (e) {
-                if (e.matches) {
-                    body.classList.remove('animated-bg');
-                    body.style.animationPlayState = 'paused';
-                } else {
-                    body.classList.add('animated-bg');
-                    body.style.animationPlayState = 'running';
-                }
-            });
-        }
-    }
-
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
 }());

@@ -38,7 +38,7 @@
     el.parentNode.replaceChild(a, el);
     // copy button
     var copy = document.createElement('button');
-    copy.className = 'ml-2 text-sm text-gray-300 hover:text-white transition';
+    copy.className = 'copy-btn';
     copy.type = 'button';
     copy.setAttribute('aria-label', 'Copier email');
     copy.textContent = 'Copier';
@@ -56,7 +56,7 @@
     a.textContent = formatted;
     el.parentNode.replaceChild(a, el);
     var copy = document.createElement('button');
-    copy.className = 'ml-2 text-sm text-gray-300 hover:text-white transition';
+    copy.className = 'copy-btn';
     copy.type = 'button';
     copy.setAttribute('aria-label', 'Copier numéro');
     copy.textContent = 'Copier';

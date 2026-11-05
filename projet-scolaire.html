@@ -1,539 +1,267 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Projets - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ajout des styles globaux -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets scolaires — Flavio Lodé</title>
+    <meta name="description" content="Du BTS SIO au BUT R&T : infrastructure réseau sécurisée GSB, projets web et objectifs en cybersécurité.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-    <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html" aria-current="page">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                    </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 flex-1">
-        <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-blue-400">PROJETS SCOLAIRES</h1>
-        <p class="text-center text-gray-300 mb-8">Mes réalisations académiques au cours du BTS SIO</p>
-
-        <!-- Bouton retour -->
-        <div class="flex justify-start mb-8">
-            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets" aria-current="page">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <span>Retour</span>
-            </a>
-        </div>
-
-        <style>
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes slideInDown {
-                from { opacity: 0; transform: translateY(-30px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes float-up {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Statistiques */
-            .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; animation: fadeInUp 0.7s ease-out; }
-            .stat-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                padding: 1.5rem;
-                text-align: center;
-                transition: all 0.3s ease;
-            }
-            .stat-card:hover {
-                transform: translateY(-8px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 15px 35px rgba(96, 165, 250, 0.15);
-            }
-            .stat-number { font-size: 2.5rem; font-weight: 700; color: #60a5fa; margin-bottom: 0.5rem; }
-            .stat-label { color: #cbd5e1; font-size: 0.95rem; }
-
-            /* Sections */
-            .projects-section { margin-top: 4rem; }
-            .section-title { font-size: 1.5rem; font-weight: 700; color: #60a5fa; margin-bottom: 2rem; margin-top: 2rem; border-bottom: 2px solid rgba(96, 165, 250, 0.3); padding-bottom: 1rem; }
-
-            /* Projet phare */
-            .featured-project {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
-                border: 2px solid rgba(96, 165, 250, 0.4);
-                border-radius: 1.5rem;
-                overflow: hidden;
-                margin-bottom: 3rem;
-                animation: fadeInUp 0.8s ease-out 0.2s both;
-            }
-            .featured-project:hover {
-                border-color: rgba(96, 165, 250, 0.7);
-                box-shadow: 0 20px 50px rgba(96, 165, 250, 0.2);
-            }
-            .featured-content { padding: 2rem; }
-            .featured-info h3 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; }
-            .featured-info .period { color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1rem; }
-            .featured-info .description { color: #bcd0df; line-height: 1.6; margin-bottom: 1.5rem; }
-
-            /* Grille de projets */
-            .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-            .project-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                overflow: hidden;
-                transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
-                display: flex;
-                flex-direction: column;
-                animation: float-up 0.6s ease-out backwards;
-            }
-            .project-card:nth-child(1) { animation-delay: 0.3s; }
-            .project-card:nth-child(2) { animation-delay: 0.4s; }
-            .project-card:nth-child(3) { animation-delay: 0.5s; }
-            .project-card:hover {
-                transform: translateY(-12px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
-            }
-            .project-image {
-                width: 100%;
-                height: 200px;
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #64748b;
-                font-size: 3rem;
-                border-bottom: 1px solid rgba(96, 165, 250, 0.1);
-            }
-            .project-card:hover .project-image {
-                filter: brightness(1.1);
-            }
-            .project-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-            .project-name { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-            .project-period { color: #94a3b8; font-size: 0.8rem; margin-bottom: 0.8rem; }
-            .project-description { color: #bcd0df; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; flex-grow: 1; }
-
-            /* Badges technologies */
-            .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-            .tech-badge {
-                display: inline-block;
-                padding: 0.25rem 0.7rem;
-                background: rgba(96, 165, 250, 0.15);
-                color: #60a5fa;
-                border-radius: 20px;
-                font-size: 0.75rem;
-                font-weight: 600;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                transition: all 0.2s ease;
-            }
-            .tech-badge:hover {
-                background: rgba(96, 165, 250, 0.25);
-                border-color: rgba(96, 165, 250, 0.6);
-            }
-
-            /* Résultats */
-            .results { font-size: 0.85rem; color: #a5f3fc; font-weight: 600; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
-            .result-item { margin-bottom: 0.5rem; }
-            .result-item::before { content: '✓ '; color: #10b981; }
-
-            /* Sous-sections dans featured */
-            .project-subsection { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
-            .project-subsection h4 { color: #60a5fa; font-weight: 700; margin-bottom: 0.8rem; }
-            .subsection-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-            @media (max-width: 768px) {
-                .subsection-list { grid-template-columns: 1fr; }
-            }
-            .subsection-list ul { list-style: disc; list-style-position: inside; color: #bcd0df; font-size: 0.9rem; line-height: 1.6; }
-            .subsection-list li { margin-bottom: 0.5rem; }
-
-            /* Galerie d'outils */
-            .tools-gallery { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
-            .tool-item { display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
-            .tool-box {
-                width: 100px;
-                height: 100px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                padding: 1rem;
-                transition: all 0.3s ease;
-            }
-            .tool-item:hover .tool-box {
-                transform: translateY(-8px) scale(1.1);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 15px 35px rgba(96, 165, 250, 0.2);
-            }
-            .tool-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-            .tool-name { margin-top: 0.8rem; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; transition: color 0.3s ease; }
-            .tool-item:hover .tool-name { color: #60a5fa; }
-
-            /* Lien schéma */
-            .schema-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease; text-decoration: none; }
-            .schema-link:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3); }
-        </style>
-
-        <!-- STATISTIQUES CLÉS -->
-        <section class="stats-container">
-            <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Projets réalisés</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">2</div>
-                <div class="stat-label">Années de BTS</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Technologies</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Projets livrés</div>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <a href="projet.html" class="back-link reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>cd ../projets</a>
+                <br>
+                <span class="eyebrow reveal">Projets scolaires</span>
+                <h1 class="reveal d1">Mon parcours, <span class="grad">mes projets</span></h1>
+                <p class="lead reveal d2">Du BTS SIO au BUT Réseaux et Télécommunications, découvrez les projets qui construisent mon parcours.</p>
             </div>
         </section>
 
-        <!-- PROJET PHARE : GSB SISR -->
-        <section class="projects-section">
-            <h2 class="section-title">🌟 Projet Phare : Infrastructure Réseau GSB</h2>
-            <div class="featured-project">
-                <div class="featured-content">
-                    <h3>Mise en place d'une infrastructure réseau sécurisée (SISR)</h3>
-                    <p class="featured-info period">📅 Mars 2025 - Décembre 2025 | BTS SIO SISR</p>
-                    <p class="featured-info description">
-                        Conception et déploiement d'une infrastructure réseau d'entreprise sécurisée avec segmentation VLAN, gestion Active Directory, DHCP, DNS et haute disponibilité. Projet complet montrant les compétences en infrastructure systèmes et réseaux.
-                    </p>
+        <!-- OBJECTIFS 3E ANNÉE -->
+        <section class="section" style="padding-top:20px">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="num">// 3e année BUT R&amp;T</span><h2>Mes objectifs en cybersécurité</h2></div>
+                </div>
+                <div class="split">
+                    <div class="card intro-panel reveal">
+                        <span class="badge cyan">Prochaine étape</span>
+                        <h3>BUT Réseaux et Télécommunications</h3>
+                        <p>Ces projets accompagneront ma 3<sup>e</sup> année, parcours cybersécurité. Ils me permettront d'approfondir l'audit, la détection et la réponse aux incidents dans des environnements réseau réalistes.</p>
+                        <ul class="list-arrow">
+                            <li>Analyser les risques</li>
+                            <li>Détecter les menaces</li>
+                            <li>Protéger les infrastructures</li>
+                        </ul>
+                    </div>
+                    <div class="grid cols-2">
+                        <article class="card card-hover proj-card reveal">
+                            <div class="top"><span class="index-num">01</span><span class="badge cyan">À venir</span></div>
+                            <h3>Audit de sécurité et test d'intrusion</h3>
+                            <p>Évaluer la sécurité d'un système d'information, rechercher ses vulnérabilités et proposer des recommandations adaptées.</p>
+                            <div class="tags"><span class="tag">Kali Linux</span><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">OWASP</span></div>
+                            <div class="deliverable"><b>Livrables</b>Rapport d'audit, cartographie des vulnérabilités et plan de remédiation.</div>
+                        </article>
+                        <article class="card card-hover proj-card reveal d1">
+                            <div class="top"><span class="index-num">02</span><span class="badge cyan">À venir</span></div>
+                            <h3>Mise en place d'un mini-SOC</h3>
+                            <p>Centraliser les journaux, détecter les comportements suspects et suivre les alertes de sécurité d'une infrastructure réseau.</p>
+                            <div class="tags"><span class="tag">SIEM</span><span class="tag">Wazuh</span><span class="tag">ELK</span><span class="tag">Linux</span></div>
+                            <div class="deliverable"><b>Livrables</b>Règles de détection, collecte des logs et tableau de bord de supervision.</div>
+                        </article>
+                        <article class="card card-hover proj-card reveal">
+                            <div class="top"><span class="index-num">03</span><span class="badge cyan">À venir</span></div>
+                            <h3>Réponse à incident et forensique</h3>
+                            <p>Simuler une compromission pour identifier l'origine de l'incident, préserver les preuves et formaliser une procédure de réponse.</p>
+                            <div class="tags"><span class="tag">Forensique</span><span class="tag">YARA</span><span class="tag">MITRE ATT&amp;CK</span></div>
+                            <div class="deliverable"><b>Livrables</b>Chronologie de l'attaque, indicateurs de compromission et procédure de crise.</div>
+                        </article>
+                        <article class="card card-hover proj-card reveal d1">
+                            <div class="top"><span class="index-num">04</span><span class="badge cyan">À venir</span></div>
+                            <h3>Sécurisation d'une infrastructure réseau</h3>
+                            <p>Concevoir une architecture résiliente intégrant le cloisonnement, le contrôle des accès, le chiffrement et le durcissement des équipements.</p>
+                            <div class="tags"><span class="tag">VLAN</span><span class="tag">Firewall</span><span class="tag">VPN</span><span class="tag">802.1X</span></div>
+                            <div class="deliverable"><b>Livrables</b>Architecture documentée, politique de filtrage et tests de sécurité.</div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Technologies -->
-                    <div>
-                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Technologies utilisées</strong>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Windows Server</span>
-                            <span class="tech-badge">Active Directory</span>
-                            <span class="tech-badge">DHCP</span>
-                            <span class="tech-badge">DNS</span>
-                            <span class="tech-badge">VLAN</span>
-                            <span class="tech-badge">PowerShell</span>
-                            <span class="tech-badge">Cisco</span>
-                            <span class="tech-badge">Proxmox</span>
-                        </div>
+        <!-- GSB -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="num">// parcours BTS SIO SISR — réalisations de 2e année</span><h2>Infrastructure réseau sécurisée GSB</h2></div>
+                    <p>Projets réalisés et compétences développées au cours de ma deuxième année de BTS.</p>
+                </div>
+                <div class="split">
+                    <div class="card intro-panel reveal">
+                        <span class="badge">Projet réalisé</span>
+                        <h3>Infrastructure réseau sécurisée</h3>
+                        <p>Un projet d'infrastructure réalisé en 2<sup>e</sup> année de BTS SIO SISR, autour de la segmentation réseau, des services Windows et de la haute disponibilité.</p>
+                        <ul class="list-arrow">
+                            <li>Administrer les services réseau</li>
+                            <li>Sécuriser l'infrastructure</li>
+                            <li>Documenter la solution</li>
+                        </ul>
                     </div>
 
-                    <!-- Sous-projets/Phases -->
-                    <div class="project-subsection">
-                        <h4>📋 Phases du projet</h4>
-                        <div class="subsection-list">
-                            <ul>
-                                <li><strong>Partie 1 :</strong> Mise en place réseau et VMs</li>
-                                <li><strong>Partie 2 :</strong> Automatisation & Service Qualité</li>
-                                <li><strong>Partie 3 :</strong> Haute disponibilité & secours</li>
-                            </ul>
-                            <ul>
+                    <article class="card feature reveal d1">
+                        <div class="top" style="display:flex;justify-content:space-between;align-items:center"><span class="index-num">01</span><span class="badge">Réalisé</span></div>
+                        <h3>Mise en place d'une infrastructure réseau sécurisée (SISR)</h3>
+                        <div class="card-meta"><span class="hl">Mars 2025 – Décembre 2025</span><span>BTS SIO SISR</span></div>
+                        <p>Conception et déploiement d'une infrastructure réseau d'entreprise sécurisée avec segmentation VLAN, gestion Active Directory, DHCP, DNS et haute disponibilité. Projet complet montrant les compétences en infrastructure systèmes et réseaux.</p>
+
+                        <div class="block">
+                            <h4>Technologies utilisées</h4>
+                            <div class="tags"><span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">DHCP</span><span class="tag">DNS</span><span class="tag">VLAN</span><span class="tag">PowerShell</span><span class="tag">Cisco</span><span class="tag">Proxmox</span></div>
+                        </div>
+
+                        <div class="block">
+                            <h4>Phases du projet</h4>
+                            <div class="phases">
+                                <div class="phase"><span>Partie 1</span><b>Mise en place réseau et VMs</b></div>
+                                <div class="phase"><span>Partie 2</span><b>Automatisation &amp; Service Qualité</b></div>
+                                <div class="phase"><span>Partie 3</span><b>Haute disponibilité &amp; secours</b></div>
+                            </div>
+                            <ul class="list-arrow" style="margin-top:14px">
                                 <li>Segmentation réseau (VLAN 78)</li>
                                 <li>Configuration des switchs L2/L3</li>
                                 <li>Synchronisation AD/DNS/DHCP</li>
                             </ul>
                         </div>
-                    </div>
 
-                    <!-- Résultats & Impact -->
-                    <div class="project-subsection">
-                        <h4>✨ Résultats & Apprentissages</h4>
-                        <div class="results">
-                            <div class="result-item">Infrastructure sécurisée et scalable déployée</div>
-                            <div class="result-item">Automatisation via PowerShell et GPO réussie</div>
-                            <div class="result-item">Haute disponibilité configurée avec basculement</div>
-                            <div class="result-item">Documentation technique complète fournie</div>
+                        <div class="block">
+                            <h4>Résultats &amp; apprentissages</h4>
+                            <ul class="checks">
+                                <li>Infrastructure sécurisée et scalable déployée</li>
+                                <li>Automatisation via PowerShell et GPO réussie</li>
+                                <li>Haute disponibilité configurée avec basculement</li>
+                                <li>Documentation technique complète fournie</li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <!-- Outils utilisés -->
-                    <div class="project-subsection">
-                        <h4>🛠️ Outils et logiciels</h4>
-                        <div class="tools-gallery">
-                            <div class="tool-item">
-                                <div class="tool-box">
-                                    <img src="assets/img/proxmox.png" alt="Proxmox" />
-                                </div>
-                                <div class="tool-name">Proxmox</div>
+                        <div class="block">
+                            <h4>Outils et logiciels</h4>
+                            <div class="tool-gallery">
+                                <div class="tool-tile"><div class="box"><img src="assets/img/proxmox.png" alt=""></div>Proxmox</div>
+                                <div class="tool-tile"><div class="box"><img src="assets/img/cisco.png" alt=""></div>Cisco</div>
+                                <div class="tool-tile"><div class="box"><img src="assets/img/AD.avif" alt=""></div>Active Directory</div>
+                                <div class="tool-tile"><div class="box"><img src="assets/img/powershell.png" alt=""></div>PowerShell</div>
+                                <div class="tool-tile"><div class="box"><img src="assets/img/windows-server.png" alt=""></div>Windows Server</div>
                             </div>
-                            <div class="tool-item">
-                                <div class="tool-box">
-                                    <img src="assets/img/cisco.png" alt="Cisco" />
-                                </div>
-                                <div class="tool-name">Cisco</div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-box">
-                                    <img src="assets/img/AD.avif" alt="Active Directory" />
-                                </div>
-                                <div class="tool-name">Active Directory</div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-box">
-                                    <img src="assets/img/powershell.png" alt="PowerShell" />
-                                </div>
-                                <div class="tool-name">PowerShell</div>
-                            </div>
-                            <div class="tool-item">
-                                <div class="tool-box">
-                                    <img src="assets/img/windows-server.png" alt="Windows Server" />
-                                </div>
-                                <div class="tool-name">Windows Server</div>
-                            </div>
-                        </div>
-                        <div style="text-align: center; margin-top: 1.5rem;">
-                            <a href="assets/img/schema.png" class="schema-link" target="_blank">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                </svg>
+                            <a href="assets/img/schema.png" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="margin-top:20px">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
                                 Voir le schéma réseau
                             </a>
                         </div>
-                    </div>
 
-                    <!-- Documentation et fichiers -->
-                    <div class="project-subsection">
-                        <h4>📄 Documentation & Fichiers du Projet</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
-                            <!-- 📌 DOCUMENT 1 : À remplacer par votre fichier -->
-                            <div style="background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 0.8rem; padding: 1.5rem; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderColor='rgba(96, 165, 250, 0.5)'; this.style.backgroundColor='rgba(96, 165, 250, 0.15)'" onmouseout="this.style.borderColor='rgba(96, 165, 250, 0.2)'; this.style.backgroundColor='rgba(96, 165, 250, 0.1)'">
-                                <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                    <div style="font-size: 2.5rem;">📋</div>
-                                    <div style="flex-grow: 1;">
-                                        <div style="color: #60a5fa; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">Documentation Principale</div>
-                                        <div style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.5;">
-                                            Description détaillée du projet, architecture et implémentation
-                                        </div>
-                                        <a href="PDF/Infra-GSB-Lode (4).pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.2rem; background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; border-radius: 0.4rem; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                                            Voir le PDF
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 📌 DOCUMENT 2 : À remplacer par votre fichier -->
-                            <div style="background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 0.8rem; padding: 1.5rem; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderColor='rgba(96, 165, 250, 0.5)'; this.style.backgroundColor='rgba(96, 165, 250, 0.15)'" onmouseout="this.style.borderColor='rgba(96, 165, 250, 0.2)'; this.style.backgroundColor='rgba(96, 165, 250, 0.1)'">
-                                <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                    <div style="font-size: 2.5rem;">🏗️</div>
-                                    <div style="flex-grow: 1;">
-                                        <div style="color: #60a5fa; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">Guide Haute Disponibilité</div>
-                                        <div style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.5;">
-                                            Configuration de la redondance et tolérance aux pannes
-                                        </div>
-                                        <a href="PDF/Documentation _ Haute Disponibilité et Tolérance aux Pannes (1).pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.2rem; background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; border-radius: 0.4rem; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                                            Voir le PDF
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="block">
+                            <h4>Documentation &amp; fichiers du projet</h4>
+                            <div class="docs">
+                                <a class="doc" href="PDF/Infra-GSB-Lode%20(4).pdf" target="_blank" rel="noopener">
+                                    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+                                    <span><b>Documentation principale</b><p>Description détaillée du projet, architecture et implémentation</p><span class="open">Voir le PDF ↗</span></span>
+                                </a>
+                                <a class="doc" href="PDF/Documentation%20_%20Haute%20Disponibilit%C3%A9%20et%20Tol%C3%A9rance%20aux%20Pannes%20(1).pdf" target="_blank" rel="noopener">
+                                    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+                                    <span><b>Guide Haute Disponibilité</b><p>Configuration de la redondance et tolérance aux pannes</p><span class="open">Voir le PDF ↗</span></span>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- AUTRES PROJETS SCOLAIRES -->
-        <section class="projects-section">
-            <h2 class="section-title">📚 Autres Projets Scolaires</h2>
-            <div class="projects-grid">
-                <!-- Site vitrine -->
-                <div class="project-card">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <div class="project-name">Site Vitrine</div>
-                        <div class="project-period">2024 - 2025</div>
-                        <p class="project-description">
-                            Création d'un site vitrine responsive et optimisé SEO avec pages institutionnelles, présentation d'offres et formulaire de contact dynamique.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Responsive</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Design moderne et épuré</div>
-                            <div class="result-item">Score SEO optimisé</div>
-                            <div class="result-item">Mobile-first responsive</div>
-                        </div>
-                    </div>
+        <!-- AUTRES RÉALISATIONS -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="num">// BTS SIO</span><h2>Autres réalisations de BTS</h2></div>
                 </div>
-
-                <!-- Portfolio -->
-                <div class="project-card">
-                    <div class="project-image">👨‍💼</div>
-                    <div class="project-content">
-                        <div class="project-name">Portfolio Personnel</div>
-                        <div class="project-period">2025</div>
-                        <p class="project-description">
-                            Développement d'un portfolio personnel présentant mes compétences, réalisations, expériences et projets. Site de démonstration de mes capacités en développement web.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">Tailwind CSS</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Animations</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Design moderne avec animations</div>
-                            <div class="result-item">Présentation professionnelle</div>
-                            <div class="result-item">Totalement responsive</div>
-                        </div>
-                    </div>
+                <div class="grid cols-2">
+                    <article class="card card-hover proj-card reveal">
+                        <div class="top"><span class="index-num">02</span><span class="badge">Réalisé</span></div>
+                        <h3>Site Vitrine</h3>
+                        <div class="card-meta"><span class="hl">2024 – 2025</span></div>
+                        <p>Création d'un site vitrine responsive et optimisé SEO avec pages institutionnelles, présentation d'offres et formulaire de contact dynamique.</p>
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div>
+                        <ul class="checks card-foot"><li>Design moderne et épuré</li><li>Score SEO optimisé</li><li>Mobile-first responsive</li></ul>
+                    </article>
+                    <article class="card card-hover proj-card reveal d1">
+                        <div class="top"><span class="index-num">03</span><span class="badge">Réalisé</span></div>
+                        <h3>Portfolio Personnel</h3>
+                        <div class="card-meta"><span class="hl">2025</span></div>
+                        <p>Développement d'un portfolio personnel présentant mes compétences, réalisations, expériences et projets. Site de démonstration de mes capacités en développement web.</p>
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">Tailwind CSS</span><span class="tag">JavaScript</span><span class="tag">Animations</span></div>
+                        <ul class="checks card-foot"><li>Design moderne avec animations</li><li>Présentation professionnelle</li><li>Totalement responsive</li></ul>
+                    </article>
+                    <article class="card card-hover proj-card reveal">
+                        <div class="top"><span class="index-num">04</span><span class="badge">Réalisé</span></div>
+                        <h3>Gestion de Boutique</h3>
+                        <div class="card-meta"><span class="hl">2024</span></div>
+                        <p>Développement d'une boutique en ligne avec gestion du catalogue produits, panier d'achat, système de paiement et administration back-end.</p>
+                        <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">Stripe</span></div>
+                        <ul class="checks card-foot"><li>Panier et checkout fonctionnels</li><li>Base de données optimisée</li><li>Système de paiement intégré</li></ul>
+                    </article>
+                    <article class="card card-hover proj-card reveal d1">
+                        <div class="top"><span class="index-num">05</span><span class="badge">Réalisé</span></div>
+                        <h3>Aménagement Salle 109</h3>
+                        <div class="card-meta"><span class="hl">2024 – 2025</span></div>
+                        <p>Projet d'aménagement et de rénovation de salle de classe incluant la planification, l'organisation spatiale et l'optimisation de l'environnement pédagogique.</p>
+                        <div class="tags"><span class="tag">Planification</span><span class="tag">Design spatial</span><span class="tag">Organisation</span><span class="tag">Gestion projet</span></div>
+                        <ul class="checks card-foot"><li>Optimisation de l'espace classe</li><li>Amélioration de l'environnement pédagogique</li><li>Projet réalisé et livré</li></ul>
+                    </article>
                 </div>
+            </div>
+        </section>
 
-                <!-- Gestion de boutique -->
-                <div class="project-card">
-                    <div class="project-image">🛒</div>
-                    <div class="project-content">
-                        <div class="project-name">Gestion de Boutique</div>
-                        <div class="project-period">2024</div>
-                        <p class="project-description">
-                            Développement d'une boutique en ligne avec gestion du catalogue produits, panier d'achat, système de paiement et administration back-end.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Stripe</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Panier et checkout fonctionnels</div>
-                            <div class="result-item">Base de données optimisée</div>
-                            <div class="result-item">Système de paiement intégré</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Aménagement Salle 109 -->
-                <div class="project-card">
-                    <div class="project-image">🎓</div>
-                    <div class="project-content">
-                        <div class="project-name">Aménagement Salle 109</div>
-                        <div class="project-period">2024 - 2025</div>
-                        <p class="project-description">
-                            Projet d'aménagement et de rénovation de salle de classe incluant la planification, l'organisation spatiale et l'optimisation de l'environnement pédagogique.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Planification</span>
-                            <span class="tech-badge">Design spatial</span>
-                            <span class="tech-badge">Organisation</span>
-                            <span class="tech-badge">Gestion projet</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Optimisation de l'espace classe</div>
-                            <div class="result-item">Amélioration de l'environnement pédagogique</div>
-                            <div class="result-item">Projet réalisé et livré</div>
-                        </div>
+        <section class="section">
+            <div class="container">
+                <div class="card next-step reveal">
+                    <div><span class="num mono" style="color:var(--green);font-size:.8rem">// et en entreprise ?</span><h3>Découvrir mes stages chez Forvia et Stellantis</h3></div>
+                    <div class="hero-actions" style="margin-top:0">
+                        <a href="projet-entreprise.html" class="btn btn-ghost">Stage 1<sup>re</sup> année</a>
+                        <a href="projet-entreprise-2.html" class="btn btn-primary">Stage 2<sup>e</sup> année <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html" aria-current="page">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            </div>
         </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
-     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/security.js" defer></script>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-    
-
-
-
-

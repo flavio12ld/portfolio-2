@@ -1,502 +1,174 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Projets - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ajout des styles globaux -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Forvia — Flavio Lodé</title>
+    <meta name="description" content="Stage DevOps de Flavio Lodé chez Forvia Clean Mobility : optimisation de l'application interne DORY.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html" aria-current="page">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                    </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 flex-1">
-        <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-blue-400">PROJETS EN ENTREPRISE</h1>
-        <p class="text-center text-gray-300 mb-8">Mes réalisations professionnelles et contributions</p>
-
-        <!-- Bouton retour -->
-        <div class="flex justify-start mb-8">
-            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets" aria-current="page">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <span>Retour</span>
-            </a>
-        </div>
-
-        <style>
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes slideInDown {
-                from { opacity: 0; transform: translateY(-30px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes float-up {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Statistiques */
-            .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; animation: fadeInUp 0.7s ease-out; }
-            .stat-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                padding: 1.5rem;
-                text-align: center;
-                transition: all 0.3s ease;
-            }
-            .stat-card:hover {
-                transform: translateY(-8px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 15px 35px rgba(96, 165, 250, 0.15);
-            }
-            .stat-number { font-size: 3rem; font-weight: 700; color: #60a5fa; margin-bottom: 0.5rem; }
-            .stat-label { color: #cbd5e1; font-size: 1.1rem; }
-
-            /* Projets principaux */
-            .projects-section { margin-top: 4rem; }
-            .section-title { font-size: 1.75rem; font-weight: 700; color: #60a5fa; margin-bottom: 2rem; margin-top: 2rem; border-bottom: 2px solid rgba(96, 165, 250, 0.3); padding-bottom: 1rem; }
-
-            /* Projet phare */
-            .featured-project {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
-                border: 2px solid rgba(96, 165, 250, 0.4);
-                border-radius: 1.5rem;
-                overflow: hidden;
-                margin-bottom: 3rem;
-                animation: fadeInUp 0.8s ease-out 0.2s both;
-            }
-            .featured-header {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                padding: 2rem;
-                align-items: center;
-            }
-            @media (max-width: 768px) {
-                .featured-header { grid-template-columns: 1fr; }
-            }
-            .featured-image {
-                width: 100%;
-                height: 300px;
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                border-radius: 1rem;
-                overflow: hidden;
-                border: 1px solid rgba(96, 165, 250, 0.25);
-            }
-            .featured-image > a { display: block; width: 100%; height: 100%; }
-            .featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-            .featured-info h3 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
-            .featured-info .company { color: #60a5fa; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
-            .featured-info .period { color: #cbd5e1; font-size: 1rem; margin-bottom: 1rem; }
-            .featured-info .description { color: #bcd0df; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem; }
-            .featured-content { padding: 2rem; padding-top: 0; }
-            .featured-project:hover {
-                border-color: rgba(96, 165, 250, 0.7);
-                box-shadow: 0 20px 50px rgba(96, 165, 250, 0.2);
-            }
-
-            /* Grille de projets */
-            .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-            .project-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                overflow: hidden;
-                transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
-                display: flex;
-                flex-direction: column;
-                animation: float-up 0.6s ease-out backwards;
-            }
-            .project-card:nth-child(1) { animation-delay: 0.3s; }
-            .project-card:nth-child(2) { animation-delay: 0.4s; }
-            .project-card:nth-child(3) { animation-delay: 0.5s; }
-            .project-card:nth-child(4) { animation-delay: 0.6s; }
-            .project-card:nth-child(5) { animation-delay: 0.7s; }
-            .project-card:nth-child(6) { animation-delay: 0.8s; }
-
-            .project-card:hover {
-                transform: translateY(-12px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
-            }
-
-            .project-image {
-                width: 100%;
-                height: 200px;
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                display: flex;
-                align-items: stretch;
-                justify-content: stretch;
-                color: #64748b;
-                font-size: 1rem;
-                border-bottom: 1px solid rgba(96, 165, 250, 0.1);
-                overflow: hidden;
-            }
-            .project-image > a { display: block; width: 100%; height: 100%; }
-            .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-            .project-image .placeholder { margin: auto; padding: 0 1rem; text-align: center; }
-            /* Some screenshots are tall/narrow (modal popups). Use contain + padding to avoid cropping. */
-            .project-image--contain img { object-fit: contain; padding: 12px; box-sizing: border-box; }
-            .project-card:hover .project-image {
-                filter: brightness(1.1);
-            }
-
-            .project-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-            .project-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-            .project-company { color: #60a5fa; font-size: 0.95rem; margin-bottom: 0.8rem; }
-            .project-period { color: #94a3b8; font-size: 0.95rem; margin-bottom: 0.8rem; }
-            .project-description { color: #bcd0df; font-size: 1.05rem; line-height: 1.5; margin-bottom: 1rem; flex-grow: 1; }
-
-            /* Badges technologies */
-            .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-            .tech-badge {
-                display: inline-block;
-                padding: 0.25rem 0.7rem;
-                background: rgba(96, 165, 250, 0.15);
-                color: #60a5fa;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                font-weight: 600;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                transition: all 0.2s ease;
-            }
-            .tech-badge:hover {
-                background: rgba(96, 165, 250, 0.25);
-                border-color: rgba(96, 165, 250, 0.6);
-            }
-
-            /* Résultats/Impact */
-            .results { font-size: 1rem; color: #a5f3fc; font-weight: 600; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
-            .result-item { margin-bottom: 0.5rem; }
-            .result-item::before { content: '✓ '; color: #10b981; }
-        </style>
-
-        <!-- STATISTIQUES CLÉS -->
-        <section class="stats-container">
-            <div class="stat-card">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Semaines de stage</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1</div>
-                <div class="stat-label">Entreprise d'accueil</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Missions réalisées</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8+</div>
-                <div class="stat-label">Technos utilisées</div>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <a href="projet.html" class="back-link reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>cd ../projets</a>
+                <br>
+                <span class="eyebrow reveal">Projets en entreprise · Stage 1<sup>re</sup> année</span>
+                <h1 class="reveal d1">Forvia <span class="grad">Clean Mobility</span></h1>
+                <p class="lead reveal d2">Mes réalisations professionnelles et contributions au sein du service IT, en tant que stagiaire DevOps.</p>
             </div>
         </section>
 
-        <!-- CONTEXTE DU STAGE -->
-        <section class="projects-section">
-            <h2 class="section-title">🏢 Contexte du stage</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder">
-                        <img src="assets/img/logo-forvia.png" alt="logo Forvia Clean Mobility" loading="lazy"/></span></div>
-                    <div class="project-content">
-                        <div class="project-name">Forvia Clean Mobility</div>
-                        <div class="project-company">Bois sur Prés (25550 Bavans)</div>
-                        <div class="project-period">Stage du 26 mai au 27 juin 2025</div>
-                        <p class="project-description">
-                            Entreprise spécialisée dans la production d’équipements automobiles. Intégration au service IT,
-                            avec un rôle de stagiaire DevOps et un encadrement par l’équipe architecture.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder">
-                        <img src="assets/img/vs.png"alt="Capture d'écran de Visual Studio Code"loading="lazy"/>
-                    </span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-name">Ressources & environnement</div>
-                        <div class="project-company">Outils principaux</div>
-                        <p class="project-description">
-                            Visual Studio Code, PowerShell, WinSCP, WSL/Ubuntu, GitLab, PostgreSQL, Redis et Antora (Asciidoc).
-                            Utilisation d’une application métier (DORY) pour l’inventaire des architectures.
-                        </p>
-                    </div>
+        <section class="container">
+            <div class="stats reveal">
+                <div class="stat"><b data-count="5">5</b><span>semaines de stage</span></div>
+                <div class="stat"><b data-count="1">1</b><span>entreprise d'accueil</span></div>
+                <div class="stat"><b data-count="4" data-suffix="+">4+</b><span>missions réalisées</span></div>
+                <div class="stat"><b data-count="8" data-suffix="+">8+</b><span>technos utilisées</span></div>
+            </div>
+        </section>
+
+        <!-- CONTEXTE -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 01</span><h2>Contexte du stage</h2></div></div>
+                <div class="grid cols-2">
+                    <article class="card reveal">
+                        <div class="card-media logo"><img src="assets/img/logo-forvia.png" alt="Logo Forvia Clean Mobility" loading="lazy"></div>
+                        <h3>Forvia Clean Mobility</h3>
+                        <div class="card-meta"><span class="hl">Bois sur Prés (25550 Bavans)</span><span>Stage du 26 mai au 27 juin 2025</span></div>
+                        <p>Entreprise spécialisée dans la production d’équipements automobiles. Intégration au service IT, avec un rôle de stagiaire DevOps et un encadrement par l’équipe architecture.</p>
+                    </article>
+                    <article class="card reveal d1">
+                        <div class="card-media contain"><img src="assets/img/vs.png" alt="Capture d'écran de Visual Studio Code" loading="lazy"></div>
+                        <h3>Ressources &amp; environnement</h3>
+                        <div class="card-meta"><span class="hl">Outils principaux</span></div>
+                        <p>Visual Studio Code, PowerShell, WinSCP, WSL/Ubuntu, GitLab, PostgreSQL, Redis et Antora (Asciidoc). Utilisation d’une application métier (DORY) pour l’inventaire des architectures.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- PROJET PHARE -->
-        <section class="projects-section">
-            <h2 class="section-title">🌟 Projet Phare</h2>
-            <div class="featured-project">
-                <div class="featured-header">
-                    <div class="featured-image">
-                        <a href="assets/img/Image1.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
-                            <img
-                                src="assets/img/Image1.png"
-                                alt="Capture d'écran de l'application DORY — TIGER (DEV2)"
-                                loading="lazy"
-                            />
-                        </a>
-                    </div>
-                    <div class="featured-info">
-                        <h3>Optimisation de l’application DORY</h3>
-                        <div class="company">📍 Forvia Clean Mobility — Service IT</div>
-                        <div class="period">📅 26 mai 2025 – 27 juin 2025</div>
-                        <p class="description">
-                            Stage DevOps centré sur l’amélioration de DORY, l’application interne d’inventaire des architectures et configurations.
-                            Mon rôle a consisté à analyser l’existant, ajouter de nouvelles fonctionnalités, améliorer l’ergonomie et mettre à jour
-                            la documentation pour faciliter l’adoption par les équipes.
-                        </p>
-                    </div>
-                </div>
-                <div class="featured-content">
-                    <div>
-                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Technologies utilisées</strong>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Vue.js</span>
-                            <span class="tech-badge">TypeScript</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">JSON</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">Redis</span>
-                            <span class="tech-badge">WSL / Ubuntu</span>
-                            <span class="tech-badge">GitLab</span>
-                            <span class="tech-badge">Antora (Asciidoc)</span>
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 02 — projet phare</span><h2>Optimisation de l’application DORY</h2></div></div>
+                <article class="card spotlight reveal">
+                    <a class="spotlight-media" href="assets/img/Image1.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
+                        <img src="assets/img/Image1.png" alt="Capture d'écran de l'application DORY — TIGER (DEV2)" loading="lazy">
+                    </a>
+                    <div class="spotlight-body">
+                        <span class="badge">Forvia Clean Mobility — Service IT</span>
+                        <div class="card-meta" style="margin-top:14px"><span class="hl">26 mai 2025 – 27 juin 2025</span></div>
+                        <p>Stage DevOps centré sur l’amélioration de DORY, l’application interne d’inventaire des architectures et configurations. Mon rôle a consisté à analyser l’existant, ajouter de nouvelles fonctionnalités, améliorer l’ergonomie et mettre à jour la documentation pour faciliter l’adoption par les équipes.</p>
+                        <div class="tags" style="margin-top:20px"><span class="tag">Vue.js</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">JSON</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">WSL / Ubuntu</span><span class="tag">GitLab</span><span class="tag">Antora (Asciidoc)</span></div>
+                        <div class="card-foot">
+                            <p class="mono" style="color:var(--green);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Résultats &amp; impact</p>
+                            <ul class="checks">
+                                <li>Amélioration de l’ergonomie et de la navigation dans DORY</li>
+                                <li>Ajout de fonctionnalités métier (duplication, suppression multi-alias)</li>
+                                <li>Internationalisation des messages d’erreur (FR/EN)</li>
+                                <li>Documentation mise à jour + création d’une FAQ</li>
+                            </ul>
                         </div>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Résultats & Impact</strong>
-                        <div style="color: #bcd0df; font-size: 0.9rem; line-height: 1.6;">
-                            ✓ Amélioration de l’ergonomie et de la navigation dans DORY<br>
-                            ✓ Ajout de fonctionnalités métier (duplication, suppression multi-alias)<br>
-                            ✓ Internationalisation des messages d’erreur (FR/EN)<br>
-                            ✓ Documentation mise à jour + création d’une FAQ
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <!-- AUTRES PROJETS -->
-        <section class="projects-section">
-            <h2 class="section-title">📚 Autres Projets</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image project-image--contain">
-                        <a href="assets/img/Image2.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
-                            <img
-                                src="assets/img/Image2.png"
-                                alt="Pop-up DORY « Ajouter un alias » avec le message d'erreur : machine non sélectionnée"
-                                loading="lazy"
-                            />
-                        </a>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-name">Validation formulaire & messages d’erreur</div>
-                        <div class="project-company">Forvia Clean Mobility</div>
-                        <div class="project-period">Mai 2025</div>
-                        <p class="project-description">
-                            Ajout de messages d’erreur bloquants quand l’environnement ou la machine n’est pas sélectionné.
-                            Mise en place d’un libellé bilingue (FR/EN) via fichier JSON.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Vue.js</span>
-                            <span class="tech-badge">TypeScript</span>
-                            <span class="tech-badge">JSON</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Meilleure clarté des erreurs utilisateurs</div>
-                            <div class="result-item">Support multilingue intégré</div>
-                        </div>
-                    </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 03</span><h2>Autres projets</h2></div></div>
+                <div class="grid cols-3">
+                    <article class="card card-hover proj-card reveal">
+                        <a class="card-media contain" href="assets/img/Image2.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand"><img src="assets/img/Image2.png" alt="Pop-up DORY « Ajouter un alias » avec le message d'erreur : machine non sélectionnée" loading="lazy"></a>
+                        <h3>Validation formulaire &amp; messages d’erreur</h3>
+                        <div class="card-meta"><span class="hl">Mai 2025</span><span>Forvia Clean Mobility</span></div>
+                        <p>Ajout de messages d’erreur bloquants quand l’environnement ou la machine n’est pas sélectionné. Mise en place d’un libellé bilingue (FR/EN) via fichier JSON.</p>
+                        <div class="tags"><span class="tag">Vue.js</span><span class="tag">TypeScript</span><span class="tag">JSON</span></div>
+                        <ul class="checks card-foot"><li>Meilleure clarté des erreurs utilisateurs</li><li>Support multilingue intégré</li></ul>
+                    </article>
+                    <article class="card card-hover proj-card reveal d1">
+                        <a class="card-media contain" href="assets/img/Image4.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand"><img src="assets/img/Image4.png" alt="Capture d'écran de l'application DORY — Pop-up de duplication" loading="lazy"></a>
+                        <h3>Action “Dupliquer configuration”</h3>
+                        <div class="card-meta"><span class="hl">Juin 2025</span><span>Forvia Clean Mobility</span></div>
+                        <p>Création d’un bouton et d’un pop-up permettant de dupliquer la configuration d’un environnement vers un module. Intégration de l’action côté interface et alignement UX.</p>
+                        <div class="tags"><span class="tag">Vue.js</span><span class="tag">Vuetify</span></div>
+                        <ul class="checks card-foot"><li>Gain de temps pour les utilisateurs</li><li>Action plus lisible et guidée</li></ul>
+                    </article>
+                    <article class="card card-hover proj-card reveal d2">
+                        <a class="card-media contain" href="assets/img/Image6.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand"><img src="assets/img/Image6.png" alt="Capture d'écran de la suppression multi-alias dans DORY" loading="lazy"></a>
+                        <h3>Suppression multi-alias &amp; FAQ</h3>
+                        <div class="card-meta"><span class="hl">Juin 2025</span><span>Forvia Clean Mobility</span></div>
+                        <p>Ajout de la suppression de plusieurs alias (frontend + backend). Création d’une page FAQ via Antora pour clarifier les nouvelles fonctionnalités.</p>
+                        <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Antora</span></div>
+                        <ul class="checks card-foot"><li>Traitements en lot simplifiés</li><li>Documentation claire et à jour</li></ul>
+                    </article>
+                    <!-- Pour ajouter un projet : dupliquez un bloc <article class="card card-hover proj-card"> ci-dessus -->
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder"><img
-                                src="assets/img/Image4.png"
-                                alt="Capture d'écran de l'application DORY — Pop-up de duplication"
-                                loading="lazy"
-                            /></span></div>
-                    <div class="project-content">
-                        <div class="project-name">Action “Dupliquer configuration”</div>
-                        <div class="project-company">Forvia Clean Mobility</div>
-                        <div class="project-period">Juin 2025</div>
-                        <p class="project-description">
-                            Création d’un bouton et d’un pop-up permettant de dupliquer la configuration d’un environnement vers un module.
-                            Intégration de l’action côté interface et alignement UX.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Vue.js</span>
-                            <span class="tech-badge">Vuetify</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Gain de temps pour les utilisateurs</div>
-                            <div class="result-item">Action plus lisible et guidée</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder"><img
-                                src="assets/img/Image6.png"
-                                alt="Capture d'écran "
-                                loading="lazy"
-                            /></span></div>
-                    <div class="project-content">
-                        <div class="project-name">Suppression multi-alias & FAQ</div>
-                        <div class="project-company">Forvia Clean Mobility</div>
-                        <div class="project-period">Juin 2025</div>
-                        <p class="project-description">
-                            Ajout de la suppression de plusieurs alias (frontend + backend).
-                            Création d’une page FAQ via Antora pour clarifier les nouvelles fonctionnalités.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">TypeScript</span>
-                            <span class="tech-badge">Antora</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Traitements en lot simplifiés</div>
-                            <div class="result-item">Documentation claire et à jour</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 📌 TEMPLATES : Dupliquez cette structure pour ajouter plus de projets -->
-                <!-- 
-                <div class="project-card">
-                    <div class="project-image">EMOJI</div>
-                    <div class="project-content">
-                        <div class="project-name">Titre du projet</div>
-                        <div class="project-company">Entreprise</div>
-                        <div class="project-period">Dates</div>
-                        <p class="project-description">Description</p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Tech 1</span>
-                            <span class="tech-badge">Tech 2</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Résultat 1</div>
-                        </div>
-                    </div>
-                </div>
-                -->
             </div>
         </section>
 
-        <!-- STAGE SUIVANT -->
-        <section class="projects-section">
-            <h2 class="section-title">Stage de Deuxieme année</h2>
-            <div class="text-center">
-                <a href="projet-entreprise-2.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition duration-300 shadow-lg hover:shadow-xl">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                    Voir le stage chez Stellantis
+        <section class="section">
+            <div class="container">
+                <a href="projet-entreprise-2.html" class="card card-hover next-step reveal">
+                    <div><span class="mono" style="color:var(--green);font-size:.8rem">// stage de deuxième année</span><h3>Voir le stage chez Stellantis</h3></div>
+                    <span class="btn btn-primary">Continuer <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
             </div>
         </section>
-</main>
+    </main>
 
-<footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html" aria-current="page">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            </div>
         </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
 
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/security.js" defer></script>
 </body>
 </html>
-
-
-
