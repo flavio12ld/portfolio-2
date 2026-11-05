@@ -3,217 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ajout des styles globaux -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
+    <title>CV — Flavio Lodé</title>
+    <meta name="description" content="Curriculum vitae de Flavio Lodé : expériences chez Stellantis et Forvia, formation et contact.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white text-lg">
-        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html" aria-current="page">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <p class="prompt reveal"><b>flavio@portfolio</b>:<i>~/cv</i>$ cat cv.txt</p>
+                <div class="section-head" style="margin:0;align-items:flex-end">
+                    <div>
+                        <span class="eyebrow reveal" style="margin-top:18px">Profil professionnel</span>
+                        <h1 class="reveal d1">Curriculum <span class="grad">Vitae</span></h1>
+                        <p class="lead reveal d2">Étudiant en BTS SIO — Spécialisation SISR. Passionné par l'infrastructure et la cybersécurité.</p>
                     </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                    <a href="PDF/CV%20Flavio%20LODE%202026.pdf" target="_blank" rel="noopener" class="btn btn-primary reveal d2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                        Télécharger le CV (PDF)
+                    </a>
                 </div>
             </div>
-        </div>
-    </nav>
-    <main class="max-w-6xl mx-auto py-16 px-4 sm:px-6 md:px-8 flex-1">
-        <div class="flex items-start justify-between mb-8 flex-col md:flex-row gap-4">
-            <div>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">Curriculum Vitae</h1>
-                <p class="text-gray-300">Étudiant en BTS SIO — Spécialisation SISR. Passionné par l'infrastructure et la cybersécurité.</p>
-            </div>
-            <div class="md:text-right">
-                <a href="PDF/CV Flavio LODE BTS.pdf" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded transition">Télécharger le CV (PDF)</a>
-            </div>
-        </div>
+        </section>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Column gauche: profil + contact + skills -->
-            <aside class="space-y-6">
-                <div class="p-4 sm:p-6 md:p-8 card-impression">
-                    <div class="flex items-center gap-4">
-                        <div>
-                            <div class="text-2xl font-semibold">Flavio Lodé</div>
-                            <div class="text-base text-gray-300">Étudiant BTS SIO • SISR</div>
+        <section class="section" style="padding-top:20px">
+            <div class="container cv-layout">
+                <!-- Colonne gauche -->
+                <aside class="cv-side">
+                    <div class="card reveal">
+                        <div class="avatar" aria-hidden="true">FL</div>
+                        <h2 style="font-size:1.5rem">Flavio Lodé</h2>
+                        <p class="mono" style="color:var(--green);font-size:.82rem;margin-top:4px">Étudiant BTS SIO • SISR</p>
+                        <p style="margin-top:16px;font-size:.94rem">Je m'intéresse aux architectures réseaux, à la résolution d'incidents et aux projets d'automatisation de l'infrastructure.</p>
+                    </div>
+                    <div class="card reveal d1">
+                        <h3 style="margin-bottom:16px">Contact</h3>
+                        <div class="contact-rows">
+                            <div class="contact-row"><span>Email</span><button type="button" class="obf-reveal" data-type="email" data-user="flaviolode12" data-domain="gmail.com">Afficher l'email</button></div>
+                            <div class="contact-row"><span>Téléphone</span><button type="button" class="obf-reveal" data-type="tel" data-t="0780580124">Afficher le téléphone</button></div>
+                            <div class="contact-row"><span>Ville</span><b>Montbéliard, France</b></div>
+                        </div>
+                        <div class="socials" style="margin-top:20px">
+                            <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                            <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
                         </div>
                     </div>
-                    <p class="mt-4 text-gray-300">Je m'intéresse aux architectures réseaux, à la résolution d'incidents et aux projets d'automatisation de l'infrastructure.</p>
-                </div>
+                </aside>
 
-                <div class="p-4 sm:p-6 md:p-8 card-impression">
-                    <h3 class="text-2xl font-semibold mb-3">Contact</h3>
-                    <div class="space-y-2 text-base text-gray-300">
-                        <div>Email: <button class="obf-reveal text-blue-400" data-type="email" data-user="flaviolode12" data-domain="gmail.com">Afficher l'email</button></div>
-                        <div>Téléphone: <button class="obf-reveal font-medium" data-type="tel" data-t="0780580124">Afficher le téléphone</button></div>
-                        <div>Ville: <span class="font-medium">Montbéliard, France</span></div>
-                    </div>
-                    <div class="mt-4 flex gap-3">
-                        <a href="www.linkedin.com/in/flavio-lode" target="_blank" aria-label="LinkedIn" class="p-2 rounded-md hover:bg-gray-800 transition">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6" />
-                        </a>
-                        <a href="https://github.com/flavio12ld" target="_blank" aria-label="GitHub" class="p-2 rounded-md hover:bg-gray-800 transition">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-6 h-6 bg-white rounded-full" />
-                        </a>
-                    </div>
-                </div>
-
-                <div class="p-4 sm:p-6 md:p-8 card-impression">
-                    <h3 class="text-2xl font-semibold mb-3">Compétences</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1"><span>HTML / CSS</span><span class="text-lg font-semibold">75%</span></div>
-                            <div class="progress-track rounded-full h-4 bg-gray-700">
-                                <div class="progress-fill bg-green-600 h-4 rounded-full" data-target="75"></div>
+                <!-- Colonne droite -->
+                <div class="grid" style="gap:24px">
+                    <section class="card reveal">
+                        <div class="card-title"><h2>Expériences</h2><span>// parcours professionnel</span></div>
+                        <div class="timeline">
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">15 Mars – 02 Jui</span><span class="badge">Stage</span></div>
+                                <h3>Orange</h3>
+                                <p class="tl-sub"> ... — Argiesans</p>
+                                <ul class="list-arrow">
+                                                                       
+                                </ul>
                             </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1"><span>Administration systèmes</span><span class="text-lg font-semibold">40%</span></div>
-                            <div class="progress-track rounded-full h-4 bg-gray-700">
-                                <div class="progress-fill bg-blue-500 h-4 rounded-full" data-target="40"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1"><span>SQL</span><span class="text-lg font-semibold">65%</span></div>
-                            <div class="progress-track rounded-full h-4 bg-gray-700">
-                                <div class="progress-fill bg-green-400 h-4 rounded-full" data-target="65"></div>
-                            </div>
-                        </div>
-                    <h3 class="text-2xl font-semibold mb-4">Langues</h3>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between mb-1"><span>Français</span><span class="text-lg font-semibold">Langue maternelle</span></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1"><span>Anglais</span><span class="text-lg font-semibold">B1</span></div>
-                            <div class="progress-track rounded-full h-4 bg-gray-700">
-                                <div class="progress-fill bg-yellow-400 h-4 rounded-full" data-target="60"></div>
-                            </div>
-                            <div class="flex justify-between mb-1"><span>Allemand</span><span class="text-lg font-semibold">A2+</span></div>
-                            <div class="progress-track rounded-full h-4 bg-gray-700">
-                                <div class="progress-fill bg-yellow-400 h-4 rounded-full" data-target="40"></div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Column droite: experience / formation / langues -->
-            <div class="md:col-span-2 space-y-6">
-                <section class="p-4 sm:p-6 md:p-8 card-impression">
-                    <h3 class="text-2xl font-semibold mb-4">Expériences</h3>
-                    <div class="space-y-4">
-                        
-                        <!-- Ajout: Expériences professionnelles supplémentaires -->
-                        <div class="p-3 sm:p-4 md:p-6 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="font-semibold">Avril 2026 — Stellantis (automobile)</div>
-                                    <div class="text-base text-gray-300">Stage Administrateur Système Cybersécurité — Poissy</div>
-                                </div>
-                                <div class="text-base text-gray-300">23 fév - 03 avr</div>
-                            </div>
-                            <div class="mt-2 text-gray-300">
-                                <ul class="list-disc pl-5 space-y-1">
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">Avril 2026 · 23 fév – 03 avr</span><span class="badge">Stage</span></div>
+                                <h3>Stellantis (automobile)</h3>
+                                <p class="tl-sub">Stage Administrateur Système Cybersécurité — Sochaux</p>
+                                <ul class="list-arrow">
                                     <li>Développement d'une interface d'automatisation en Python pour audit CIS-CAT et hardening.</li>
                                     <li>Gestion multi-plateformes (Linux SLES, Red Hat, Windows, Solaris, AIX).</li>
                                     <li>Veille technologique sur NeuVector pour sécurisation Kubernetes/Rancher.</li>
                                     <li>Intégration IA (Claude-Sonnet) pour assistance remédiation.</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <div class="p-3 sm:p-4 md:p-6 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="font-semibold">Août 2025 — Auchan (employé saisonnier)</div>
-                                    <div class="text-base text-gray-300">Emballage en boulangerie — Belfort</div>
-                                </div>
-                                <div class="text-base text-gray-300">Saisonnier</div>
+                            <div class="tl-item minor">
+                                <div class="tl-head"><span class="tl-date">Août 2025</span><span class="badge cyan">Saisonnier</span></div>
+                                <h3>Auchan (employé saisonnier)</h3>
+                                <p class="tl-sub">Emballage en boulangerie — Belfort</p>
                             </div>
-                        </div>
-
-                        <div class="p-3 sm:p-4 md:p-6 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="font-semibold">Juin 2025 — Société Forvia (secteur automobile)</div>
-                                    <div class="text-base text-gray-300">Stage IT d’un mois — Bavans</div>
-                                </div>
-                                <div class="text-base text-gray-300">26 mai - 27 juin</div>
-                            </div>
-                            <div class="mt-2 text-gray-300">
-                                <ul class="list-disc pl-5 space-y-1">
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">Juin 2025 · 26 mai – 27 juin</span><span class="badge">Stage</span></div>
+                                <h3>Société Forvia (secteur automobile)</h3>
+                                <p class="tl-sub">Stage IT d’un mois — Bavans</p>
+                                <ul class="list-arrow">
                                     <li>Ajout de fonctionnalités sur une application interne (Dory).</li>
                                     <li>Développement frontend-backend avec utilisation de : API, JSON, YAML, Jenkins, Ansible, Docker.</li>
                                     <li>Travail en projet sur architectures PLM (Product Lifecycle Management).</li>
@@ -221,62 +117,73 @@
                                 </ul>
                             </div>
                         </div>
+                    </section>
 
-                    </div>
-                </section>
-
-                <section class="p-4 sm:p-6 md:p-8 card-impression">
-                    <h3 class="text-2xl font-semibold mb-4">Formation</h3>
-                    <div class="space-y-3">
-                        <div class="p-4 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="font-semibold">2021 — Brevet de Technicien Supérieur SIO (Services Informatiques aux Organisations)</div>
-                            <div class="text-base text-gray-300">Lycée Louis Pergaud — Besançon</div>
-                            <div class="mt-2 text-gray-300">
-                                <ul class="list-disc pl-5 space-y-1">
+                    <section class="card reveal">
+                        <div class="card-title"><h2>Formation</h2><span>// parcours scolaire</span></div>
+                        <div class="timeline">
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">En cours</span></div>
+                                <h3>Bachelor Universitaire de Technologie</h3>
+                                <p class="tl-sub">Université Marie et Louis Pasteur — Montbéliard</p>
+                                <ul class="list-arrow">
+                                    <li>Parcours Cybersécurité</li>
+                                </ul>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">2026</span></div>
+                                <h3>Brevet de Technicien Supérieur SIO (Services Informatiques aux Organisations)</h3>
+                                <p class="tl-sub">Lycée Louis Pergaud — Besançon</p>
+                                <ul class="list-arrow">
                                     <li>2ème année : option Solutions d'Infrastructure, Systèmes, Réseaux, Cybersécurité (SISR)</li>
                                     <li>1ère année : programmation, réseaux, développements de sites internet, applications informatiques</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <div class="p-4 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="font-semibold">2024 — Baccalauréat Général</div>
-                            <div class="text-base text-gray-300">Lycée Germaine Tillion — Montbéliard</div>
-                            <div class="mt-2 text-gray-300">
-                                <ul class="list-disc pl-5 space-y-1">
+                            <div class="tl-item">
+                                <div class="tl-head"><span class="tl-date">2024</span></div>
+                                <h3>Baccalauréat Général</h3>
+                                <p class="tl-sub">Lycée Germaine Tillion — Montbéliard</p>
+                                <ul class="list-arrow">
                                     <li>Terminale : Mathématiques, Numérique et Sciences Informatiques</li>
                                     <li>Première : Physique-Chimie en troisième spécialité</li>
                                 </ul>
                             </div>
+                            <div class="tl-item minor">
+                                <div class="tl-head"><span class="tl-date">2020</span></div>
+                                <h3>Brevet des collèges</h3>
+                                <p class="tl-sub">Collège JJ. Rousseau — Voujeaucourt</p>
+                            </div>
                         </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                        <div class="p-4 bg-gray-800/50 rounded-md border border-white/6">
-                            <div class="font-semibold">2020 — Brevet des collèges</div>
-                            <div class="text-base text-gray-300">Collège JJ. Rousseau — Voujeaucourt</div>
-                        </div>
-                    </div>
-                </section>
-
-                
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html" aria-current="page">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
             </div>
         </div>
-    </main>
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
-        </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
 
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/security.js" defer></script>
 </body>
 </html>
-
-
-

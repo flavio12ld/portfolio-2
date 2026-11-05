@@ -1,47 +1,80 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Racine — Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan du site — Flavio Lodé</title>
+    <meta name="description" content="Point d'entrée vers les sections importantes du portfolio de Flavio Lodé.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen text-white">
-    <nav class="bg-gray-900 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                <a href="projet.html" class="text-blue-400 hover:text-blue-300">Projets</a>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <p class="prompt reveal"><b>flavio@portfolio</b>:<i>/</i>$ tree -L 1</p>
+                <span class="eyebrow reveal" style="margin-top:18px">Page racine</span>
+                <h1 class="reveal d1">Plan du <span class="grad">site</span></h1>
+                <p class="lead reveal d2">Un point d'entrée généré dynamiquement vers les sections importantes de ce portfolio.</p>
+            </div>
+        </section>
+        <section class="section" style="padding-top:20px">
+            <div class="container">
+                <div id="rootCards" class="grid cols-3"></div>
+                <div style="margin-top:36px"><a href="index.html" class="btn btn-ghost">Retour à l'accueil</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
             </div>
         </div>
-    </nav>
-
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-12">
-        <h1 class="text-3xl font-bold text-center mb-4">Page racine</h1>
-        <p class="text-center text-gray-300 mb-8">Un point d'entrée généré dynamiquement vers les sections importantes de ce portfolio.</p>
-
-        <div id="rootCards" class="grid gap-4 sm:grid-cols-2"></div>
-
-        <div class="mt-10 text-center">
-            <a href="index.html" class="inline-block bg-transparent border border-gray-700 text-gray-300 px-4 py-2 rounded-md hover:bg-gray-800">Retour à l'accueil</a>
-        </div>
-    </main>
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="hover:text-blue-400 transition">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
-        </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
+
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/security.js" defer></script>
     <script src="assets/js/root.js" defer></script>
 </body>
 </html>
-
-

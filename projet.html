@@ -1,159 +1,99 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Projets - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ajout des styles globaux -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets — Flavio Lodé</title>
+    <meta name="description" content="Projets scolaires et projets en entreprise de Flavio Lodé : infrastructure réseau, automatisation, développement.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html" aria-current="page">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                    </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <p class="prompt reveal"><b>flavio@portfolio</b>:<i>~/projets</i>$ ls</p>
+                <span class="eyebrow reveal" style="margin-top:18px">Projets</span>
+                <h1 class="reveal d1">Choisis un type de <span class="grad">projet</span></h1>
+                <p class="lead reveal d2">Ce que j'ai réalisé pendant ma formation et pendant mes stages — avec le contexte, les technologies et les résultats.</p>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <main class="max-w-4xl mx-auto py-16 px-4 sm:px-6 md:px-8 text-center flex-1">
-        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-blue-300">Choisis un type de projet</h1>
-
-        <div class="grid gap-6 sm:grid-cols-2">
-            <a href="projet-scolaire.html" class="group block p-8 bg-gray-800/60 border border-white/6 rounded-lg transform transition hover:scale-105 hover:shadow-2xl">
-                <div class="flex items-center justify-center gap-4">
-                    <span class="text-4xl">🎓</span>
-                    <div class="text-left">
-                        <h2 class="font-semibold text-xl md:text-2xl">Projets scolaires</h2>
-                        <p class="text-gray-300 mt-1">Projets réalisés lors de ma formation, TP et examens</p>
-                    </div>
-                </div>
-            </a>
-
-            <div class="relative group">
-                <a href="#" class="block p-8 bg-gray-800/60 border border-white/6 rounded-lg transform transition hover:scale-105 hover:shadow-2xl">
-                    <div class="flex items-center justify-center gap-4">
-                        <span class="text-4xl">🏢</span>
-                        <div class="text-left">
-                            <h2 class="font-semibold text-xl md:text-2xl">Projets en entreprise</h2>
-                            <p class="text-gray-300 mt-1">Projets professionnels, stage et alternance</p>
-                        </div>
-                    </div>
+        <section class="section" style="padding-top:20px">
+            <div class="container grid cols-3">
+                <a href="projet-scolaire.html" class="card card-hover hub-card reveal">
+                    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+                    <span class="badge" style="align-self:flex-start;margin-bottom:12px">Formation</span>
+                    <h2>Projets scolaires</h2>
+                    <p>Projets réalisés lors de ma formation, TP et examens : infrastructure réseau sécurisée GSB, projets web, et mes objectifs de 3<sup>e</sup> année en cybersécurité.</p>
+                    <span class="more">Voir les projets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
-
-                <!-- Sous-cadres qui apparaissent au survol -->
-                <div class="absolute top-full left-0 right-0 mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-out z-10">
-                    <div class="grid gap-4 sm:grid-cols-2">
-                        <a href="projet-entreprise.html" class="block p-6 bg-gray-700/80 border border-blue-500/30 rounded-lg transform transition hover:scale-105 hover:shadow-xl hover:bg-gray-700/90">
-                            <div class="flex items-center justify-center gap-3">
-                                <div class="text-center">
-                                    <h3 class="font-semibold text-lg">Stage 1ère année</h3>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="projet-entreprise-2.html" class="block p-6 bg-gray-700/80 border border-blue-500/30 rounded-lg transform transition hover:scale-105 hover:shadow-xl hover:bg-gray-700/90">
-                            <div class="flex items-center justify-center gap-3">
-                                <div class="text-center">
-                                    <h3 class="font-semibold text-lg">Stage 2ème année</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                <a href="projet-entreprise.html" class="card card-hover hub-card reveal d1">
+                    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+                    <span class="badge cyan" style="align-self:flex-start;margin-bottom:12px">Stage 1<sup>re</sup> année · 2025</span>
+                    <h2>Forvia Clean Mobility</h2>
+                    <p>Stage DevOps de 5 semaines : optimisation de DORY, l'application interne d'inventaire des architectures et configurations.</p>
+                    <span class="more">Voir le stage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a href="projet-entreprise-2.html" class="card card-hover hub-card reveal d2">
+                    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <span class="badge cyan" style="align-self:flex-start;margin-bottom:12px">Stage 2<sup>e</sup> année · 2026</span>
+                    <h2>Stellantis</h2>
+                    <p>Stage de 6 semaines en cybersécurité : automatisation de l'audit CIS-CAT et du hardening, veille NeuVector, assistance IA.</p>
+                    <span class="more">Voir le stage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html" aria-current="page">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            </div>
         </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
-     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/security.js" defer></script>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
-</html> 
-
-
-
-
+</html>

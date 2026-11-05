@@ -1,417 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Projets - Portfolio Flavio Lodé</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ajout des styles globaux -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/progress.css">
-    <link rel="stylesheet" href="assets/css/veille.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Stellantis — Flavio Lodé</title>
+    <meta name="description" content="Stage cybersécurité de Flavio Lodé chez Stellantis : automatisation de l'audit CIS-CAT et du hardening, veille NeuVector.">
+    <meta name="theme-color" content="#030806">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23030806'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300ff88' text-anchor='middle'%3EFL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-gradient-to-br from-black via-gray-800 to-blue-200 min-h-screen flex flex-col text-white">
-        <nav class="bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-black/95 backdrop-blur-md border-b border-blue-500/20 sticky top-0 z-50 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
-                <!-- Logo et Nom -->
-                <div class="flex items-center gap-3">
-                    
-                    <a href="index.html" class="hidden md:inline text-xl font-bold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition duration-300">Flavio Lodé</a>
-                </div>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="bg-veil" aria-hidden="true"></div>
 
-                <!-- Menu Desktop -->
-                <div class="flex items-center gap-8">
-                    <ul id="mainNav" class="hidden lg:flex items-center gap-1">
-                        <li>
-                            <a href="index.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Accueil
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="a-propos.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> À propos
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cvv.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> CV
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="competence.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Compétences
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="projet.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-blue-300 transition duration-300 hover:bg-blue-500/20" aria-current="page">
-                                <span class="nav-emoji inline-block mr-2"></span> Projet
-                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="veille.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Veille
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item group relative px-4 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white transition duration-300 hover:bg-blue-500/10">
-                                <span class="nav-emoji inline-block mr-2"></span> Contact
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navigation principale">
+            <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="mainNav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="cvv.html">CV</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="projet.html" aria-current="page">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!-- Réseaux Sociaux -->
-                    <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-gray-700">
-                        <a href="https://www.linkedin.com/in/flavio-lode/" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="LinkedIn">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                        <a href="https://github.com/flavio-lode" target="_blank" class="group p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300" aria-label="GitHub">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-5 h-5 bg-white rounded-full opacity-70 group-hover:opacity-100 transition" />
-                        </a>
-                    </div>
-
-                    <!-- Bouton Mobile -->
-                    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" class="lg:hidden p-2.5 rounded-lg hover:bg-blue-500/20 transition duration-300 text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 flex-1">
-        <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-blue-400">PROJETS EN ENTREPRISE</h1>
-        <p class="text-center text-gray-300 mb-8">Mes réalisations professionnelles et contributions</p>
-
-        <!-- Bouton retour -->
-        <div class="flex justify-start mb-8">
-            <a href="projet.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; border-bottom: 1px solid rgba(96, 165, 250, 0.3);" onmouseover="this.style.color='#60a5fa'; this.style.borderBottomColor='rgba(96, 165, 250, 0.6)'; this.style.paddingLeft='0.75rem';" onmouseout="this.style.color='#cbd5e1'; this.style.borderBottomColor='rgba(96, 165, 250, 0.3)'; this.style.paddingLeft='1rem';" aria-label="Retour à la sélection des projets" title="Retour à la sélection des projets" aria-current="page">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <span>Retour</span>
-            </a>
-        </div>
-
-        <style>
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes slideInDown {
-                from { opacity: 0; transform: translateY(-30px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes float-up {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Statistiques */
-            .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; animation: fadeInUp 0.7s ease-out; }
-            .stat-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                padding: 1.5rem;
-                text-align: center;
-                transition: all 0.3s ease;
-            }
-            .stat-card:hover {
-                transform: translateY(-8px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 15px 35px rgba(96, 165, 250, 0.15);
-            }
-            .stat-number { font-size: 3rem; font-weight: 700; color: #60a5fa; margin-bottom: 0.5rem; }
-            .stat-label { color: #cbd5e1; font-size: 1.1rem; }
-
-            /* Projets principaux */
-            .projects-section { margin-top: 4rem; }
-            .section-title { font-size: 1.75rem; font-weight: 700; color: #60a5fa; margin-bottom: 2rem; margin-top: 2rem; border-bottom: 2px solid rgba(96, 165, 250, 0.3); padding-bottom: 1rem; }
-
-            /* Projet phare */
-            .featured-project {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
-                border: 2px solid rgba(96, 165, 250, 0.4);
-                border-radius: 1.5rem;
-                overflow: hidden;
-                margin-bottom: 3rem;
-                animation: fadeInUp 0.8s ease-out 0.2s both;
-            }
-            .featured-header {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                padding: 2rem;
-                align-items: center;
-            }
-            @media (max-width: 768px) {
-                .featured-header { grid-template-columns: 1fr; }
-            }
-            .featured-image {
-                width: 100%;
-                height: 300px;
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                border-radius: 1rem;
-                overflow: hidden;
-                border: 1px solid rgba(96, 165, 250, 0.25);
-            }
-            .featured-image > a { display: block; width: 100%; height: 100%; }
-            .featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-            .featured-info h3 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
-            .featured-info .company { color: #60a5fa; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
-            .featured-info .period { color: #cbd5e1; font-size: 1rem; margin-bottom: 1rem; }
-            .featured-info .description { color: #bcd0df; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem; }
-            .featured-content { padding: 2rem; padding-top: 0; }
-            .featured-project:hover {
-                border-color: rgba(96, 165, 250, 0.7);
-                box-shadow: 0 20px 50px rgba(96, 165, 250, 0.2);
-            }
-
-            /* Grille de projets */
-            .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-            .project-card {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                border: 1px solid rgba(96, 165, 250, 0.2);
-                border-radius: 1rem;
-                overflow: hidden;
-                transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
-                display: flex;
-                flex-direction: column;
-                animation: float-up 0.6s ease-out backwards;
-            }
-            .project-card:nth-child(1) { animation-delay: 0.3s; }
-            .project-card:nth-child(2) { animation-delay: 0.4s; }
-            .project-card:nth-child(3) { animation-delay: 0.5s; }
-            .project-card:nth-child(4) { animation-delay: 0.6s; }
-            .project-card:nth-child(5) { animation-delay: 0.7s; }
-            .project-card:nth-child(6) { animation-delay: 0.8s; }
-
-            .project-card:hover {
-                transform: translateY(-12px);
-                border-color: rgba(96, 165, 250, 0.5);
-                box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
-            }
-
-            .project-image {
-                width: 100%;
-                height: 200px;
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                display: flex;
-                align-items: stretch;
-                justify-content: stretch;
-                color: #64748b;
-                font-size: 1rem;
-                border-bottom: 1px solid rgba(96, 165, 250, 0.1);
-                overflow: hidden;
-            }
-            .project-image > a { display: block; width: 100%; height: 100%; }
-            .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-            .project-image .placeholder { margin: auto; padding: 0 1rem; text-align: center; }
-            /* Some screenshots are tall/narrow (modal popups). Use contain + padding to avoid cropping. */
-            .project-image--contain img { object-fit: contain; padding: 12px; box-sizing: border-box; }
-            .project-card:hover .project-image {
-                filter: brightness(1.1);
-            }
-
-            .project-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-            .project-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-            .project-company { color: #60a5fa; font-size: 0.95rem; margin-bottom: 0.8rem; }
-            .project-period { color: #94a3b8; font-size: 0.95rem; margin-bottom: 0.8rem; }
-            .project-description { color: #bcd0df; font-size: 1.05rem; line-height: 1.5; margin-bottom: 1rem; flex-grow: 1; }
-
-            /* Badges technologies */
-            .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-            .tech-badge {
-                display: inline-block;
-                padding: 0.25rem 0.7rem;
-                background: rgba(96, 165, 250, 0.15);
-                color: #60a5fa;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                font-weight: 600;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                transition: all 0.2s ease;
-            }
-            .tech-badge:hover {
-                background: rgba(96, 165, 250, 0.25);
-                border-color: rgba(96, 165, 250, 0.6);
-            }
-
-            /* Résultats/Impact */
-            .results { font-size: 1rem; color: #a5f3fc; font-weight: 600; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(96, 165, 250, 0.1); }
-            .result-item { margin-bottom: 0.5rem; }
-            .result-item::before { content: '✓ '; color: #10b981; }
-        </style>
-
-        <!-- STATISTIQUES CLÉS -->
-        <section class="stats-container">
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Semaines de stage</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1</div>
-                <div class="stat-label">Entreprise d'accueil</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">2</div>
-                <div class="stat-label">Projets réalisés</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Technos utilisées</div>
+    <main id="contenu">
+        <section class="page-hero">
+            <div class="container">
+                <a href="projet.html" class="back-link reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>cd ../projets</a>
+                <br>
+                <span class="eyebrow reveal">Projets en entreprise · Stage 2<sup>e</sup> année</span>
+                <h1 class="reveal d1"><span class="grad">Stellantis</span> — Cybersécurité</h1>
+                <p class="lead reveal d2">Mes réalisations professionnelles et contributions en tant qu'Administrateur Système orienté cybersécurité.</p>
             </div>
         </section>
 
-        <!-- CONTEXTE DU STAGE -->
-        <section class="projects-section">
-            <h2 class="section-title">🏢 Contexte du stage</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder">
-                        <img src="assets/img/logo stellantis.png" alt="logo Stellantis" loading="lazy"/></span></div>
-                    <div class="project-content">
-                        <div class="project-name">Stellantis</div>
-                        <div class="project-company">Sochaux (25600)</div>
-                        <div class="project-period">Stage du 23 février au 03 avril 2026</div>
-                        <p class="project-description">
-                            Stage de deuxième année en BTS SIO option SISR. Rôle d'Administrateur Système orienté cybersécurité.
-                            Intégration dans un contexte international exigeant, confirmant mon projet professionnel dans la cybersécurité.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image"><span class="placeholder">
-                        <img src="assets/img/GitLab_logo.svg.png"alt="Capture d'écran de Visual Studio Code"loading="lazy"/>
-                    </span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-name">Ressources & environnement</div>
-                        <div class="project-company">Outils principaux</div>
-                        <p class="project-description">
-                            Visual Studio Code, Python, GitLab, Claude-Sonnet (IA), CIS-CAT, NeuVector, Kubernetes/Rancher.
-                            Environnements Linux (SLES, Red Hat), Windows, Solaris, AIX.
-                        </p>
-                    </div>
+        <section class="container">
+            <div class="stats reveal">
+                <div class="stat"><b data-count="6">6</b><span>semaines de stage</span></div>
+                <div class="stat"><b data-count="1">1</b><span>entreprise d'accueil</span></div>
+                <div class="stat"><b data-count="2">2</b><span>projets réalisés</span></div>
+                <div class="stat"><b data-count="10" data-suffix="+">10+</b><span>technos utilisées</span></div>
+            </div>
+        </section>
+
+        <!-- CONTEXTE -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 01</span><h2>Contexte du stage</h2></div></div>
+                <div class="grid cols-2">
+                    <article class="card reveal">
+                        <div class="card-media logo"><img src="assets/img/logo%20stellantis.png" alt="Logo Stellantis" loading="lazy"></div>
+                        <h3>Stellantis</h3>
+                        <div class="card-meta"><span class="hl">Sochaux (25600)</span><span>Stage du 23 février au 03 avril 2026</span></div>
+                        <p>Stage de deuxième année en BTS SIO option SISR. Rôle d'Administrateur Système orienté cybersécurité. Intégration dans un contexte international exigeant, confirmant mon projet professionnel dans la cybersécurité.</p>
+                    </article>
+                    <article class="card reveal d1">
+                        <div class="card-media logo"><img src="assets/img/GitLab_logo.svg.png" alt="Logo GitLab" loading="lazy"></div>
+                        <h3>Ressources &amp; environnement</h3>
+                        <div class="card-meta"><span class="hl">Outils principaux</span></div>
+                        <p>Visual Studio Code, Python, GitLab, Claude-Sonnet (IA), CIS-CAT, NeuVector, Kubernetes/Rancher. Environnements Linux (SLES, Red Hat), Windows, Solaris, AIX.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- PROJET PHARE -->
-        <section class="projects-section">
-            <h2 class="section-title">🌟 Projet Phare</h2>
-            <div class="featured-project">
-                <div class="featured-header">
-                    <div class="featured-image">
-                        <a href="assets/img/ImageStellantis1.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
-                            <img
-                                src="assets/img/ImageStellantis1.png"
-                                alt="Capture d'écran de l'interface d'automatisation Python"
-                                loading="lazy"
-                            />
-                        </a>
-                    </div>
-                    <div class="featured-info">
-                        <h3>Plugin d'automatisation </h3>
-                        <div class="company">📍 Stellantis — Service Cybersécurité</div>
-                        <div class="period">📅 23 février 2026 – 03 avril 2026</div>
-                        <p class="description">
-                            Développement d'une interface d'automatisation en Python pour piloter l'audit de sécurité CIS-CAT et le hardening des systèmes.
-                            Outil capable de télécharger les kits de sécurité, scanner les infrastructures (Linux SLES, Red Hat, Windows, Solaris, AIX)
-                            et appliquer automatiquement des correctifs pour atteindre un score de conformité supérieur à 80% avant la mise en production.
-                            Intégration d'une dimension innovante avec une commande /ai utilisant le modèle Claude-Sonnet pour assister la remédiation.
-                        </p>
-                    </div>
-                </div>
-                <div class="featured-content">
-                    <div>
-                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Technologies utilisées</strong>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">CIS-CAT</span>
-                            <span class="tech-badge">Claude-Sonnet</span>
-                            <span class="tech-badge">Linux SLES</span>
-                            <span class="tech-badge">Red Hat</span>
-                            <span class="tech-badge">Windows</span>
-                            <span class="tech-badge">Solaris</span>
-                            <span class="tech-badge">AIX</span>
-                            <span class="tech-badge">GitLab</span>
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 02 — projet phare</span><h2>Plugin d'automatisation</h2></div></div>
+                <article class="card spotlight reveal">
+                    <a class="spotlight-media" href="assets/img/ImageStellantis1.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
+                        <img src="assets/img/ImageStellantis1.png" alt="Capture d'écran de l'interface d'automatisation Python" loading="lazy"
+                             onerror="this.onerror=null;this.src='assets/img/logo%20stellantis.png';this.alt='Logo Stellantis';this.parentNode.classList.add('logo');this.parentNode.removeAttribute('href');">
+                    </a>
+                    <div class="spotlight-body">
+                        <span class="badge">Stellantis — Service Cybersécurité</span>
+                        <div class="card-meta" style="margin-top:14px"><span class="hl">23 février 2026 – 03 avril 2026</span></div>
+                        <p>Développement d'une interface d'automatisation en Python pour piloter l'audit de sécurité CIS-CAT et le hardening des systèmes. Outil capable de télécharger les kits de sécurité, scanner les infrastructures (Linux SLES, Red Hat, Windows, Solaris, AIX) et appliquer automatiquement des correctifs pour atteindre un score de conformité supérieur à 80% avant la mise en production.</p>
+                        <p style="margin-top:12px">Intégration d'une dimension innovante avec une commande <span class="mono" style="color:var(--green)">/ai</span> utilisant le modèle Claude-Sonnet pour assister la remédiation.</p>
+                        <div class="tags" style="margin-top:20px"><span class="tag">Python</span><span class="tag">CIS-CAT</span><span class="tag">Claude-Sonnet</span><span class="tag">Linux SLES</span><span class="tag">Red Hat</span><span class="tag">Windows</span><span class="tag">Solaris</span><span class="tag">AIX</span><span class="tag">GitLab</span></div>
+                        <div class="card-foot">
+                            <p class="mono" style="color:var(--green);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Résultats &amp; impact</p>
+                            <ul class="checks">
+                                <li>Automatisation complète de l'audit et du hardening</li>
+                                <li>Score de conformité &gt;80% avant mise en production</li>
+                                <li>Assistance IA pour la remédiation via Claude-Sonnet</li>
+                                <li>Gestion multi-plateformes (Linux, Windows, Unix)</li>
+                                <li>Confirmation du projet professionnel en cybersécurité</li>
+                            </ul>
                         </div>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <strong style="color: #60a5fa; display: block; margin-bottom: 1rem;">Résultats & Impact</strong>
-                        <div style="color: #bcd0df; font-size: 0.9rem; line-height: 1.6;">
-                            ✓ Automatisation complète de l'audit et du hardening<br>
-                            ✓ Score de conformité >80% avant mise en production<br>
-                            ✓ Assistance IA pour la remédiation via Claude-Sonnet<br>
-                            ✓ Gestion multi-plateformes (Linux, Windows, Unix)<br>
-                            ✓ Confirmation du projet professionnel en cybersécurité
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <!-- AUTRES PROJETS -->
-        <section class="projects-section">
-            <h2 class="section-title">📚 Autres Projets</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image project-image--contain">
-                        <a href="assets/img/EA-neuvector.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand">
-                            <img
-                                src="assets/img/EA-neuvector.png"
-                                alt="Veille technologique sur NeuVector"
-                                loading="lazy"
-                            />
-                        </a>
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal"><div><span class="num">// 03</span><h2>Autres projets</h2></div></div>
+                <article class="card spotlight reveal">
+                    <a class="spotlight-media" href="assets/img/EA-neuvector.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand" style="background:#f4f7f5">
+                        <img src="assets/img/EA-neuvector.png" alt="Veille technologique sur NeuVector" loading="lazy" style="object-fit:contain;padding:18px">
+                    </a>
+                    <div class="spotlight-body">
+                        <span class="badge cyan">Mars 2026</span>
+                        <h3>Veille technologique NeuVector</h3>
+                        <p>Veille technologique sur NeuVector pour sécuriser les environnements conteneurisés Kubernetes/Rancher. Analyse des fonctionnalités de sécurité, intégration et bénéfices pour la protection des conteneurs.</p>
+                        <div class="tags" style="margin-top:20px"><span class="tag">NeuVector</span><span class="tag">Kubernetes</span><span class="tag">Rancher</span></div>
+                        <ul class="checks card-foot"><li>Sécurisation des environnements conteneurisés</li><li>Documentation et recommandations</li></ul>
                     </div>
-                    <div class="project-content">
-                        <div class="project-name">Veille technologique NeuVector</div>
-                        <div class="project-company">Stellantis</div>
-                        <div class="project-period">Mars 2026</div>
-                        <p class="project-description">
-                            Veille technologique sur NeuVector pour sécuriser les environnements conteneurisés Kubernetes/Rancher.
-                            Analyse des fonctionnalités de sécurité, intégration et bénéfices pour la protection des conteneurs.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">NeuVector</span>
-                            <span class="tech-badge">Kubernetes</span>
-                            <span class="tech-badge">Rancher</span>
-                        </div>
-                        <div class="results">
-                            <div class="result-item">Sécurisation des environnements conteneurisés</div>
-                            <div class="result-item">Documentation et recommandations</div>
-                        </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="card next-step reveal">
+                    <div><span class="mono" style="color:var(--green);font-size:.8rem">// envie d'en savoir plus ?</span><h3>Revoir le stage chez Forvia ou me contacter</h3></div>
+                    <div class="hero-actions" style="margin-top:0">
+                        <a href="projet-entreprise.html" class="btn btn-ghost">Stage 1<sup>re</sup> année</a>
+                        <a href="contact.html" class="btn btn-primary">Me contacter <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
                     </div>
                 </div>
             </div>
         </section>
-</main>
+    </main>
 
-<footer class="bg-gray-900 text-gray-400 py-6 mt-12">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="index.html" class="hover:text-blue-400 transition">Accueil</a>
-            <a href="a-propos.html" class="hover:text-blue-400 transition">À propos</a>
-            <a href="cv.html" class="hover:text-blue-400 transition">CV</a>
-            <a href="competence.html" class="hover:text-blue-400 transition">Compétences</a>
-            <a href="projet.html" class="text-blue-300 hover:text-blue-400 transition" aria-current="page">Projet</a>
-            <a href="veille.html" class="hover:text-blue-400 transition">Veille technologique</a>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand"><span class="brand-mark">FL</span><span>Flavio Lodé</span></a>
+                <p>Étudiant en BUT R&amp;T, parcours cybersécurité — Montbéliard, France.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens du pied de page">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="cvv.html">CV</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet.html" aria-current="page">Projets</a>
+                <a href="veille.html">Veille technologique</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/flavio-lode/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a class="social" href="https://github.com/flavio12ld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            </div>
         </div>
-        <p class="text-center mt-4">&copy; 2025 Flavio Lodé. Tous droits réservés.</p>
+        <p class="footer-copy">© <span data-year>2026</span> Flavio Lodé — Tous droits réservés.</p>
     </footer>
 
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/security.js" defer></script>
 </body>
 </html>
